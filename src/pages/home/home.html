@@ -1,0 +1,49 @@
+<ion-header color="royal">
+  <ion-navbar color="royal" >
+    <ion-title>Home Richiedente</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only color="royal" (click)='logout()'>
+        <ion-icon name="logout"><img src="assets/img/logout.png" class="dimensioni"> </ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding >
+<p>
+<img src="assets/img/logo1.gif"/>
+
+</p>
+<p>
+
+</p>
+
+<ion-content class="card-background-page">
+<p>
+  <ion-card  (click)='viewCatalogo()'>
+    <img src="assets/img/icona-catalogo3.png"/>
+    <div class="card-title">Catalogo Articoli</div>
+    <div class="card-subtitle"></div>
+  </ion-card>
+
+  <ion-card (click)='viewMagazzino()'>
+    <img src="assets/img/magazzino.jpg"/>
+    <div class="card-title">MyMagazzino</div>
+    <div class="card-subtitle"></div>
+  </ion-card>
+
+  <ion-card>
+    <img src="assets/img/richieste.jpg"/>
+    <div class="card-title">Gestisci richieste</div>
+    <div class="card-subtitle"></div>
+  </ion-card>
+
+  <ion-card>
+    <img src="assets/img/squadra.jpg"/>
+    <div class="card-title">Profilo Squadra</div>
+    <div class="card-subtitle"></div>
+  </ion-card>
+</p>
+
+</ion-content>
+</ion-content>
