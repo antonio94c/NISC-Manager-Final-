@@ -6,6 +6,7 @@ import { LoginPage } from '../pages/login/login';
 import {RegistratiPage} from '../pages/registrati/registrati';
 import {RecuperaPasswordPage} from '../pages/recupera-password/recupera-password';
 import {HttpClientModule} from '@angular/common/http';
+import {HttpModule} from '@angular/http';
 import {HomePage} from '../pages/home/home';
 import {AboutPage} from '../pages/about/about';
 import {DettagliPage} from '../pages/dettagliarticoli/dettagliarticoli';
@@ -28,6 +29,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   imports: [
     BrowserModule,
     HttpClientModule,
+    HttpModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],

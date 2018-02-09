@@ -12,17 +12,17 @@
       <ion-label>
         USER_ID
       </ion-label>
-      <ion-input type="text" placeholder=""></ion-input>
+      <ion-input type="text" placeholder="" [(ngModel)]="user_id" [ngModelOptions]="{standalone: true}"></ion-input>
     </ion-item>
     <ion-item id="page-input4">
       <ion-label>
         Password
       </ion-label>
-      <ion-input type="text" placeholder=""></ion-input>
+      <ion-input type="password" placeholder="" [(ngModel)]="password" [ngModelOptions]="{standalone: true}"></ion-input>
     </ion-item>
     <ion-item><a (click)='recuperaPassword()'>Password Dimentica?</a></ion-item>
   </form>
-  <button id="page-button1" ion-button color="positive" block (click)='enter()'>
+  <button id="page-button1" ion-button color="positive" block (click)='postRequest(user_id, password)'>
     Login
   </button>
   <button id="page-button2" ion-button color="positive" block (click)='sign_up()'>

@@ -15,31 +15,31 @@
         <ion-label>
           Nome Squadra
         </ion-label>
-        <ion-input type="text" placeholder=""></ion-input>
+        <ion-input placeholder="Text Input" type="text" [(ngModel)]="nome_s" [ngModelOptions]="{standalone: true}"></ion-input>
       </ion-item>
       <ion-item id="registrati-input6">
         <ion-label>
           Nome del richiedente
         </ion-label>
-        <ion-input type="email" placeholder=""></ion-input>
+        <ion-input placeholder="Text Input" type="text" [(ngModel)]="nome_r" [ngModelOptions]="{standalone: true}"></ion-input>
       </ion-item>
       <ion-item id="registrati-input7">
         <ion-label>
           Email
         </ion-label>
-        <ion-input type="text" placeholder=""></ion-input>
+        <ion-input placeholder="Text Input" type="text" [(ngModel)]="email" [ngModelOptions]="{standalone: true}"></ion-input>
       </ion-item>
       <ion-item id="registrati-input8">
         <ion-label>
           Password
         </ion-label>
-        <ion-input type="text" placeholder=""></ion-input>
+        <ion-input placeholder="Text Input" type="password" [(ngModel)]="pass" [ngModelOptions]="{standalone: true}"></ion-input>
       </ion-item>
       <ion-item id="registrati-input9">
         <ion-label>
           Conferma Password
         </ion-label>
-        <ion-input type="text" placeholder=""></ion-input>
+        <ion-input placeholder="Text Input" type="password" [(ngModel)]="conf_pass" [ngModelOptions]="{standalone: true}"></ion-input>
       </ion-item>
     </ion-list>
   </form>
@@ -48,7 +48,7 @@
       <ion-label>
         Seleziona Ruolo
       </ion-label>
-      <ion-select name="">
+      <ion-select [(ngModel)]="selectedValue" [ngModelOptions]="{standalone: true}">
         <ion-option>
           Richiedente
         </ion-option>
@@ -58,7 +58,7 @@
       </ion-select>
     </ion-item>
   </form>
-  <button id="registrati-button3" ion-button color="stable" block>
+  <button id="registrati-button3" ion-button color="stable" block (click)="postRequest(nome_s,email, pass)">
     Sign up
   </button>
 </ion-content>
