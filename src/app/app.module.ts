@@ -11,6 +11,8 @@ import {HomePage} from '../pages/home/home';
 import {AboutPage} from '../pages/about/about';
 import {DettagliPage} from '../pages/dettagliarticoli/dettagliarticoli';
 import {MymagazzinoPage} from '../pages/mymagazzino/mymagazzino';
+import {HomeAmmPage} from '../pages/home-amm/home-amm';
+import {GestioneRegistrazionePage} from '../pages/gestione-registrazione/gestione-registrazione';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -24,7 +26,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HomePage,
     AboutPage,
     DettagliPage,
-    MymagazzinoPage
+    MymagazzinoPage,
+    HomeAmmPage,
+    GestioneRegistrazionePage
   ],
   imports: [
     BrowserModule,
@@ -41,7 +45,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HomePage,
     AboutPage,
     DettagliPage,
-    MymagazzinoPage
+    MymagazzinoPage,
+    HomeAmmPage,
+    GestioneRegistrazionePage
   ],
   providers: [
     StatusBar,

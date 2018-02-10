@@ -1,0 +1,55 @@
+<!--
+  Generated template for the GestioneRegistrazionePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Gestione Registrazione</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+    
+        <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+    
+        <ion-grid>
+          <ion-row>
+            <ion-col col-3>Squadra</ion-col>
+            <ion-col col-3>Email</ion-col>
+            <ion-col col-3>Status</ion-col>
+            <ion-col col-3>Approvi?</ion-col>
+          </ion-row>
+        </ion-grid>
+    
+        <ion-list>
+            <ion-item *ngFor="let utente of utenti">
+              <ion-grid>
+                  <ion-row>
+                    <ion-col col-2>{{utente.nome_s}}</ion-col>
+                    <ion-col col-4>{{utente.email}}</ion-col>
+                    <ion-col col-4 *ngIf="utente.stato == 'in attesa';">
+                      <button class="inAttesa" ion-button> </button>
+                    </ion-col>
+                    <ion-col col-4 *ngIf="utente.stato == 'approvato';">
+                      <button class="approvato" ion-button> </button>
+                    </ion-col>
+                    <ion-col col-4 *ngIf="utente.stato == 'rifiutato';">
+                      <button class="rifiutato" ion-button> </button>
+                    </ion-col>
+
+
+
+<!--
+
+                    <ng-template #elseBlock><button class="approvato" ion-button> </button></ng-template> -->
+                    <ion-col col-2><ion-icon name="checkmark-circle-outline" (click)="updateStatus(utente,'approvato')"></ion-icon> 
+                      <ion-icon name="close" (click)="updateStatus(utente,'rifiutato')"></ion-icon></ion-col>
+                  </ion-row>
+                </ion-grid>
+            </ion-item>
+          </ion-list>
+   </ion-content>

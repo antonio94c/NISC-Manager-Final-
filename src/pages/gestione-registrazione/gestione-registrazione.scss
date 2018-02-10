@@ -1,0 +1,24 @@
+page-gestione-registrazione {
+
+    .inAttesa{
+        width: 30px !important;
+        height: 30px !important;
+        border-radius: 50% !important;
+        background-color: #EDFF21;
+    }
+
+    .approvato{
+        width: 30px !important;
+        height: 30px !important;
+        border-radius: 50% !important;
+        background-color: #287233;
+    }
+
+    .rifiutato{
+        width: 30px !important;
+        height: 30px !important;
+        border-radius: 50% !important;
+        background-color: red;
+    }
+
+}

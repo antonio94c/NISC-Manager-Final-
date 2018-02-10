@@ -15,7 +15,7 @@ export class HomePage {
   }
 
   logout(){
-    this.navCtrl.push(LoginPage);
+    this.navCtrl.setRoot(LoginPage);
   }
 
   viewCatalogo(){

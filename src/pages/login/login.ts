@@ -5,6 +5,7 @@ import { RegistratiPage } from '../registrati/registrati';
 import { RecuperaPasswordPage } from '../recupera-password/recupera-password';
 import { HomePage } from '../home/home';
 import { Http, RequestOptions, Headers } from '@angular/http';
+import { HomeAmmPage } from '../home-amm/home-amm';
 
 
 @Component({
@@ -52,7 +53,7 @@ export class LoginPage {
         if(this.dati_server!=null){
             this.utenti.push(new Utente(this.dati_server[0].email,this.dati_server[0].password,this.dati_server[0].nome_s,this.dati_server[0].componenti,this.dati_server[0].stato));
             if(this.dati_server[0].stato == 'approvato')
-                this.navCtrl.push(HomePage);
+                this.navCtrl.setRoot(HomePage);
             else this.presentConfirm('Richiesta in approvazione');
         }
         else this.presentConfirm('Non sei registrato'); 
@@ -60,6 +61,10 @@ export class LoginPage {
         console.log(error);// Error getting the data
       });
   } 
+
+  goToHomeAmm(){
+    this.navCtrl.setRoot(HomeAmmPage);
+  }
 
   presentConfirm(text: string) {
     let alert = this.altr.create({
