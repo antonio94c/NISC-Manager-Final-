@@ -13,9 +13,17 @@ import {DettagliPage} from '../pages/dettagliarticoli/dettagliarticoli';
 import {MymagazzinoPage} from '../pages/mymagazzino/mymagazzino';
 import {HomeAmmPage} from '../pages/home-amm/home-amm';
 import {GestioneRegistrazionePage} from '../pages/gestione-registrazione/gestione-registrazione';
-
+import {EliminaMagazziniAdminPage} from '../pages/elimina-magazzini-admin/elimina-magazzini-admin';
+import {GestioneArticoliAdminPage} from '../pages/gestione-articoli-admin/gestione-articoli-admin';
+import {GestioneMagazziniAdminPage} from '../pages/gestione-magazzini-admin/gestione-magazzini-admin';
+import {InserisciModificaMagazzinoPage} from '../pages/inserisci-modifica-magazzino/inserisci-modifica-magazzino';
+import {HomeMagPage} from '../pages/home-mag/home-mag';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { IonicStorageModule } from '@ionic/storage';
+import {GestioneMagazziniMagPage} from '../pages/gestione-magazzini-mag/gestione-magazzini-mag';
+import {RichiesteMaterialePage} from '../pages/richiestemateriale/richiestemateriale';
+import {DettagliRichiestaPage} from '../pages/dettaglirichiesta/dettaglirichiesta';
 
 @NgModule({
   declarations: [
@@ -28,13 +36,22 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     DettagliPage,
     MymagazzinoPage,
     HomeAmmPage,
-    GestioneRegistrazionePage
+    GestioneRegistrazionePage,
+    EliminaMagazziniAdminPage,
+    GestioneArticoliAdminPage,
+    GestioneMagazziniAdminPage,
+    InserisciModificaMagazzinoPage,
+    GestioneMagazziniMagPage,
+    HomeMagPage,
+    RichiesteMaterialePage,
+    DettagliRichiestaPage
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     HttpModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -47,7 +64,15 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     DettagliPage,
     MymagazzinoPage,
     HomeAmmPage,
-    GestioneRegistrazionePage
+    GestioneRegistrazionePage,
+    EliminaMagazziniAdminPage,
+    GestioneArticoliAdminPage,
+    GestioneMagazziniAdminPage,
+    InserisciModificaMagazzinoPage,
+    GestioneMagazziniMagPage,
+    HomeMagPage,
+    RichiesteMaterialePage,
+    DettagliRichiestaPage
   ],
   providers: [
     StatusBar,

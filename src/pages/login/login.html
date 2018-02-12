@@ -22,10 +22,19 @@
     </ion-item>
     <ion-item><a (click)='recuperaPassword()'>Password Dimentica?</a></ion-item>
   </form>
-  <button id="page-button1" ion-button color="positive" block (click)='goToHomeAmm()'>
+  <button id="page-button1" ion-button color="positive" block (click)='postRequest(user_id,password)'>
     Login
   </button>
   <button id="page-button2" ion-button color="positive" block (click)='sign_up()'>
     Registarti
+  </button>
+  <button ion-button color="positive" block (click)='goToHomeRic()'>
+    Richiedente
+  </button>
+  <button ion-button color="positive" block (click)='goToHomeMag()'>
+    Magazziniere
+  </button>
+  <button ion-button color="positive" block (click)='goToHomeAmm()'>
+    Amministratore
   </button>
 </ion-content>

@@ -3,6 +3,7 @@ import { NavController } from 'ionic-angular';
 import {LoginPage} from '../login/login';
 import { AboutPage } from '../about/about';
 import { MymagazzinoPage } from '../mymagazzino/mymagazzino';
+import { RichiesteMaterialePage } from '../richiestemateriale/richiestemateriale';
 
 @Component({
   selector: 'page-home',
@@ -24,6 +25,10 @@ export class HomePage {
 
   viewMagazzino(){
     this.navCtrl.push(MymagazzinoPage);
+  }
+
+  viewRichiesta(){
+    this.navCtrl.push(RichiesteMaterialePage);
   }
 
 }

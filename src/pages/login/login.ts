@@ -6,6 +6,7 @@ import { RecuperaPasswordPage } from '../recupera-password/recupera-password';
 import { HomePage } from '../home/home';
 import { Http, RequestOptions, Headers } from '@angular/http';
 import { HomeAmmPage } from '../home-amm/home-amm';
+import {HomeMagPage} from '../home-mag/home-mag';
 
 
 @Component({
@@ -51,9 +52,16 @@ export class LoginPage {
         console.log(this.dati_server);
 
         if(this.dati_server!=null){
-            this.utenti.push(new Utente(this.dati_server[0].email,this.dati_server[0].password,this.dati_server[0].nome_s,this.dati_server[0].componenti,this.dati_server[0].stato));
-            if(this.dati_server[0].stato == 'approvato')
-                this.navCtrl.setRoot(HomePage);
+            this.utenti.push(new Utente(this.dati_server[0].email,this.dati_server[0].password,this.dati_server[0].nome_s,this.dati_server[0].componenti,this.dati_server[0].stato, this.dati_server[0].ruolo));
+            if(this.dati_server[0].ruolo == 'Amministratore')
+               this.navCtrl.setRoot(HomeAmmPage);
+            else
+            if(this.dati_server[0].stato == 'approvato'){
+               if(this.dati_server[0].ruolo == 'Magazziniere')
+                  this.navCtrl.setRoot(HomeMagPage);
+               if(this.dati_server[0].ruolo == 'Richiedente')
+                  this.navCtrl.setRoot(HomePage);
+            }
             else this.presentConfirm('Richiesta in approvazione');
         }
         else this.presentConfirm('Non sei registrato'); 
@@ -64,6 +72,14 @@ export class LoginPage {
 
   goToHomeAmm(){
     this.navCtrl.setRoot(HomeAmmPage);
+  }
+
+  goToHomeRic(){
+    this.navCtrl.setRoot(HomePage);
+  }
+
+  goToHomeMag(){
+    this.navCtrl.setRoot(HomeMagPage);
   }
 
   presentConfirm(text: string) {
@@ -91,12 +107,14 @@ class Utente{
  nome_s: string;
  componenti: number;
  stato: string;
+ ruolo: string;
 
-  constructor(email:string, password:string, nome_s:string, compo:number, stato:string){
+  constructor(email:string, password:string, nome_s:string, compo:number, stato:string, ruolo:string){
     this.email = email;
     this.password = password;
     this.nome_s = nome_s;
     this.componenti = compo;
     this.stato = stato;
+    this.ruolo = ruolo;
   }
 }

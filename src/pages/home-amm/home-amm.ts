@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {LoginPage} from '../login/login';
 import { GestioneRegistrazionePage } from '../gestione-registrazione/gestione-registrazione';
+import {GestioneMagazziniAdminPage} from '../gestione-magazzini-admin/gestione-magazzini-admin';
 
 /**
  * Generated class for the HomeAmmPage page.
@@ -24,8 +25,7 @@ export class HomeAmmPage {
     this.navCtrl.setRoot(LoginPage);
   }
 
-  goToGestioneRegistrazioni(){
-    this.navCtrl.push(GestioneRegistrazionePage);
+  viewMagazzini(){
+    this.navCtrl.push(GestioneMagazziniAdminPage);
   }
-
 }
