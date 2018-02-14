@@ -1,0 +1,31 @@
+<ion-header>
+    <ion-navbar color="danger">
+      <ion-title>Sposta articoli</ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content style="background-color:rgb(205, 241, 245);">
+    <p>
+        <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>     
+    </p>
+    <p></p>
+    <div ng-controller="listController"> 
+      <ion-list>
+    
+      <ion-item *ngFor="let articolo of articoli">
+          <ion-thumbnail item-start>
+            <img src="assets/img/componente4.jpg">
+          </ion-thumbnail>
+          <h2>Nome: {{articolo.nome}}</h2>
+          <p>Disponibiltà: {{articolo.quantita}}</p>
+          <p>
+            <label>Da spostare:
+              <input #spostare type="number" value="0" min="0" max={{articolo.quantita}} step="1">
+            </label>
+          </p>
+          <button ion-button outline item-end (click)='sposta(articolo,spostare.value)'>Sposta</button>
+        </ion-item>
+      </ion-list>
+    </div>
+
+  </ion-content>

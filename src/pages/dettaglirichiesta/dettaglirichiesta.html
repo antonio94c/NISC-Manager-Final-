@@ -13,13 +13,13 @@
     </ion-header>
     
     
-    <ion-content padding>
-      <ion-grid>
-        <ion-row>
+    <ion-content padding >
+      <ion-grid >
+        <ion-row style="background:#ee3b53" >
           
-          <ion-col col-4>ID articolo</ion-col>
-          <ion-col col-4>Quantità richiesta</ion-col>
-          <ion-col col-4>Quantità approvata</ion-col>
+          <ion-col col-4 style="font-weight: bold; color: white;">Nome articolo</ion-col>
+          <ion-col col-3  style="font-weight: bold; color: white;">Quantità richiesta</ion-col>
+          <ion-col col-4  style="font-weight: bold; color: white;">Quantità approvata</ion-col>
           
          
         </ion-row>
@@ -27,11 +27,11 @@
   
       <ion-list ion-item *ngFor="let richiesta of richieste">
           
-            <ion-grid>
+            <ion-grid style="font-size: 13px;">
                 <ion-row>
                   
                   <ion-col col-4>{{ richiesta.articolo }}</ion-col>
-                  <ion-col col-4>{{ richiesta.quantita_richiesta }}</ion-col>
+                  <ion-col col-3>{{ richiesta.quantita_richiesta }}</ion-col>
                   <ion-col col-4>{{ richiesta.quantita_approvata }}</ion-col>
                   
                 </ion-row>

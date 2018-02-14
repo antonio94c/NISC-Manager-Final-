@@ -1,14 +1,14 @@
 webpackJsonp([14],{
 
-/***/ 306:
+/***/ 315:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MymagazzinoPageModule", function() { return MymagazzinoPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GestioneArticoliMagPageModule", function() { return GestioneArticoliMagPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__mymagazzino__ = __webpack_require__(111);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__gestione_articoli_mag__ = __webpack_require__(115);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,23 +18,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var MymagazzinoPageModule = (function () {
-    function MymagazzinoPageModule() {
+var GestioneArticoliMagPageModule = (function () {
+    function GestioneArticoliMagPageModule() {
     }
-    MymagazzinoPageModule = __decorate([
+    GestioneArticoliMagPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__mymagazzino__["a" /* MymagazzinoPage */],
+                __WEBPACK_IMPORTED_MODULE_2__gestione_articoli_mag__["a" /* GestioneArticoliMagPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__mymagazzino__["a" /* MymagazzinoPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__gestione_articoli_mag__["a" /* GestioneArticoliMagPage */]),
             ],
         })
-    ], MymagazzinoPageModule);
-    return MymagazzinoPageModule;
+    ], GestioneArticoliMagPageModule);
+    return GestioneArticoliMagPageModule;
 }());
 
-//# sourceMappingURL=mymagazzino.module.js.map
+//# sourceMappingURL=gestione-articoli-mag.module.js.map
 
 /***/ })
 

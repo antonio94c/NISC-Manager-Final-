@@ -1,14 +1,14 @@
 webpackJsonp([10],{
 
-/***/ 298:
+/***/ 319:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EliminaMagazziniAdminPageModule", function() { return EliminaMagazziniAdminPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GestioneUtentiPageModule", function() { return GestioneUtentiPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__elimina_magazzini_admin__ = __webpack_require__(105);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__gestione_utenti__ = __webpack_require__(121);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,23 +18,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var EliminaMagazziniAdminPageModule = (function () {
-    function EliminaMagazziniAdminPageModule() {
+var GestioneUtentiPageModule = (function () {
+    function GestioneUtentiPageModule() {
     }
-    EliminaMagazziniAdminPageModule = __decorate([
+    GestioneUtentiPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__elimina_magazzini_admin__["a" /* EliminaMagazziniAdminPage */],
+                __WEBPACK_IMPORTED_MODULE_2__gestione_utenti__["a" /* GestioneUtentiPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__elimina_magazzini_admin__["a" /* EliminaMagazziniAdminPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__gestione_utenti__["a" /* GestioneUtentiPage */]),
             ],
         })
-    ], EliminaMagazziniAdminPageModule);
-    return EliminaMagazziniAdminPageModule;
+    ], GestioneUtentiPageModule);
+    return GestioneUtentiPageModule;
 }());
 
-//# sourceMappingURL=elimina-magazzini-admin.module.js.map
+//# sourceMappingURL=gestione-utenti.module.js.map
 
 /***/ })
 

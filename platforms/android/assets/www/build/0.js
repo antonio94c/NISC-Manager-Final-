@@ -1,14 +1,14 @@
 webpackJsonp([0],{
 
-/***/ 289:
+/***/ 327:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MymagazzinoPageModule", function() { return MymagazzinoPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SpostaArticoliMagPageModule", function() { return SpostaArticoliMagPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__mymagazzino__ = __webpack_require__(106);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__sposta_articoli_mag__ = __webpack_require__(115);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,23 +18,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var MymagazzinoPageModule = (function () {
-    function MymagazzinoPageModule() {
+var SpostaArticoliMagPageModule = (function () {
+    function SpostaArticoliMagPageModule() {
     }
-    MymagazzinoPageModule = __decorate([
+    SpostaArticoliMagPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__mymagazzino__["a" /* MymagazzinoPage */],
+                __WEBPACK_IMPORTED_MODULE_2__sposta_articoli_mag__["a" /* SpostaArticoliMagPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__mymagazzino__["a" /* MymagazzinoPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__sposta_articoli_mag__["a" /* SpostaArticoliMagPage */]),
             ],
         })
-    ], MymagazzinoPageModule);
-    return MymagazzinoPageModule;
+    ], SpostaArticoliMagPageModule);
+    return SpostaArticoliMagPageModule;
 }());
 
-//# sourceMappingURL=mymagazzino.module.js.map
+//# sourceMappingURL=sposta-articoli-mag.module.js.map
 
 /***/ })
 

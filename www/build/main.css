@@ -25817,6 +25817,10 @@ page-mymagazzino ion-col {
   text-align: center;
 }
 
+page-profilo ion-col {
+  text-align: center;
+}
+
 page-richiestemateriale ion-col {
   text-align: center;
 }

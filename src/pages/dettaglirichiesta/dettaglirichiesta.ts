@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { HttpClient } from '@angular/common/http';
+//import { HttpClient } from '@angular/common/http';
+import { Http, Headers, RequestOptions } from '@angular/http';
 /**
  * Generated class for the DettagliArticoloPage page.
  *
@@ -40,8 +41,32 @@ export class DettagliRichiestaPage {
     //dati_server: any;
     richieste_divise: any;
   
-    constructor(public navCtrl: NavController, public http: HttpClient, public navParams: NavParams) {
-      http.get('http://niscmanager.altervista.org/get_dettagli_richiesta.php?nome_squadra=squadra1')
+   
+    constructor(public navCtrl: NavController, public http: Http, public navParams: NavParams) {
+      var headers = new Headers();
+      headers.append('Content-Type', 'application/x-www-form-urlencoded' );
+      let options = new RequestOptions({ headers: headers }); 
+
+      var squadra="squadra1"; 
+      var id= navParams.data;  
+      let postParams = {
+        squadra,
+        id
+      };
+      this.http.post("http://niscmanager.altervista.org/get_dettagli_richiesta.php", JSON.stringify(postParams), options)
+        .subscribe(data => {
+          console.log("ciao "+data['_body']);
+          this.richieste_divise=JSON.parse(data['_body']);
+          console.log("ciao dopo "+this.richieste_divise);
+          if(this.richieste_divise!=null){
+            for(var i=0;i<this.richieste_divise.length;i++){
+              this.richieste.push(new Richiesta(this.richieste_divise[i].id,this.richieste_divise[i].stato,this.richieste_divise[i].articolo,this.richieste_divise[i].quantita_richiesta,this.richieste_divise[i].quantita_approvata));
+            }
+          }
+        });
+      }
+    
+      /* http.get('http://niscmanager.altervista.org/get_dettagli_richiesta.php?nome_squadra=squadra1')
       .subscribe(data => { 
               this.richieste_divise = data; 
               console.log(this.richieste_divise);
@@ -54,8 +79,8 @@ export class DettagliRichiestaPage {
       },err => {
         console.log("Error occured");
       }); 
+   */
    
-    }
   
    /* itemSelected(richiesta: Richiesta) {
       console.log("Selected Item", richiesta.stato);

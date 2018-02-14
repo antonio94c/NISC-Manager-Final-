@@ -40,14 +40,8 @@
                     <ion-col col-4 *ngIf="utente.stato == 'rifiutato';">
                       <button class="rifiutato" ion-button> </button>
                     </ion-col>
-
-
-
-<!--
-
-                    <ng-template #elseBlock><button class="approvato" ion-button> </button></ng-template> -->
-                    <ion-col col-2><ion-icon name="checkmark-circle-outline" (click)="updateStatus(utente,'approvato')"></ion-icon> 
-                      <ion-icon name="close" (click)="updateStatus(utente,'rifiutato')"></ion-icon></ion-col>
+                    <ion-col col-2><ion-icon name="checkmark-circle-outline" (click)="updateStatus(utente,'approvato','')"></ion-icon> 
+                      <ion-icon name="close" (click)="updateStatus(utente,'rifiutato','')"></ion-icon></ion-col>
                   </ion-row>
                 </ion-grid>
             </ion-item>

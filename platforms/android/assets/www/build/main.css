@@ -25686,6 +25686,35 @@ page-dettagli h1 {
   color: #ff1985;
 }
 
+age-dettagli h1 {
+  font-size: 40px;
+  font-weight: bold;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
+  color: #ff1985;
+}
+
+page-gestione-registrazione .inAttesa {
+  width: 30px !important;
+  height: 30px !important;
+  border-radius: 50% !important;
+  background-color: #EDFF21;
+}
+
+page-gestione-registrazione .approvato {
+  width: 30px !important;
+  height: 30px !important;
+  border-radius: 50% !important;
+  background-color: #287233;
+}
+
+page-gestione-registrazione .rifiutato {
+  width: 30px !important;
+  height: 30px !important;
+  border-radius: 50% !important;
+  background-color: red;
+}
+
 page-home .sfondo {
   color: #caedf3;
 }
@@ -25753,6 +25782,41 @@ page-home-amm .card-background-page .card-subtitle {
   color: #fff;
 }
 
+page-home-mag .sfondo {
+  color: #caedf3;
+}
+
+page-home-mag .dimensioni {
+  width: 30%;
+}
+
+page-home-mag .card-background-page ion-card {
+  position: relative;
+  text-align: center;
+  opacity: 0.7;
+}
+
+page-home-mag .card-background-page .card-title {
+  position: absolute;
+  top: 36%;
+  font-size: 2.0em;
+  width: 100%;
+  font-weight: bold;
+  color: #0c0106;
+}
+
+page-home-mag .card-background-page .card-subtitle {
+  font-size: 1.0em;
+  position: absolute;
+  top: 52%;
+  width: 100%;
+  color: #fff;
+}
+
 page-mymagazzino ion-col {
+  text-align: center;
+}
+
+page-richiestemateriale ion-col {
   text-align: center;
 }

@@ -19,11 +19,22 @@ import {GestioneMagazziniAdminPage} from '../pages/gestione-magazzini-admin/gest
 import {InserisciModificaMagazzinoPage} from '../pages/inserisci-modifica-magazzino/inserisci-modifica-magazzino';
 import {HomeMagPage} from '../pages/home-mag/home-mag';
 import { StatusBar } from '@ionic-native/status-bar';
+import {EmailComposer}  from '@ionic-native/email-composer';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { IonicStorageModule } from '@ionic/storage';
 import {GestioneMagazziniMagPage} from '../pages/gestione-magazzini-mag/gestione-magazzini-mag';
 import {RichiesteMaterialePage} from '../pages/richiestemateriale/richiestemateriale';
 import {DettagliRichiestaPage} from '../pages/dettaglirichiesta/dettaglirichiesta';
+import {GestioneUtentiPage} from '../pages/gestione-utenti/gestione-utenti';
+import {ModificaProfiloAdminPage} from '../pages/modifica-profilo-admin/modifica-profilo-admin';
+import {ProfiloAdminPage} from '../pages/profilo-admin/profilo-admin';
+import {DettagliArticoliMagPage} from '../pages/dettagli-articoli-mag/dettagli-articoli-mag';
+import {EliminaArticoliPage} from '../pages/elimina-articoli/elimina-articoli';
+import {GestioneArticoliMagPage} from '../pages/gestione-articoli-mag/gestione-articoli-mag';
+import {InserisciModificaArticoloPage} from '../pages/inserisci-modifica-articolo/inserisci-modifica-articolo';
+import {SpostaArticoliMagPage} from '../pages/sposta-articoli-mag/sposta-articoli-mag';
+import {ProfiloUtentePage} from '../pages/profilo/profilo';;
+
 
 @NgModule({
   declarations: [
@@ -44,7 +55,16 @@ import {DettagliRichiestaPage} from '../pages/dettaglirichiesta/dettaglirichiest
     GestioneMagazziniMagPage,
     HomeMagPage,
     RichiesteMaterialePage,
-    DettagliRichiestaPage
+    DettagliRichiestaPage,
+    GestioneUtentiPage,
+    ModificaProfiloAdminPage,
+    ProfiloAdminPage,
+    DettagliArticoliMagPage,
+    EliminaArticoliPage,
+    GestioneArticoliMagPage,
+    InserisciModificaArticoloPage,
+    SpostaArticoliMagPage,
+    ProfiloUtentePage
   ],
   imports: [
     BrowserModule,
@@ -72,10 +92,20 @@ import {DettagliRichiestaPage} from '../pages/dettaglirichiesta/dettaglirichiest
     GestioneMagazziniMagPage,
     HomeMagPage,
     RichiesteMaterialePage,
-    DettagliRichiestaPage
+    DettagliRichiestaPage,
+    GestioneUtentiPage,
+    ModificaProfiloAdminPage,
+    ProfiloAdminPage,
+    DettagliArticoliMagPage,
+    EliminaArticoliPage,
+    GestioneArticoliMagPage,
+    InserisciModificaArticoloPage,
+    SpostaArticoliMagPage,
+    ProfiloUtentePage
   ],
   providers: [
     StatusBar,
+    EmailComposer,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]

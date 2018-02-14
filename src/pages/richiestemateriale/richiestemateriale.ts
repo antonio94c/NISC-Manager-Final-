@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-import { HttpClient } from '@angular/common/http';
+import { Http, Headers, RequestOptions } from '@angular/http';
+//import { HttpClient } from '@angular/common/http';
 import { DettagliRichiestaPage } from '../dettaglirichiesta/dettaglirichiesta';
 
 /**
@@ -23,8 +24,8 @@ export class RichiesteMaterialePage{
   dati_server: any;
   richieste_divise: any;
 
-  constructor(public navCtrl: NavController, public http: HttpClient, public navParams: NavParams) {
-    http.get('http://niscmanager.altervista.org/get_richieste_inviate.php?nome_squadra=squadra1')
+  constructor(public navCtrl: NavController, public http: Http, public navParams: NavParams) {
+    /*http.get('http://niscmanager.altervista.org/get_richieste_inviate.php?nome_squadra=squadra1')
     .subscribe(data => { 
             this.dati_server = data; 
             console.log(this.dati_server);
@@ -37,7 +38,26 @@ export class RichiesteMaterialePage{
     },err => {
       console.log("Error occured");
     }); 
- 
+ */
+var headers = new Headers();
+headers.append('Content-Type', 'application/x-www-form-urlencoded' );
+let options = new RequestOptions({ headers: headers }); 
+
+var squadra="squadra1"; 
+  let postParams = {
+    squadra
+  };
+  this.http.post("http://niscmanager.altervista.org/get_richieste_inviate.php", JSON.stringify(postParams), options)
+    .subscribe(data => {
+      console.log("ciao "+data['_body']);
+      this.dati_server=JSON.parse(data['_body']);
+      console.log("ciao dopo "+this.dati_server);
+      if(this.dati_server!=null){
+        for(var i=0;i<this.dati_server.length;i++){
+          this.richieste.push(new Richiesta(this.dati_server[i].id,this.dati_server[i].stato,this.dati_server[i].articolo,this.dati_server[i].quantita_richiesta,this.dati_server[i].quantita_approvata));
+        }
+      }
+    });
   }
 
   itemSelected(richiesta: Richiesta) {

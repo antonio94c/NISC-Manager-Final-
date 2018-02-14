@@ -1,0 +1,29 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Gestione Utenti</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+    <ion-list>
+      <ion-item *ngFor="let utente of utenti">
+        <ion-card>
+            <ion-card-header>
+              {{utente.email}}
+            </ion-card-header>
+            <ion-card-content>
+                      Squadra: {{utente.nome_s}} <br/>
+                      Componenti: {{utente.componenti}} <br/>
+                      Ruolo : {{utente.ruolo}} <br/>
+                      Stato: {{utente.stato}} 
+
+                      <div><button ion-button outline item-end (click)="goToModified(utente)">Modifica</button></div>
+            </ion-card-content>
+          </ion-card>
+        </ion-item>
+    </ion-list>
+</ion-content>

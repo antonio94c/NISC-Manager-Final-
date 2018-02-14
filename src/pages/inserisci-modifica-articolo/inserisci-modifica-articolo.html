@@ -1,0 +1,47 @@
+<ion-header>
+
+  <ion-navbar color="danger">
+    <ion-title>{{ titolo_pagina }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding style="background-color:rgb(205, 241, 245);">
+  <ion-grid>
+      <ion-row>
+          <ion-item>
+            <p>ID: {{next_id}}</p>
+          </ion-item>
+        </ion-row>
+    <ion-row>
+      <ion-item>
+        <ion-label stacked>Nome</ion-label>
+        <ion-input #nome type="text" value={{articolo.nome}}></ion-input>
+      </ion-item>
+    </ion-row>
+    <ion-row>
+      <ion-item>
+        <ion-label stacked>Quantità</ion-label>
+        <ion-input #quantita type="number" value={{articolo.quantita}}></ion-input>
+      </ion-item>
+    </ion-row>
+    <ion-row>
+      <ion-item>
+        <ion-label stacked>Descrizione</ion-label>
+        <ion-input #descrizione type="text" value={{articolo.descrizione}}></ion-input>
+      </ion-item>
+    </ion-row>
+    <ion-row>
+      <ion-item>
+          <p #mag>Magazzino: {{magazzino}}</p>
+      </ion-item>
+    </ion-row>
+    
+  </ion-grid>
+
+  <p align='center'>
+    <button ion-button color="secondary" round (click)='salva(nome.value,quantita.value,descrizione.value,magazzino)'>Salva</button>
+  </p>
+
+</ion-content>

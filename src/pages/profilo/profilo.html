@@ -1,0 +1,30 @@
+<ion-header>
+        <ion-navbar color="danger">
+          <ion-title>Modifica Profilo</ion-title>
+          
+        </ion-navbar>
+      </ion-header>
+      
+      <ion-content padding >
+        <p>
+          <img src="assets/img/logo1.gif"/>
+        </p>
+      <p>
+      </p>
+      <ion-list>
+        <ion-item>
+          <ion-input type="password" placeholder="Password Attuale" style="font-size: 14px;font-weight: bold;" [(ngModel)]="pa"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input type="password" style="font-size: 14px;font-weight: bold;" placeholder="Nuova Password" [(ngModel)]="mp"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input type="password" style="font-size: 14px;font-weight: bold;" placeholder="Conferma Password" [(ngModel)]="cp"></ion-input>
+        </ion-item>
+      </ion-list>
+
+      <p align='center'>
+        <button ion-button color="primary" round (click)='conferma_modifiche(pa, mp, cp)'>Conferma</button>
+      </p>
+      </ion-content>
+

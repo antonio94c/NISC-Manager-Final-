@@ -1,0 +1,37 @@
+<ion-header>
+
+    <ion-navbar>
+      <ion-title>dettagli articolo</ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+  
+  
+  <ion-content padding>
+    <ion-grid>
+      <ion-row>
+        <ion-col col-4 class="logo">
+          <img src="../../assets/imgs/logo.png"/>
+        </ion-col>
+        <ion-col> 
+          <p><b>ID:</b> {{ articolo.id }}</p>
+          <h1>{{ articolo.nome }}</h1>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+          <ion-col>
+            <b>Quantità:</b> {{ articolo.quantita }}
+          </ion-col>
+      </ion-row>
+      <ion-row>
+          <ion-col>
+              <b>Descrizione:</b><br>
+              {{ articolo.descrizione }}
+          </ion-col>
+      </ion-row>
+    </ion-grid>
+    <p align='center'>
+        <button ion-button color="secondary" round (click)='modifica()'>Modifica</button>
+      </p>
+  
+  </ion-content>

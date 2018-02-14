@@ -1,12 +1,12 @@
 import { Component, ViewChild} from '@angular/core';
 import { NavController, AlertController } from 'ionic-angular';
-import {HttpClient} from '@angular/common/http';
 import { RegistratiPage } from '../registrati/registrati';
 import { RecuperaPasswordPage } from '../recupera-password/recupera-password';
 import { HomePage } from '../home/home';
 import { Http, RequestOptions, Headers } from '@angular/http';
 import { HomeAmmPage } from '../home-amm/home-amm';
 import {HomeMagPage} from '../home-mag/home-mag';
+import { Storage } from '@ionic/storage';
 
 
 @Component({
@@ -15,10 +15,10 @@ import {HomeMagPage} from '../home-mag/home-mag';
 })
 export class LoginPage {
 
-  dati_server:any;
-  utenti=[];
+  dati_server : any;
+  utenti = [];
 
-  constructor(public navCtrl: NavController, private http: Http, private altr: AlertController) {
+  constructor(public navCtrl: NavController, private http: Http, private altr: AlertController, public str:Storage) {
   
   }
 
@@ -46,21 +46,31 @@ export class LoginPage {
       pass
     };
     
-    this.http.post("http://niscmanager.altervista.org/get_richiedenti.php", JSON.stringify(postParams), options)
+    this.http.post("http://niscmanager.altervista.org/get_utenti.php", JSON.stringify(postParams), options)
       .subscribe(data => {
         this.dati_server = data.json(); 
         console.log(this.dati_server);
-
+        
         if(this.dati_server!=null){
-            this.utenti.push(new Utente(this.dati_server[0].email,this.dati_server[0].password,this.dati_server[0].nome_s,this.dati_server[0].componenti,this.dati_server[0].stato, this.dati_server[0].ruolo));
-            if(this.dati_server[0].ruolo == 'Amministratore')
-               this.navCtrl.setRoot(HomeAmmPage);
+            this.utenti.push(new Utente(this.dati_server[0].email,this.dati_server[0].password,this.dati_server[0].nome_squadra,this.dati_server[0].componenti,this.dati_server[0].stato, this.dati_server[0].ruolo));
+            if(this.dati_server[0].ruolo == 'Amministratore'){
+               this.navCtrl.setRoot(HomeAmmPage,this.utenti[0]);
+               this.str.set('email', this.utenti[0].email);
+               this.str.set('password', this.utenti[0].password);
+            }
             else
             if(this.dati_server[0].stato == 'approvato'){
-               if(this.dati_server[0].ruolo == 'Magazziniere')
-                  this.navCtrl.setRoot(HomeMagPage);
-               if(this.dati_server[0].ruolo == 'Richiedente')
+               console.log(this.dati_server[0].stato);
+               if(this.dati_server[0].ruolo == 'Magazziniere'){
+                  this.navCtrl.setRoot(HomeMagPage,this.utenti[0]);
+                  this.str.set('email', this.utenti[0].email);
+                  this.str.set('password', this.utenti[0].password);
+               }
+               if(this.dati_server[0].ruolo == 'Richiedente'){
                   this.navCtrl.setRoot(HomePage);
+                  this.str.set('email', this.utenti[0].email);
+                  this.str.set('password', this.utenti[0].password);
+               }
             }
             else this.presentConfirm('Richiesta in approvazione');
         }

@@ -1,14 +1,14 @@
 webpackJsonp([9],{
 
-/***/ 299:
+/***/ 320:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GestioneArticoliAdminPageModule", function() { return GestioneArticoliAdminPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HomeAmmPageModule", function() { return HomeAmmPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__gestione_articoli_admin__ = __webpack_require__(106);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_amm__ = __webpack_require__(55);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,23 +18,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var GestioneArticoliAdminPageModule = (function () {
-    function GestioneArticoliAdminPageModule() {
+var HomeAmmPageModule = (function () {
+    function HomeAmmPageModule() {
     }
-    GestioneArticoliAdminPageModule = __decorate([
+    HomeAmmPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__gestione_articoli_admin__["a" /* GestioneArticoliAdminPage */],
+                __WEBPACK_IMPORTED_MODULE_2__home_amm__["a" /* HomeAmmPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__gestione_articoli_admin__["a" /* GestioneArticoliAdminPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__home_amm__["a" /* HomeAmmPage */]),
             ],
         })
-    ], GestioneArticoliAdminPageModule);
-    return GestioneArticoliAdminPageModule;
+    ], HomeAmmPageModule);
+    return HomeAmmPageModule;
 }());
 
-//# sourceMappingURL=gestione-articoli-admin.module.js.map
+//# sourceMappingURL=home-amm.module.js.map
 
 /***/ })
 

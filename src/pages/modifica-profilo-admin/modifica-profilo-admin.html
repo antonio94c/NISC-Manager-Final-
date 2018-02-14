@@ -1,0 +1,50 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Modifica Profilo</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+      <ion-grid>
+          <ion-row>
+            <ion-item>
+              <ion-label stacked>Email </ion-label>
+              <ion-input type="text" value={{email_v}} [(ngModel)]="email" [ngModelOptions]="{standalone: true}"></ion-input>
+            </ion-item>
+          </ion-row>
+          <ion-row>
+            <ion-item>
+              <ion-label stacked>Status</ion-label>
+              <ion-select [(ngModel)]="stato" [ngModelOptions]="{standalone: true}">
+                  <ion-option value="approvato">
+                    Approva
+                  </ion-option>
+                  <ion-option value="rifiutato">
+                    Rifiuta
+                  </ion-option>
+              </ion-select>
+            </ion-item>
+          </ion-row>
+         <ion-row>
+           <ion-item>
+              <ion-label stacked>Ruolo</ion-label>
+          <ion-select [(ngModel)]="ruolo" [ngModelOptions]="{standalone: true}">
+              <ion-option value="Richiedente">
+                Richiedente
+              </ion-option>
+              <ion-option value="Magazziniere">
+                Magazziniere
+              </ion-option>
+          </ion-select>
+        </ion-item>
+        </ion-row>
+      </ion-grid>
+
+  <p align='center'>
+      <button ion-button color="secondary" round (click)='postRequest(email, stato, ruolo)'>Salva</button>
+  </p>
+  
+</ion-content>
