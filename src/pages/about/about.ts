@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController  } from 'ionic-angular';
 
-import { HttpClient } from '@angular/common/http';
+import { Http, Headers, RequestOptions } from '@angular/http';
+
 import { DettagliPage } from '../dettagliarticoli/dettagliarticoli';
 
 /**
@@ -21,27 +22,66 @@ export class AboutPage{
   articoli = [];
 
   dati_server: any;
+  quantita_articoli: number[];
 
-  constructor(public navCtrl: NavController, public http: HttpClient, public navParams: NavParams) {
-    http.get('http://niscmanager.altervista.org/get_articoli.php?magazzino=principale')
-    .subscribe(data => { 
-            this.dati_server = data; 
-            console.log(this.dati_server);
-
-            if(this.dati_server!=null){
-              for(var i=0;i<this.dati_server.length;i++){
-                this.articoli.push(new Articolo(this.dati_server[i].id,this.dati_server[i].nome,this.dati_server[i].quantita,this.dati_server[i].descrizione,"principale"));
-              }
+  constructor(public navCtrl: NavController, public http: Http, public navParams: NavParams,public altr:AlertController) {
+    var headers = new Headers();
+    headers.append('Content-Type', 'application/x-www-form-urlencoded' );
+    let options = new RequestOptions({ headers: headers }); 
+ 
+    var nome_mag="principale"; 
+      let postParams = {
+        nome_mag
+      };
+      this.http.post("http://niscmanager.altervista.org/get_articoli_post.php", JSON.stringify(postParams), options)
+        .subscribe(data => {
+          console.log("ciao "+data['_body']);
+          this.dati_server=JSON.parse(data['_body']);
+          if(this.dati_server!=null){
+            for(var i=0;i<this.dati_server.length;i++){
+              this.articoli.push(new Articolo(this.dati_server[i].id,this.dati_server[i].nome,this.dati_server[i].quantita,this.dati_server[i].descrizione,nome_mag));
             }
-    },err => {
-      console.log("Error occured");
-    }); 
+          }
+        });
+
+    this.quantita_articoli=[this.articoli.length];
  
   }
 
   dettagli(articolo: Articolo) {
-    console.log("Selected Item", articolo.nome);
+    console.log("Selected Item", articolo.quantita);
     this.navCtrl.push(DettagliPage, articolo);
+  }
+  reset(){
+    for(var i=0; i<this.quantita_articoli.length; i++){
+     this.quantita_articoli[i]=0;
+    }
+  }
+
+  invia_richiesta(text: string){
+    console.log("hai preso",this.quantita_articoli[0]);
+/* inviare con post i dati 
+*/
+
+    this.presentConfirm('con successo');
+  }
+
+
+  presentConfirm(text: string) {
+    let alert = this.altr.create({
+      title: 'Richiesta inviata',
+      message: text,
+      buttons: [
+        {
+          text: 'Ok',
+          role: 'cancel',
+          handler: () => {
+            console.log('Cancel clicked');
+          }
+        },
+      ]
+    });
+    alert.present();
   }
 
   initializeItems(){

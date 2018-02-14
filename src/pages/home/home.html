@@ -1,5 +1,6 @@
-<ion-header color="royal">
-  <ion-navbar color="royal" >
+<ion-header>
+    <ion-navbar color="danger">
+  
     <ion-title>Home Richiedente</ion-title>
     <ion-buttons end>
       <button ion-button icon-only color="royal" (click)='logout()'>
@@ -8,6 +9,8 @@
     </ion-buttons>
   </ion-navbar>
 </ion-header>
+
+
 
 <ion-content padding >
 <p>
@@ -38,7 +41,7 @@
     <div class="card-subtitle"></div>
   </ion-card>
 
-  <ion-card (click)="goToProfilo()">
+  <ion-card (click)="viewProfilo()">
     <img src="assets/img/squadra.jpg"/>
     <div class="card-title">Profilo Squadra</div>
     <div class="card-subtitle"></div>
