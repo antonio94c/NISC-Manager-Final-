@@ -1,52 +1,42 @@
 <ion-header>
-    <ion-navbar color="danger">
+    <ion-navbar color="primary">
   
-    <ion-title>Home Richiedente</ion-title>
+    <ion-title>Home</ion-title>
     <ion-buttons end>
-      <button ion-button icon-only color="royal" (click)='logout()'>
+      <button ion-button icon-only color="light" (click)='logout()'>
         <ion-icon name="logout"><img src="assets/img/logout.png" class="dimensioni"> </ion-icon>
       </button>
     </ion-buttons>
   </ion-navbar>
 </ion-header>
 
-
-
 <ion-content padding >
 <p>
 <img src="assets/img/logo1.gif"/>
-
 </p>
-<p>
-
-</p>
-
-<ion-content class="card-background-page">
-<p>
-  <ion-card  (click)='viewCatalogo()'>
-    <img src="assets/img/icona-catalogo3.png"/>
-    <div class="card-title">Catalogo Articoli</div>
-    <div class="card-subtitle"></div>
-  </ion-card>
-
-  <ion-card (click)='viewMagazzino()'>
-    <img src="assets/img/magazzino.jpg"/>
-    <div class="card-title">MyMagazzino</div>
-    <div class="card-subtitle"></div>
-  </ion-card>
-
-  <ion-card (click)="viewRichiesta()">
-    <img src="assets/img/richieste.jpg"/>
-    <div class="card-title">Gestisci richieste</div>
-    <div class="card-subtitle"></div>
-  </ion-card>
-
-  <ion-card (click)="viewProfilo()">
-    <img src="assets/img/squadra.jpg"/>
-    <div class="card-title">Profilo Squadra</div>
-    <div class="card-subtitle"></div>
-  </ion-card>
-</p>
-
-</ion-content>
+<ion-grid>
+  <ion-row>
+    <ion-col>
+    <button class="home" (click)="viewProfilo()"><img src="assets/rich/Profilo.PNG"/>Profilo</button>
+   </ion-col>
+   <ion-col> 
+   <button class="home" (click)="viewCatalogo()"><img src="assets/rich/Catalogo_Articoli.PNG" />
+  Catalogo Articoli
+  </button>
+  </ion-col>
+  </ion-row>
+  <br/>
+  <ion-row>
+      <ion-col>
+      <button class="home" (click)="viewMagazzino()"><img src="assets/rich/mag.PNG" />
+      MyMagazzino
+      </button>
+     </ion-col>
+     <ion-col> 
+    <button class="home" (click)="viewRichiesta()"> <img src="assets/rich/rich.PNG" />
+    Richieste
+    </button>
+    </ion-col>
+    </ion-row>
+</ion-grid>
 </ion-content>

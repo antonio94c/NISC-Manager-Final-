@@ -1,14 +1,12 @@
 <ion-header>
-    <ion-navbar color="danger">
+    <ion-navbar color="primary">
       <ion-title>Catalogo articoli</ion-title>
     </ion-navbar>
   </ion-header>
   
-  <ion-content style="background-color:rgb(205, 241, 245);">
+  <ion-content style="background-color:rgb(252, 253, 253);">
     <p>
-        
-        <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
-            
+  <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
           
     </p>
     <p></p>
@@ -34,7 +32,7 @@
   
     <p align='center'>
       
-      <button ion-button color="secondary" round (click)='invia_richiesta()'>Invia Richiesta</button>
+      <button ion-button color="primary" round (click)='invia_richiesta()'>Invia Richiesta</button>
       <button ion-button color="danger" round (click)='reset()'>Reset</button>
     </p>
   </ion-content>

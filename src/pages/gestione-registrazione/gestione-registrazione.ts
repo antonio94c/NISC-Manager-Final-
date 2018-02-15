@@ -12,6 +12,7 @@ export class GestioneRegistrazionePage {
 
   dati_server : any;
   utenti = [];
+  utenti_s = [];
   email_a:string;
   password_a:string;
 
@@ -43,7 +44,8 @@ export class GestioneRegistrazionePage {
 
         if(this.dati_server!=null){
           for(var i=0;i<this.dati_server.length;i++){
-              this.utenti.push(new Utente(this.dati_server[i].email,this.dati_server[i].password,this.dati_server[i].nome_squadra,this.dati_server[i].componenti,this.dati_server[i].stato));
+              if(this.dati_server[i].ruolo != 'Amministratore')
+                 this.utenti.push(new Utente(this.dati_server[i].email,this.dati_server[i].password,this.dati_server[i].nome_squadra,this.dati_server[i].componenti,this.dati_server[i].stato,this.dati_server[i].ruolo));
           }  
         }
        }, error => {
@@ -70,8 +72,31 @@ export class GestioneRegistrazionePage {
         console.log(this.dati_server);
        }, error => {
         console.log(error);// Error getting the data
-      });}
+      });
+    }
 
+    initializeItems(){
+      this.utenti = [];
+      for(var i=0;i<this.dati_server.length;i++){
+        if(this.dati_server[i].ruolo != 'Amministratore')
+           this.utenti.push(new Utente(this.dati_server[i].email,this.dati_server[i].password,this.dati_server[i].nome_squadra,this.dati_server[i].componenti,this.dati_server[i].stato,this.dati_server[i].ruolo));
+      }
+    }
+
+    getItems(ev: any) {
+      // Reset items back to all of the items
+      this.initializeItems();
+  
+      // set val to the value of the searchbar
+      let val = ev.target.value;
+  
+      // if the value is an empty string don't filter the items
+      if (val && val.trim() != '') {
+        this.utenti = this.utenti.filter((search) => {
+          return (search.nome_s.toLowerCase().indexOf(val.toLowerCase()) > -1);
+        })
+      }
+    }
 }
 
 class Utente{
@@ -81,12 +106,14 @@ class Utente{
    nome_s: string;
    componenti: number;
    stato: string;
+   ruolo:string;
   
-    constructor(email:string, password:string, nome_s:string, compo:number, stato:string){
+    constructor(email:string, password:string, nome_s:string, compo:number, stato:string, ruolo:string){
       this.email = email;
       this.password = password;
       this.nome_s = nome_s;
       this.componenti = compo;
       this.stato = stato;
+      this.ruolo = ruolo;
     }
 }

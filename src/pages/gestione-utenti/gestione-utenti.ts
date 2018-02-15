@@ -19,11 +19,9 @@ export class GestioneUtentiPage {
   constructor(public navCtrl: NavController, public navParams: NavParams,public http:Http, public storage:Storage) {
     storage.get('email').then((val) => {
       this.email = val;
-      console.log('email', val);
     });
     storage.get('password').then((val) => {
       this.password = val;
-      console.log('password', val);
     });
     this.postRequest(this.email,this.password);
   }
@@ -57,6 +55,29 @@ export class GestioneUtentiPage {
   goToModified(utente:Utente){
     this.navCtrl.push(ModificaProfiloAdminPage,utente);
 
+  }
+
+  initializeItems(){
+    this.utenti = [];
+    for(var i=0;i<this.dati_server.length;i++){
+      if(this.dati_server[i].ruolo != 'Amministratore')
+         this.utenti.push(new Utente(this.dati_server[i].email,this.dati_server[i].password,this.dati_server[i].nome_squadra,this.dati_server[i].componenti,this.dati_server[i].stato,this.dati_server[i].ruolo));
+    }
+  }
+
+  getItems(ev: any) {
+    // Reset items back to all of the items
+    this.initializeItems();
+
+    // set val to the value of the searchbar
+    let val = ev.target.value;
+
+    // if the value is an empty string don't filter the items
+    if (val && val.trim() != '') {
+      this.utenti = this.utenti.filter((search) => {
+        return (search.nome_s.toLowerCase().indexOf(val.toLowerCase()) > -1);
+      })
+    }
   }
 }
 

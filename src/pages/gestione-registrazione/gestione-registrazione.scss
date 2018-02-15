@@ -5,6 +5,7 @@ page-gestione-registrazione {
         height: 30px !important;
         border-radius: 50% !important;
         background-color: #EDFF21;
+        right:10px;
     }
 
     .approvato{
@@ -12,6 +13,7 @@ page-gestione-registrazione {
         height: 30px !important;
         border-radius: 50% !important;
         background-color: #287233;
+        right:15px;
     }
 
     .rifiutato{
@@ -19,6 +21,10 @@ page-gestione-registrazione {
         height: 30px !important;
         border-radius: 50% !important;
         background-color: red;
+        right:10px;
     }
 
+    .dati{
+        font-size:19px;
+    }
 }

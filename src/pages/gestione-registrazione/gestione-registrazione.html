@@ -1,12 +1,6 @@
-<!--
-  Generated template for the GestioneRegistrazionePage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar color="primary">
     <ion-title>Gestione Registrazione</ion-title>
   </ion-navbar>
 
@@ -14,36 +8,22 @@
 
 <ion-content padding>
     
-        <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
-    
-        <ion-grid>
-          <ion-row>
-            <ion-col col-3>Squadra</ion-col>
-            <ion-col col-3>Email</ion-col>
-            <ion-col col-3>Status</ion-col>
-            <ion-col col-3>Approvi?</ion-col>
-          </ion-row>
-        </ion-grid>
-    
+        <ion-searchbar placeholder="Cerca per nome squadra" (ionInput)="getItems($event)"></ion-searchbar>
+
         <ion-list>
             <ion-item *ngFor="let utente of utenti">
-              <ion-grid>
-                  <ion-row>
-                    <ion-col col-2>{{utente.nome_s}}</ion-col>
-                    <ion-col col-4>{{utente.email}}</ion-col>
-                    <ion-col col-4 *ngIf="utente.stato == 'in attesa';">
-                      <button class="inAttesa" ion-button> </button>
-                    </ion-col>
-                    <ion-col col-4 *ngIf="utente.stato == 'approvato';">
-                      <button class="approvato" ion-button> </button>
-                    </ion-col>
-                    <ion-col col-4 *ngIf="utente.stato == 'rifiutato';">
-                      <button class="rifiutato" ion-button> </button>
-                    </ion-col>
-                    <ion-col col-2><ion-icon name="checkmark-circle-outline" (click)="updateStatus(utente,'approvato','')"></ion-icon> 
-                      <ion-icon name="close" (click)="updateStatus(utente,'rifiutato','')"></ion-icon></ion-col>
-                  </ion-row>
-                </ion-grid>
-            </ion-item>
+              <h2>{{utente.nome_s}}</h2>
+              <h3>{{utente.email}}</h3>
+              <p>{{utente.ruolo}}</p>
+              <button item-end *ngIf="utente.stato == 'rifiutato';" class="rifiutato" ion-button> </button>
+              <button item-end *ngIf="utente.stato == 'approvato';" class="approvato" ion-button> </button>
+              <button item-end *ngIf="utente.stato == 'in attesa';" class="inAttesa" ion-button> </button>
+              <ion-icon item-end name="checkmark-circle-outline" (click)="updateStatus(utente,'approvato','')"></ion-icon> 
+              <ion-icon item-end name="close" (click)="updateStatus(utente,'rifiutato','')"></ion-icon>
+            </ion-item> 
           </ion-list>
-   </ion-content>
+
+
+</ion-content>
+    
+        
