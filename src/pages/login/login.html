@@ -1,16 +1,16 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="primary">
     <ion-title>
       Login
     </ion-title>
   </ion-navbar>
 </ion-header>
-<ion-content padding id="page1">
+<ion-content padding id="page1" class="no-scroll">
   <img src="assets/img/J6RhzI1UTRKQJdXpWUkV_logoneapolis.png" style="display:block;width:100%;height:auto;margin-left:auto;margin-right:auto;" />
   <form id="page-form2">
     <ion-item id="page-input2">
       <ion-label>
-        USER_ID
+        Email
       </ion-label>
       <ion-input type="text" placeholder="" [(ngModel)]="user_id" [ngModelOptions]="{standalone: true}"></ion-input>
     </ion-item>
@@ -22,12 +22,14 @@
     </ion-item>
     <ion-item><a (click)='recuperaPassword()'>Password Dimentica?</a></ion-item>
   </form>
-  <button id="page-button1" ion-button color="positive" block (click)='postRequest(user_id,password)'>
+  <div padding>
+  <button id="page-button1" ion-button color="positive" block (click)="postRequest(user_id,password)">
     Login
   </button>
   <button id="page-button2" ion-button color="positive" block (click)='sign_up()'>
     Registarti
   </button>
+</div>
   <button ion-button color="positive" block (click)='goToHomeRic()'>
     Richiedente
   </button>

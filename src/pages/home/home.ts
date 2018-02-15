@@ -4,7 +4,7 @@ import {LoginPage} from '../login/login';
 import { AboutPage } from '../about/about';
 import { MymagazzinoPage } from '../mymagazzino/mymagazzino';
 import { RichiesteMaterialePage } from '../richiestemateriale/richiestemateriale';
-import { ProfiloUtentePage } from '../profilo/profilo';
+import { ProfiloPage } from '../profilo/profilo';
 
 @Component({
   selector: 'page-home',
@@ -33,6 +33,6 @@ export class HomePage {
   }
 
   viewProfilo(){
-    this.navCtrl.push(ProfiloUtentePage);
+    this.navCtrl.push(ProfiloPage);
   }
 }

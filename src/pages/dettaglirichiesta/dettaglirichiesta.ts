@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 //import { HttpClient } from '@angular/common/http';
+import {Storage} from '@ionic/storage';
 import { Http, Headers, RequestOptions } from '@angular/http';
 /**
  * Generated class for the DettagliArticoloPage page.
@@ -16,76 +17,61 @@ import { Http, Headers, RequestOptions } from '@angular/http';
 })
 export class DettagliRichiestaPage {
 
-  id: number;
+  /*id: number;
   stato: string;
   articolo: number;
   quantita_richiesta: number;
-  quantita_approvata: number;
+  quantita_approvata: number;*/
   
 
- /* constructor(public navCtrl: NavController, public navParams: NavParams) {
+  richieste = [];
+  richieste_divise: any;
+  
+    user: string;
+    pass: string;
     
-    console.log(navParams.data.stato);
 
-    this.id=navParams.data.id;
-    this.stato=navParams.data.stato;
-    this.articolo=navParams.data.articolo;
-    this.quantita_richiesta=navParams.data.quantita_richiesta;
-    this.quantita_approvata=navParams.data.quantita_approvata;
-    
-  
-  }*/
-
-    richieste = [];
-  
-    //dati_server: any;
-    richieste_divise: any;
-  
-   
-    constructor(public navCtrl: NavController, public http: Http, public navParams: NavParams) {
-      var headers = new Headers();
-      headers.append('Content-Type', 'application/x-www-form-urlencoded' );
-      let options = new RequestOptions({ headers: headers }); 
-
-      var squadra="squadra1"; 
-      var id= navParams.data;  
-      let postParams = {
-        squadra,
-        id
-      };
-      this.http.post("http://niscmanager.altervista.org/get_dettagli_richiesta.php", JSON.stringify(postParams), options)
-        .subscribe(data => {
-          console.log("ciao "+data['_body']);
-          this.richieste_divise=JSON.parse(data['_body']);
-          console.log("ciao dopo "+this.richieste_divise);
-          if(this.richieste_divise!=null){
-            for(var i=0;i<this.richieste_divise.length;i++){
-              this.richieste.push(new Richiesta(this.richieste_divise[i].id,this.richieste_divise[i].stato,this.richieste_divise[i].articolo,this.richieste_divise[i].quantita_richiesta,this.richieste_divise[i].quantita_approvata));
-            }
-          }
-        });
+    constructor(public navCtrl: NavController, public http: Http, public navParams: NavParams,public storage: Storage) {
+      //sessione: chi sei?  
+          storage.get('email').then((val) => {
+            this.user=val;  
+            console.log("email1: "+ this.user);
+          });
+          storage.get('password').then((val) => {
+            this.pass=val;
+          });
+ 
       }
     
-      /* http.get('http://niscmanager.altervista.org/get_dettagli_richiesta.php?nome_squadra=squadra1')
-      .subscribe(data => { 
-              this.richieste_divise = data; 
-              console.log(this.richieste_divise);
+      ionViewWillEnter() {
+        var headers = new Headers();
+        headers.append('Content-Type', 'application/x-www-form-urlencoded' );
+        let options = new RequestOptions({ headers: headers }); 
   
-              if(this.richieste_divise!=null){
-                for(var i=0;i<this.richieste_divise.length;i++){
-                  this.richieste.push(new Richiesta(this.richieste_divise[i].id,this.richieste_divise[i].stato,this.richieste_divise[i].articolo,this.richieste_divise[i].quantita_richiesta,this.richieste_divise[i].quantita_approvata));
-                }
+       // var squadra="squadra1"; 
+        var id= this.navParams.data;  
+        var email= this.user;
+        var password= this.pass;
+  
+  
+        let postParams = {
+          email,
+          password,
+          id
+          
+        };
+        this.http.post("http://niscmanager.altervista.org/get_dettagli_richiesta.php", JSON.stringify(postParams), options)
+          .subscribe(data => {
+            console.log("ciao "+data['_body']);
+            this.richieste_divise=JSON.parse(data['_body']);
+            console.log("ciao dopo "+this.richieste_divise);
+            if(this.richieste_divise!=null){
+              for(var i=0;i<this.richieste_divise.length;i++){
+                this.richieste.push(new Richiesta(this.richieste_divise[i].id,this.richieste_divise[i].stato,this.richieste_divise[i].articolo,this.richieste_divise[i].quantita_richiesta,this.richieste_divise[i].quantita_approvata, this.richieste_divise[i].nome_squadra));
               }
-      },err => {
-        console.log("Error occured");
-      }); 
-   */
-   
-  
-   /* itemSelected(richiesta: Richiesta) {
-      console.log("Selected Item", richiesta.stato);
-      this.navCtrl.push(DettagliRichiestaPage, richiesta);
-    }*/
+            }
+          });
+      }
   
     initializeItems(){
       this.richieste = [];
@@ -118,11 +104,12 @@ export class DettagliRichiestaPage {
     articolo: number;
     quantita_richiesta: number;
     quantita_approvata:number;
+    nome_squadra:string;
     
   
-    constructor(id: number, stato: string,articolo:number, quantita_richiesta:number, quantita_approvata: number){
+    constructor(id: number, stato: string,articolo:number, quantita_richiesta:number, quantita_approvata: number,nome_squadra:string){
       this.id=id;
-    
+      this.nome_squadra=nome_squadra;
       this.stato=stato;
       this.articolo=articolo;
       this.quantita_richiesta=quantita_richiesta;
@@ -134,4 +121,3 @@ export class DettagliRichiestaPage {
   }
   
 
-//}

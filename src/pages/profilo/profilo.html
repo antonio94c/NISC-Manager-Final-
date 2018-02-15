@@ -1,6 +1,6 @@
 <ion-header>
-        <ion-navbar color="danger">
-          <ion-title>Modifica Profilo</ion-title>
+        <ion-navbar color="primary">
+          <ion-title>Modifica Password</ion-title>
           
         </ion-navbar>
       </ion-header>
@@ -13,18 +13,29 @@
       </p>
       <ion-list>
         <ion-item>
-          <ion-input type="password" placeholder="Password Attuale" style="font-size: 14px;font-weight: bold;" [(ngModel)]="pa"></ion-input>
+            <ion-label>Email: {{email}}</ion-label>
         </ion-item>
         <ion-item>
-          <ion-input type="password" style="font-size: 14px;font-weight: bold;" placeholder="Nuova Password" [(ngModel)]="mp"></ion-input>
+            <ion-label>Password: {{password}}</ion-label>
+        </ion-item>
+        <ion-item *ngIf="nome_s != 'admin';">
+                <ion-label>Nome Squadra: {{nome_s}}</ion-label>
+        </ion-item>
+        <ion-item *ngIf="nome_s != 'admin';">
+                <ion-label>Componenti: {{componenti}}</ion-label>
+        </ion-item>
+        <ion-item *ngIf="nome_s != 'admin';">
+                <ion-label>Stato: {{stato}}</ion-label>
         </ion-item>
         <ion-item>
-          <ion-input type="password" style="font-size: 14px;font-weight: bold;" placeholder="Conferma Password" [(ngModel)]="cp"></ion-input>
+                <ion-label>Ruolo: {{ruolo}}</ion-label>
         </ion-item>
+        
       </ion-list>
-
+    
       <p align='center'>
-        <button ion-button color="primary" round (click)='conferma_modifiche(pa, mp, cp)'>Conferma</button>
+        <button ion-button color="primary" round (click)='goToModificaPassword()'>Modifica Password</button>
       </p>
       </ion-content>
-
+    
+    

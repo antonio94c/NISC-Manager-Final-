@@ -3,7 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { LoginPage } from '../login/login';
 import { GestioneMagazziniMagPage } from '../gestione-magazzini-mag/gestione-magazzini-mag';
 import { GestioneArticoliMagPage } from '../gestione-articoli-mag/gestione-articoli-mag';
-import { ProfiloUtentePage } from '../profilo/profilo';
+import { ProfiloPage } from '../profilo/profilo';
 
 @IonicPage()
 @Component({
@@ -25,7 +25,7 @@ export class HomeMagPage {
   }
 
   goToProfilo(){
-    this.navCtrl.push(ProfiloUtentePage);
+    this.navCtrl.push(ProfiloPage);
   }
 
 }

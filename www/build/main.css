@@ -25720,7 +25720,8 @@ page-home .sfondo {
 }
 
 page-home .dimensioni {
-  width: 30%;
+  width: 20%;
+  right: 90%;
 }
 
 page-home .card-background-page ion-card {
@@ -25759,27 +25760,10 @@ page-home-amm img {
   height: 95%;
 }
 
-page-home-amm .card-background-page ion-card {
-  position: relative;
-  text-align: center;
-  opacity: 0.7;
-}
-
-page-home-amm .card-background-page .card-title {
-  position: absolute;
-  top: 36%;
-  font-size: 2.0em;
-  width: 100%;
-  font-weight: bold;
-  color: #0c0106;
-}
-
-page-home-amm .card-background-page .card-subtitle {
-  font-size: 1.0em;
-  position: absolute;
-  top: 52%;
-  width: 100%;
-  color: #fff;
+page-home-amm .home {
+  width: 95%;
+  height: 95%;
+  background: #ffffff;
 }
 
 page-home-mag .sfondo {
@@ -25811,6 +25795,10 @@ page-home-mag .card-background-page .card-subtitle {
   top: 52%;
   width: 100%;
   color: #fff;
+}
+
+login-page .no-scroll {
+  overflow: hidden !important;
 }
 
 page-mymagazzino ion-col {

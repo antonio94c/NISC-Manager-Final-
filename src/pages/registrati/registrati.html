@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="primary">
     <ion-buttons start>
     </ion-buttons>
     <ion-title>
@@ -12,34 +12,19 @@
     <img src="assets/img/J6RhzI1UTRKQJdXpWUkV_logoneapolis.png" style="display:block;width:50%;height:50%;margin-left:auto;margin-right:auto;" />
     <ion-list id="registrati-list1">
       <ion-item id="registrati-input5">
-        <ion-label>
-          Nome Squadra
-        </ion-label>
-        <ion-input placeholder="Text Input" type="text" [(ngModel)]="nome_s" [ngModelOptions]="{standalone: true}"></ion-input>
+        <ion-input placeholder="Nome Squadra" type="text" [(ngModel)]="nome_s" [ngModelOptions]="{standalone: true}"></ion-input>
       </ion-item>
-      <ion-item id="registrati-input6">
-        <ion-label>
-          Nome del richiedente
-        </ion-label>
-        <ion-input placeholder="Text Input" type="text" [(ngModel)]="nome_r" [ngModelOptions]="{standalone: true}"></ion-input>
+      <ion-item id="registrati-input5">
+        <ion-input placeholder="Componenti" type="number" [(ngModel)]="compo" [ngModelOptions]="{standalone: true}"></ion-input>
       </ion-item>
       <ion-item id="registrati-input7">
-        <ion-label>
-          Email
-        </ion-label>
-        <ion-input placeholder="Text Input" type="text" [(ngModel)]="email" [ngModelOptions]="{standalone: true}"></ion-input>
+        <ion-input placeholder="Email" type="text" [(ngModel)]="email" [ngModelOptions]="{standalone: true}"></ion-input>
       </ion-item>
       <ion-item id="registrati-input8">
-        <ion-label>
-          Password
-        </ion-label>
-        <ion-input placeholder="Text Input" type="password" [(ngModel)]="pass" [ngModelOptions]="{standalone: true}"></ion-input>
+        <ion-input placeholder="Password" type="password" [(ngModel)]="pass" [ngModelOptions]="{standalone: true}"></ion-input>
       </ion-item>
-      <ion-item id="registrati-input9">
-        <ion-label>
-          Conferma Password
-        </ion-label>
-        <ion-input placeholder="Text Input" type="password" [(ngModel)]="conf_pass" [ngModelOptions]="{standalone: true}"></ion-input>
+      <ion-item id="Conferma password">
+        <ion-input placeholder="Conferma Password" type="password" [(ngModel)]="conf_pass" [ngModelOptions]="{standalone: true}"></ion-input>
       </ion-item>
     </ion-list>
   </form>
@@ -48,17 +33,19 @@
       <ion-label>
         Seleziona Ruolo
       </ion-label>
-      <ion-select [(ngModel)]="selectedValue" [ngModelOptions]="{standalone: true}">
-        <ion-option>
+      <ion-select [(ngModel)]="ruolo" [ngModelOptions]="{standalone: true}">
+        <ion-option value="Richiedente">
           Richiedente
         </ion-option>
-        <ion-option>
+        <ion-option value="Magazziniere">
           Magazziniere
         </ion-option>
       </ion-select>
     </ion-item>
   </form>
-  <button id="registrati-button3" ion-button color="stable" block (click)="postRequest(nome_s,email, pass)">
+  <div padding>
+  <button id="registrati-button3" ion-button color="stable" block (click)="postRequest(nome_s,email, pass, ruolo,conf_pass,compo)">
     Sign up
   </button>
+</div>
 </ion-content>

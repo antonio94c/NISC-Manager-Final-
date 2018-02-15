@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Http, RequestOptions, Headers } from '@angular/http';
 import {ModificaProfiloAdminPage} from '../modifica-profilo-admin/modifica-profilo-admin';
+import { Storage } from '@ionic/storage';
 
 @IonicPage()
 @Component({
@@ -10,11 +11,21 @@ import {ModificaProfiloAdminPage} from '../modifica-profilo-admin/modifica-profi
 })
 export class GestioneUtentiPage {
 
-  dati_server:any;
-  utenti = [];
+  public email:string;
+  public password:string;
+  public dati_server:any;
+  public utenti = [];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,public http:Http) {
-    this.postRequest("","registrazione");
+  constructor(public navCtrl: NavController, public navParams: NavParams,public http:Http, public storage:Storage) {
+    storage.get('email').then((val) => {
+      this.email = val;
+      console.log('email', val);
+    });
+    storage.get('password').then((val) => {
+      this.password = val;
+      console.log('password', val);
+    });
+    this.postRequest(this.email,this.password);
   }
 
   postRequest(email:string, pass:string){
@@ -24,10 +35,10 @@ export class GestioneUtentiPage {
 
     let params = {
       email,
-      pass
+      pass,
     };
     
-    this.http.post("http://niscmanager.altervista.org/get_utenti.php",JSON.stringify(params), options)
+    this.http.post("http://niscmanager.altervista.org/get_richiedenti.php",JSON.stringify(params), options)
       .subscribe(data => {
         this.dati_server = data.json(); 
         console.log(this.dati_server);

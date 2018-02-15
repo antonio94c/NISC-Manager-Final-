@@ -1,14 +1,14 @@
 webpackJsonp([8],{
 
-/***/ 319:
+/***/ 321:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HomeAmmPageModule", function() { return HomeAmmPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HomeMagPageModule", function() { return HomeMagPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_amm__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_mag__ = __webpack_require__(125);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,23 +18,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var HomeAmmPageModule = (function () {
-    function HomeAmmPageModule() {
+var HomeMagPageModule = (function () {
+    function HomeMagPageModule() {
     }
-    HomeAmmPageModule = __decorate([
+    HomeMagPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__home_amm__["a" /* HomeAmmPage */],
+                __WEBPACK_IMPORTED_MODULE_2__home_mag__["a" /* HomeMagPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__home_amm__["a" /* HomeAmmPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__home_mag__["a" /* HomeMagPage */]),
             ],
         })
-    ], HomeAmmPageModule);
-    return HomeAmmPageModule;
+    ], HomeMagPageModule);
+    return HomeMagPageModule;
 }());
 
-//# sourceMappingURL=home-amm.module.js.map
+//# sourceMappingURL=home-mag.module.js.map
 
 /***/ })
 

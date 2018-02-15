@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-import { HttpClient } from '@angular/common/http';
+import { Http, Headers, RequestOptions } from '@angular/http';
+//import { HttpClient } from '@angular/common/http';
 import { DettagliPage } from '../dettagliarticoli/dettagliarticoli';
+import {Storage} from '@ionic/storage';
 
 /**
  * Generated class for the MymagazzinoPage page.
@@ -22,21 +23,19 @@ export class MymagazzinoPage{
 
   dati_server: any;
 
-  constructor(public navCtrl: NavController, public http: HttpClient, public navParams: NavParams) {
-    http.get('http://niscmanager.altervista.org/get_articoli.php?magazzino=the%20best')
-    .subscribe(data => { 
-            this.dati_server = data; 
-            console.log(this.dati_server);
-
-            if(this.dati_server!=null){
-              for(var i=0;i<this.dati_server.length;i++){
-                this.articoli.push(new Articolo(this.dati_server[i].id,this.dati_server[i].nome,this.dati_server[i].quantita,this.dati_server[i].descrizione,"principale"));
-              }
-            }
-    },err => {
-      console.log("Error occured");
-    }); 
- 
+  user: string;
+  pass: string;
+  constructor(public navCtrl: NavController, public http: Http, public navParams: NavParams, public storage: Storage) {
+  
+    //sessione: chi sei?  
+    storage.get('email').then((val) => {
+      this.user=val;  
+      console.log("email1: "+ this.user);
+    });
+    storage.get('password').then((val) => {
+      this.pass=val;
+    });
+    this.ionViewWillEnter();
   }
 
   itemSelected(articolo: Articolo) {
@@ -67,6 +66,35 @@ export class MymagazzinoPage{
     }
   }
 
+  ionViewWillEnter(){
+    var headers = new Headers();
+    headers.append('Content-Type', 'application/x-www-form-urlencoded' );
+    let options = new RequestOptions({ headers: headers }); 
+    
+    //var nome_mag="squadra1"; 
+    var email= this.user;
+    var password= this.pass;
+      let postParams = {
+        email,
+        password
+      };
+    
+      console.log("email: "+ email);
+      this.http.post("http://niscmanager.altervista.org/get_magazzino_post.php", JSON.stringify(postParams), options)
+        .subscribe(data => {
+          
+
+          console.log("ciao "+data['_body']);
+          this.dati_server=JSON.parse(data['_body']);
+          console.log("ciao dopo "+this.dati_server);
+          if(this.dati_server!=null){
+            this.articoli=[]; //aggiorna da zero la lista
+            for(var i=0;i<this.dati_server.length;i++){
+              this.articoli.push(new Articolo(this.dati_server[i].id,this.dati_server[i].nome,this.dati_server[i].quantita,this.dati_server[i].descrizione, this.dati_server[i].magazzino));
+            }
+          }
+        });
+  }
 }
 
 class Articolo{

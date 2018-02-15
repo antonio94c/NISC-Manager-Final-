@@ -1,5 +1,5 @@
-<ion-header color="royal">
-  <ion-navbar color="royal" >
+<ion-header>
+  <ion-navbar color="primary" >
     <ion-title>Home Richiedente</ion-title>
     <ion-buttons end>
       <button ion-button icon-only color="royal" (click)='logout()'>
@@ -9,7 +9,7 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding >
+<ion-content padding has-bouncing="fallse">
 <p>
 <img src="assets/img/logo1.gif"/>
 </p>
@@ -17,19 +17,25 @@
 <ion-grid>
   <ion-row>
     <ion-col>
-    <img src="assets/amm/Profilo.PNG" (click)="goToProfilo()"/>
+    <button class="home" (click)="goToProfilo()"><img src="assets/amm/Profilo.PNG"/>Profilo</button>
    </ion-col>
    <ion-col> 
-   <img src="assets/amm/Gestione_Reg.PNG" (click)="goToGestioneRegistrazioni()"/>
+   <button class="home" (click)="goToGestioneRegistrazioni()"><img src="assets/amm/Gestione_Reg.PNG" />
+  Gestione Registrazioni
+  </button>
   </ion-col>
   </ion-row>
   <br/>
   <ion-row>
       <ion-col>
-      <img src="assets/amm/Gestione_Utente.PNG" (click)="goToGestioneUtenti()"/>
+      <button class="home"  (click)="goToGestioneUtenti()"><img src="assets/amm/Gestione_Utente.PNG" />
+      Gestione Utente
+      </button>
      </ion-col>
      <ion-col> 
-     <img src="assets/amm/Gestione_Magazzini.PNG" (click)="viewMagazzini()"/>
+    <button class="home" (click)="viewMagazzini()"> <img src="assets/amm/Gestione_Magazzini.PNG" />
+    Gestione Magazzini
+    </button>
     </ion-col>
     </ion-row>
 

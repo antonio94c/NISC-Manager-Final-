@@ -4,7 +4,8 @@ import {LoginPage} from '../login/login';
 import { GestioneRegistrazionePage } from '../gestione-registrazione/gestione-registrazione';
 import {GestioneMagazziniAdminPage} from '../gestione-magazzini-admin/gestione-magazzini-admin';
 import {GestioneUtentiPage} from '../gestione-utenti/gestione-utenti';
-import { ProfiloAdminPage } from '../profilo-admin/profilo-admin';
+import { ProfiloPage } from '../profilo/profilo';
+import { ModificaPasswordPage } from '../modifica-password/modifica-password';
 
 @IonicPage()
 @Component({
@@ -13,19 +14,7 @@ import { ProfiloAdminPage } from '../profilo-admin/profilo-admin';
 })
 export class HomeAmmPage {
 
-  public utente:Utente;
-
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.utente = new Utente(
-      navParams.data.email,
-      navParams.data.password,
-      navParams.data.nome_s,
-      0,
-      navParams.data.stato,
-      navParams.data.ruolo
-    );
-
-    console.log(this.utente);
   }
   
   logout(){
@@ -45,7 +34,7 @@ export class HomeAmmPage {
   }
 
   goToProfilo(){
-    this.navCtrl.push(ProfiloAdminPage,this.utente);
+    this.navCtrl.push(ProfiloPage);
   }
 
 }

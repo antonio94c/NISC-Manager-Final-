@@ -1,14 +1,14 @@
 webpackJsonp([19],{
 
-/***/ 308:
+/***/ 309:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DettagliArticoliMagPageModule", function() { return DettagliArticoliMagPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DettagliPageModule", function() { return DettagliPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__dettagli_articoli_mag__ = __webpack_require__(109);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__dettagliarticoli__ = __webpack_require__(44);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,23 +18,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var DettagliArticoliMagPageModule = (function () {
-    function DettagliArticoliMagPageModule() {
+var DettagliPageModule = (function () {
+    function DettagliPageModule() {
     }
-    DettagliArticoliMagPageModule = __decorate([
+    DettagliPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__dettagli_articoli_mag__["a" /* DettagliArticoliMagPage */],
+                __WEBPACK_IMPORTED_MODULE_2__dettagliarticoli__["a" /* DettagliPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__dettagli_articoli_mag__["a" /* DettagliArticoliMagPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__dettagliarticoli__["a" /* DettagliPage */]),
             ],
         })
-    ], DettagliArticoliMagPageModule);
-    return DettagliArticoliMagPageModule;
+    ], DettagliPageModule);
+    return DettagliPageModule;
 }());
 
-//# sourceMappingURL=dettagli-articoli-mag.module.js.map
+//# sourceMappingURL=dettagliarticoli.module.js.map
 
 /***/ })
 

@@ -1,14 +1,14 @@
 webpackJsonp([7],{
 
-/***/ 320:
+/***/ 322:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HomeMagPageModule", function() { return HomeMagPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "InserisciModificaArticoloPageModule", function() { return InserisciModificaArticoloPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_mag__ = __webpack_require__(124);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__inserisci_modifica_articolo__ = __webpack_require__(55);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,23 +18,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var HomeMagPageModule = (function () {
-    function HomeMagPageModule() {
+var InserisciModificaArticoloPageModule = (function () {
+    function InserisciModificaArticoloPageModule() {
     }
-    HomeMagPageModule = __decorate([
+    InserisciModificaArticoloPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__home_mag__["a" /* HomeMagPage */],
+                __WEBPACK_IMPORTED_MODULE_2__inserisci_modifica_articolo__["a" /* InserisciModificaArticoloPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__home_mag__["a" /* HomeMagPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__inserisci_modifica_articolo__["a" /* InserisciModificaArticoloPage */]),
             ],
         })
-    ], HomeMagPageModule);
-    return HomeMagPageModule;
+    ], InserisciModificaArticoloPageModule);
+    return InserisciModificaArticoloPageModule;
 }());
 
-//# sourceMappingURL=home-mag.module.js.map
+//# sourceMappingURL=inserisci-modifica-articolo.module.js.map
 
 /***/ })
 

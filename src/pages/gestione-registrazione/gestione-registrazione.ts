@@ -23,7 +23,7 @@ export class GestioneRegistrazionePage {
     str.get('password').then((pass) =>{
       this.password_a = pass;
     });
-    this.postRequest("","registrati");
+    this.postRequest(this.email_a,this.password_a);
   }
 
   postRequest(email:string, pass:string){
@@ -36,7 +36,7 @@ export class GestioneRegistrazionePage {
       pass
     };
     
-    this.http.post("http://niscmanager.altervista.org/get_utenti.php", JSON.stringify(postParams), options)
+    this.http.post("http://niscmanager.altervista.org/get_richiedenti.php", JSON.stringify(postParams), options)
       .subscribe(data => {
         this.dati_server = data.json(); 
         console.log(this.dati_server);

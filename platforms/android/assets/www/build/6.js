@@ -1,14 +1,14 @@
 webpackJsonp([6],{
 
-/***/ 321:
+/***/ 323:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "InserisciModificaArticoloPageModule", function() { return InserisciModificaArticoloPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "InserisciModificaMagazzinoPageModule", function() { return InserisciModificaMagazzinoPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__inserisci_modifica_articolo__ = __webpack_require__(55);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__inserisci_modifica_magazzino__ = __webpack_require__(117);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,23 +18,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var InserisciModificaArticoloPageModule = (function () {
-    function InserisciModificaArticoloPageModule() {
+var InserisciModificaMagazzinoPageModule = (function () {
+    function InserisciModificaMagazzinoPageModule() {
     }
-    InserisciModificaArticoloPageModule = __decorate([
+    InserisciModificaMagazzinoPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__inserisci_modifica_articolo__["a" /* InserisciModificaArticoloPage */],
+                __WEBPACK_IMPORTED_MODULE_2__inserisci_modifica_magazzino__["a" /* InserisciModificaMagazzinoPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__inserisci_modifica_articolo__["a" /* InserisciModificaArticoloPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__inserisci_modifica_magazzino__["a" /* InserisciModificaMagazzinoPage */]),
             ],
         })
-    ], InserisciModificaArticoloPageModule);
-    return InserisciModificaArticoloPageModule;
+    ], InserisciModificaMagazzinoPageModule);
+    return InserisciModificaMagazzinoPageModule;
 }());
 
-//# sourceMappingURL=inserisci-modifica-articolo.module.js.map
+//# sourceMappingURL=inserisci-modifica-magazzino.module.js.map
 
 /***/ })
 

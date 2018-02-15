@@ -3,89 +3,63 @@ import { IonicPage, NavController, NavParams,  AlertController } from 'ionic-ang
 import { Http, Headers, RequestOptions } from '@angular/http';
 import { HttpClient } from '@angular/common/http';
 import {Storage} from '@ionic/storage';
-/**
- * Generated class for the MymagazzinoPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { LoginPage } from '../login/login';
+import { ModificaPasswordPage } from '../modifica-password/modifica-password';
 
 @IonicPage()
 @Component({
   selector: 'page-profilo',
   templateUrl: 'profilo.html',
 })
-export class ProfiloUtentePage{
-//sessione variabili
-  email: string;
-  password: string; 
+export class ProfiloPage{
 
-  constructor(public navCtrl: NavController, public http:Http, public alert:AlertController, public storage: Storage) {
-  //sessione: chi sei?  
+  email: string;
+  password: string;
+  nome_s: string;
+  componenti: number;
+  stato: string;
+  ruolo: string;
+
+  constructor(public navCtrl: NavController, public http:Http, public alert:AlertController, public storage: Storage) { 
     storage.get('email').then((val) => {
       this.email=val;
     });
     storage.get('password').then((val) => {
       this.password=val;
     });
+    storage.get('nome_s').then((val) => {
+      this.nome_s=val;
+    });
+    storage.get('componenti').then((val) => {
+      this.componenti=val;
+    });
+    storage.get('stato').then((val) => {
+      this.stato=val;
+    });
+    storage.get('ruolo').then((val) => {
+      this.ruolo=val;
+    });
   }
 
-   conferma_modifiche(pa:string, mp:string, cp:string){
-    var headers = new Headers();
-    headers.append('Content-Type', 'application/x-www-form-urlencoded' );
-    let options = new RequestOptions({ headers: headers }); 
+  goToModificaPassword(){
+    this.navCtrl.push(ModificaPasswordPage);
+   }
 
- //per la sessione gli devo passare le variabili dell'account per postParams
-    var email= this.email;
-    var password= this.password;
-
-    let postParams = {
-      email, 
-      password,
-      pa,
-      mp,
-      cp
-    };
-
-    //POST
-    this.http.post("http://niscmanager.altervista.org/modifica_profilo.php", JSON.stringify(postParams), options)
-      .subscribe(data => {
-        console.log(data['_body']);
-      
-    //controllo modifica pw
-    if(mp == cp && password==pa) {
-     var alert = this.alert.create({
-      title: 'titolo',
-      subTitle: 'sottotitolo',
-      buttons: ['Dismiss']
-    });
-    if(data['_body']=="Records updated successfully."){
-      alert = this.alert.create({
-        title: 'Operazione completata',
-        subTitle: '',
-        buttons: [{
-          text: 'Ok',
-          handler: () => {
-            let navTransition = alert.dismiss();
-            navTransition.then(() => {
-                this.navCtrl.pop();
-              });
-            return false;
-          }
-        }]
-      });
-    }else{
-      alert = this.alert.create({
-        title: data['_body'],
-        subTitle: '',
-        buttons: ['Chiudi']
-      });
-    }
-    alert.present();
-  }}, error => {
-    console.log(error);// Error getting the data
-  });
-}
-  
+  presentConfirm(text: string) {
+    let alert = this.alert.create({
+      title: 'Login failed',
+      message: text,
+      buttons: [
+       {
+        text: 'Ok',
+        role: 'cancel',
+        handler: () => {
+          console.log('Cancel clicked');
+        }
+       },
+      ]
+   });
+   alert.present();
+  }
 }
  

@@ -8,27 +8,48 @@ import {LoginPage} from '../login/login';
   templateUrl: 'registrati.html'
 })
 export class RegistratiPage {
+  
+  public dati_server:any;
 
   constructor(public navCtrl: NavController, public http:Http, public altr:AlertController) {
 
   }
 
-  postRequest(nome_s: string, email:string, pass:string) {
+  postRequest(nome_s: string, email:string, pass:string, ruolo:string,conf_pass:string,compo:number) {
     var headers = new Headers();
     headers.append('Content-Type', 'application/x-www-form-urlencoded' );
     let options = new RequestOptions({ headers: headers }); 
- 
+
+    if(nome_s == null || email == null || pass == null || ruolo==null || conf_pass == null || compo == null){
+      this.presentConfirm("Inserisci tutti i campi");
+      return;
+    }
+
     let postParams = {
       nome_s,
       email,
-      pass
+      pass,
+      ruolo,
+      compo
     };
+
+    if(pass != conf_pass){
+      this.presentConfirm("Le password non corrispondono");
+      this.navCtrl.setRoot(LoginPage);
+      return;
+    }
     
     this.http.post("http://niscmanager.altervista.org/put_richiedente.php", JSON.stringify(postParams), options)
       .subscribe(data => {
-        console.log(data['_body']);
-        this.presentConfirm('Richiesta Inoltrata');
-        this.navCtrl.setRoot(LoginPage);
+        this.dati_server = data.json();
+
+        if(this.dati_server == 'ERROR: Could not able to execute'){
+          this.presentConfirm("Email già presente nel sistema");
+          this.navCtrl.setRoot(LoginPage);
+        }else{
+          this.presentConfirm("Richiesta Inoltrata, attendi l''approvazione dell''amministratore");
+          this.navCtrl.setRoot(LoginPage);
+        }
        }, error => {
         console.log(error);// Error getting the data
       });
@@ -36,7 +57,7 @@ export class RegistratiPage {
 
   presentConfirm(text: string) {
     let alert = this.altr.create({
-      title: 'Login failed',
+      title: 'Registrazione',
       message: text,
       buttons: [
         {

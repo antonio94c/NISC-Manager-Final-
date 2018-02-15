@@ -27,13 +27,13 @@ import {RichiesteMaterialePage} from '../pages/richiestemateriale/richiestemater
 import {DettagliRichiestaPage} from '../pages/dettaglirichiesta/dettaglirichiesta';
 import {GestioneUtentiPage} from '../pages/gestione-utenti/gestione-utenti';
 import {ModificaProfiloAdminPage} from '../pages/modifica-profilo-admin/modifica-profilo-admin';
-import {ProfiloAdminPage} from '../pages/profilo-admin/profilo-admin';
 import {DettagliArticoliMagPage} from '../pages/dettagli-articoli-mag/dettagli-articoli-mag';
 import {EliminaArticoliPage} from '../pages/elimina-articoli/elimina-articoli';
 import {GestioneArticoliMagPage} from '../pages/gestione-articoli-mag/gestione-articoli-mag';
 import {InserisciModificaArticoloPage} from '../pages/inserisci-modifica-articolo/inserisci-modifica-articolo';
 import {SpostaArticoliMagPage} from '../pages/sposta-articoli-mag/sposta-articoli-mag';
-import {ProfiloUtentePage} from '../pages/profilo/profilo';;
+import {ProfiloPage} from '../pages/profilo/profilo';
+import {ModificaPasswordPage} from '../pages/modifica-password/modifica-password';
 
 
 @NgModule({
@@ -58,13 +58,13 @@ import {ProfiloUtentePage} from '../pages/profilo/profilo';;
     DettagliRichiestaPage,
     GestioneUtentiPage,
     ModificaProfiloAdminPage,
-    ProfiloAdminPage,
     DettagliArticoliMagPage,
     EliminaArticoliPage,
     GestioneArticoliMagPage,
     InserisciModificaArticoloPage,
     SpostaArticoliMagPage,
-    ProfiloUtentePage
+    ProfiloPage,
+    ModificaPasswordPage
   ],
   imports: [
     BrowserModule,
@@ -95,13 +95,13 @@ import {ProfiloUtentePage} from '../pages/profilo/profilo';;
     DettagliRichiestaPage,
     GestioneUtentiPage,
     ModificaProfiloAdminPage,
-    ProfiloAdminPage,
     DettagliArticoliMagPage,
     EliminaArticoliPage,
     GestioneArticoliMagPage,
     InserisciModificaArticoloPage,
     SpostaArticoliMagPage,
-    ProfiloUtentePage
+    ProfiloPage,
+    ModificaPasswordPage
   ],
   providers: [
     StatusBar,

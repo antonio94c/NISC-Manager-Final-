@@ -54,22 +54,19 @@ export class LoginPage {
         if(this.dati_server!=null){
             this.utenti.push(new Utente(this.dati_server[0].email,this.dati_server[0].password,this.dati_server[0].nome_squadra,this.dati_server[0].componenti,this.dati_server[0].stato, this.dati_server[0].ruolo));
             if(this.dati_server[0].ruolo == 'Amministratore'){
-               this.navCtrl.setRoot(HomeAmmPage,this.utenti[0]);
-               this.str.set('email', this.utenti[0].email);
-               this.str.set('password', this.utenti[0].password);
+              this.navCtrl.setRoot(HomeAmmPage);
+              this.setParams(this.utenti[0]);
             }
             else
             if(this.dati_server[0].stato == 'approvato'){
-               console.log(this.dati_server[0].stato);
                if(this.dati_server[0].ruolo == 'Magazziniere'){
-                  this.navCtrl.setRoot(HomeMagPage,this.utenti[0]);
-                  this.str.set('email', this.utenti[0].email);
-                  this.str.set('password', this.utenti[0].password);
+                  this.navCtrl.setRoot(HomeMagPage);
+                  this.setParams(this.utenti[0]);
+                  
                }
                if(this.dati_server[0].ruolo == 'Richiedente'){
                   this.navCtrl.setRoot(HomePage);
-                  this.str.set('email', this.utenti[0].email);
-                  this.str.set('password', this.utenti[0].password);
+                  this.setParams(this.utenti[0]);
                }
             }
             else this.presentConfirm('Richiesta in approvazione');
@@ -78,7 +75,16 @@ export class LoginPage {
        }, error => {
         console.log(error);// Error getting the data
       });
-  } 
+  }
+  
+  setParams(utente:Utente){
+    this.str.set('email', utente.email);
+    this.str.set('password', utente.password);
+    this.str.set('nome_s',utente.nome_s);
+    this.str.set('componenti',utente.componenti);
+    this.str.set('stato',utente.stato);
+    this.str.set('ruolo',utente.ruolo);
+  }
 
   goToHomeAmm(){
     this.navCtrl.setRoot(HomeAmmPage);
