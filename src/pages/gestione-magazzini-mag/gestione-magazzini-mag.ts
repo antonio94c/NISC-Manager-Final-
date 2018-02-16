@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { AlertController } from 'ionic-angular';
 import { Http, Headers, RequestOptions } from '@angular/http';
 import { Storage } from '@ionic/storage';
 import { GestioneArticoliMagPage } from '../gestione-articoli-mag/gestione-articoli-mag';
@@ -17,7 +17,7 @@ export class GestioneMagazziniMagPage {
   user: String;
   pass: String;
 
-  constructor(public navCtrl: NavController, public http: Http, public navParams: NavParams, public storage: Storage) {
+  constructor(public navCtrl: NavController, public http: Http, public navParams: NavParams, public storage: Storage, public alertCtrl: AlertController) {
     storage.get('email').then((val) => {
       this.user=val;
     });
@@ -47,7 +47,12 @@ export class GestioneMagazziniMagPage {
               }
             }
           }else{
-            console.log(data['_body']);
+            let alert = this.alertCtrl.create({
+              title: data['_body'],
+              subTitle: '',
+              buttons: ['OK']
+            });
+            alert.present();
           }
     });
   }

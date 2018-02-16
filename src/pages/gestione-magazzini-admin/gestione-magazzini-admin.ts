@@ -5,7 +5,7 @@ import { Http, Headers, RequestOptions } from '@angular/http';
 import { InserisciModificaMagazzinoPage } from '../inserisci-modifica-magazzino/inserisci-modifica-magazzino';
 import { GestioneArticoliAdminPage } from '../gestione-articoli-admin/gestione-articoli-admin';
 import { EliminaMagazziniAdminPage } from '../elimina-magazzini-admin/elimina-magazzini-admin';
-
+import { AlertController } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 
 @IonicPage()
@@ -20,7 +20,7 @@ export class GestioneMagazziniAdminPage {
   user: String;
   pass: String;
 
-  constructor(public navCtrl: NavController, public http: Http, public navParams: NavParams, public storage: Storage) {
+  constructor(public navCtrl: NavController, public http: Http, public navParams: NavParams, public storage: Storage, public alertCtrl: AlertController) {
     storage.get('email').then((val) => {
       this.user=val;
     });
@@ -42,13 +42,20 @@ export class GestioneMagazziniAdminPage {
     };
     this.http.post("http://niscmanager.altervista.org/get_magazzini.php", JSON.stringify(postParams), options)
         .subscribe(data => {
-          console.log(data['_body']);
-          
-          this.dati_server = JSON.parse(data['_body']); 
-          if(this.dati_server!=null){
-            for(var i=0;i<this.dati_server.length;i++){
-              this.magazzini.push(new Magazzino(this.dati_server[i].nome,this.dati_server[i].descrizione));
+          if(data['_body'][0]=="["){         
+            this.dati_server = JSON.parse(data['_body']); 
+            if(this.dati_server!=null){
+              for(var i=0;i<this.dati_server.length;i++){
+                this.magazzini.push(new Magazzino(this.dati_server[i].nome,this.dati_server[i].descrizione));
+              }
             }
+          }else{
+            let alert = this.alertCtrl.create({
+              title: data['_body'],
+              subTitle: '',
+              buttons: ['OK']
+            });
+            alert.present();
           }
     });
   }

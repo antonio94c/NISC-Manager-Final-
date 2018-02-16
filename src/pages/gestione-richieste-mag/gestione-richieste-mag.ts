@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Http, Headers, RequestOptions } from '@angular/http';
 import { Storage } from '@ionic/storage';
-
+import { AlertController } from 'ionic-angular';
 import {DettagliRichiestaMagPage} from '../dettagli-richiesta-mag/dettagli-richiesta-mag';
 
 @IonicPage()
@@ -17,7 +17,7 @@ export class GestioneRichiesteMagPage {
   user: String;
   pass: String;
 
-  constructor(public navCtrl: NavController, public http: Http, public navParams: NavParams, public storage: Storage) {
+  constructor(public navCtrl: NavController, public http: Http, public navParams: NavParams, public storage: Storage, public alertCtrl: AlertController) {
     storage.get('email').then((val) => {
       this.user=val;
     });
@@ -39,12 +39,20 @@ export class GestioneRichiesteMagPage {
     };
     this.http.post("http://niscmanager.altervista.org/get_richieste_mag.php", JSON.stringify(postParams), options)
         .subscribe(data => {
-          console.log(data['_body']);
-          this.dati_server = JSON.parse(data['_body']); 
-          if(this.dati_server!=null){
-            for(var i=0;i<this.dati_server.length;i++){
-              this.richieste.push(new Richiesta(this.dati_server[i].id,this.dati_server[i].squadra,this.dati_server[i].stato));
+          if(data['_body'][0]=="["){
+            this.dati_server = JSON.parse(data['_body']); 
+            if(this.dati_server!=null){
+              for(var i=0;i<this.dati_server.length;i++){
+                this.richieste.push(new Richiesta(this.dati_server[i].id,this.dati_server[i].squadra,this.dati_server[i].stato));
+              }
             }
+          }else{
+            let alert = this.alertCtrl.create({
+              title: data['_body'],
+              subTitle: '',
+              buttons: ['OK']
+            });
+            alert.present();
           }
     });
   }

@@ -43,11 +43,14 @@ export class RegistratiPage {
       .subscribe(data => {
         this.dati_server = data.json();
 
-        if(this.dati_server == 'ERROR: Could not able to execute'){
-          this.presentConfirm("Email già presente nel sistema");
+        if(this.dati_server == 'Nome Squadra già presente'){
+          this.presentConfirm("Nome Squadra già presente");
           this.navCtrl.setRoot(LoginPage);
-        }else{
-          this.presentConfirm("Richiesta Inoltrata, attendi l''approvazione dell''amministratore");
+        }if(this.dati_server == 'ERROR: Could not able to execute'){
+          this.presentConfirm("Email già presente nel sistema o Nome Squadra già utilizzato");
+          this.navCtrl.setRoot(LoginPage);
+        }if(this.dati_server == 'Records inserted successfully.'){
+          this.presentConfirm("Richiesta Inoltrata, attendi l'approvazione dell'amministratore");
           this.navCtrl.setRoot(LoginPage);
         }
        }, error => {

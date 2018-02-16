@@ -65,11 +65,15 @@ export class DettagliRichiestaMagPage {
     var password=this.pass;
     var id=this.navParams.data[0];
     var approva=[];
-    for(var i=0;i<this.approvare.length;i++){
+    for(var i=0;i<this.richieste.length;i++){
       if(this.approvare[i]>(this.richieste[i].quantita_ric-this.richieste[i].quantita_app)){
         flag=false;
       }
-      approva.push(new Approvazione(this.richieste[i].id_articolo,this.approvare[i]));
+      if(this.approvare[i]==undefined){
+        approva.push(new Approvazione(this.richieste[i].id_articolo,"0"));
+      }else{
+        approva.push(new Approvazione(this.richieste[i].id_articolo,this.approvare[i]));
+      }
     }
     if(flag){
       var headers = new Headers();

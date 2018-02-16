@@ -57,9 +57,9 @@ export class InserisciModificaMagazzinoPage {
             subTitle: 'sottotitolo',
             buttons: ['Dismiss']
           });
-          if(data['_body']=="Records inserted successfully."){
+          if(data['_body']=="Operazione eseguita"){
             alert = this.alertCtrl.create({
-              title: 'Operazione completata',
+              title: 'Operazione eseguita',
               subTitle: '',
               buttons: [{
                 text: 'Ok',
@@ -100,9 +100,9 @@ export class InserisciModificaMagazzinoPage {
             subTitle: 'sottotitolo',
             buttons: ['Dismiss']
           });
-          if(data['_body']=="Records updated successfully."){
+          if(data['_body']=="Operazione eseguita"){
             alert = this.alertCtrl.create({
-              title: 'Operazione completata',
+              title: 'Operazione eseguita',
               subTitle: '',
               buttons: [{
                 text: 'Ok',

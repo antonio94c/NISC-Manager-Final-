@@ -45,11 +45,12 @@ export class InserisciModificaArticoloPage {
       };
       this.http.post("http://niscmanager.altervista.org/get_info_articoli.php", JSON.stringify(postParams), options)
         .subscribe(data => {
-          this.dati_server=JSON.parse(data['_body']);
-          if(this.dati_server!=null){
-            this.next_id=this.dati_server;
-            this.next_id++;
-          }
+          console.log(data['_body']);
+            this.dati_server=JSON.parse(data['_body']);
+            if(this.dati_server!=null){
+              this.next_id=this.dati_server;
+              this.next_id++;
+            }
         });
     }else{
       this.titolo_pagina="Modifica articolo";

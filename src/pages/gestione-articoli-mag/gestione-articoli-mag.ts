@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Http, Headers, RequestOptions } from '@angular/http';
-
+import { AlertController } from 'ionic-angular';
 import { DettagliArticoliMagPage } from '../dettagli-articoli-mag/dettagli-articoli-mag';
 import { InserisciModificaArticoloPage } from '../inserisci-modifica-articolo/inserisci-modifica-articolo';
 import { EliminaArticoliPage } from '../elimina-articoli/elimina-articoli';
@@ -21,7 +21,7 @@ export class GestioneArticoliMagPage {
   user: String;
   pass: String;
 
-  constructor(public navCtrl: NavController, public http: Http, public navParams: NavParams, public storage: Storage) {
+  constructor(public navCtrl: NavController, public http: Http, public navParams: NavParams, public storage: Storage, public alertCtrl: AlertController) {
     storage.get('email').then((val) => {
       this.user=val;
     });
@@ -46,16 +46,23 @@ export class GestioneArticoliMagPage {
     };
     this.http.post("http://niscmanager.altervista.org/get_articoli.php", JSON.stringify(postParams), options) 
     .subscribe(data => {
-          this.dati_server = JSON.parse(data['_body']); 
-          console.log(this.dati_server);
-
-          if(this.dati_server!=null){
-            this.articoli=[];
-            for(var i=0;i<this.dati_server.length;i++){
-              this.articoli.push(new Articolo(this.dati_server[i].id,this.dati_server[i].nome,this.dati_server[i].quantita,this.dati_server[i].descrizione,nome_mag));
-            }
+      if(data['_body'][0]=="["){
+        this.dati_server = JSON.parse(data['_body']); 
+        if(this.dati_server!=null){
+          this.articoli=[];
+          for(var i=0;i<this.dati_server.length;i++){
+            this.articoli.push(new Articolo(this.dati_server[i].id,this.dati_server[i].nome,this.dati_server[i].quantita,this.dati_server[i].descrizione,nome_mag));
           }
+        }
+      }else{
+        let alert = this.alertCtrl.create({
+          title: data['_body'],
+          subTitle: '',
+          buttons: ['OK']
         });
+        alert.present();
+      }
+    });
   }
 
   dettagli(articolo: Articolo) {
