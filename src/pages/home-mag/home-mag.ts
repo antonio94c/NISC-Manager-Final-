@@ -4,6 +4,7 @@ import { LoginPage } from '../login/login';
 import { GestioneMagazziniMagPage } from '../gestione-magazzini-mag/gestione-magazzini-mag';
 import { GestioneArticoliMagPage } from '../gestione-articoli-mag/gestione-articoli-mag';
 import { ProfiloPage } from '../profilo/profilo';
+import { GestioneRichiesteMagPage } from '../gestione-richieste-mag/gestione-richieste-mag';
 
 @IonicPage()
 @Component({
@@ -26,6 +27,10 @@ export class HomeMagPage {
 
   goToProfilo(){
     this.navCtrl.push(ProfiloPage);
+  }
+
+  goToRichiesteArticoli(){
+    this.navCtrl.push(GestioneRichiesteMagPage);
   }
 
 }

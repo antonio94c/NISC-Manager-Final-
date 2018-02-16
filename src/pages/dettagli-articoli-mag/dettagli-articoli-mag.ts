@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { InserisciModificaArticoloPage } from '../inserisci-modifica-articolo/inserisci-modifica-articolo';
 
-
 @IonicPage()
 @Component({
   selector: 'page-dettagli-articoli-mag',
@@ -13,9 +12,7 @@ export class DettagliArticoliMagPage {
   articolo: Articolo;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    
     this.articolo=navParams.data;
-  
   }
 
   modifica(){

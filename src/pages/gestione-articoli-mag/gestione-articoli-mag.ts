@@ -6,6 +6,7 @@ import { DettagliArticoliMagPage } from '../dettagli-articoli-mag/dettagli-artic
 import { InserisciModificaArticoloPage } from '../inserisci-modifica-articolo/inserisci-modifica-articolo';
 import { EliminaArticoliPage } from '../elimina-articoli/elimina-articoli';
 import { SpostaArticoliMagPage } from '../sposta-articoli-mag/sposta-articoli-mag';
+import { Storage } from '@ionic/storage';
 
 @IonicPage()
 @Component({
@@ -17,12 +18,21 @@ export class GestioneArticoliMagPage {
   articoli = [];
   dati_server: any;
   titolo: String;
+  user: String;
+  pass: String;
 
-  constructor(public navCtrl: NavController, public http: Http, public navParams: NavParams) {
-
+  constructor(public navCtrl: NavController, public http: Http, public navParams: NavParams, public storage: Storage) {
+    storage.get('email').then((val) => {
+      this.user=val;
+    });
+    storage.get('password').then((val) => {
+      this.pass=val;
+    });
   }
 
   ionViewWillEnter(){
+    var email=this.user;
+    var password=this.pass;
     var nome_mag=this.navParams.data.nome;
     this.titolo=nome_mag;
     var headers = new Headers();
@@ -30,9 +40,11 @@ export class GestioneArticoliMagPage {
     let options = new RequestOptions({ headers: headers }); 
 
     let postParams = {
+      email,
+      password,
       nome_mag
     };
-    this.http.post("http://niscmanager.altervista.org/get_articoli_post.php", JSON.stringify(postParams), options) 
+    this.http.post("http://niscmanager.altervista.org/get_articoli.php", JSON.stringify(postParams), options) 
     .subscribe(data => {
           this.dati_server = JSON.parse(data['_body']); 
           console.log(this.dati_server);

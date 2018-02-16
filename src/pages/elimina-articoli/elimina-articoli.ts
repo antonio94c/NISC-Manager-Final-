@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Http, Headers, RequestOptions } from '@angular/http';
 import { AlertController } from 'ionic-angular';
+import { Storage } from '@ionic/storage';
 
 @IonicPage()
 @Component({
@@ -13,12 +14,21 @@ export class EliminaArticoliPage {
   articoli = [];
   dati_server: any;
   titolo: String;
+  user: String;
+  pass: String;
 
-  constructor(public navCtrl: NavController, public http: Http, public navParams: NavParams, public alertCtrl: AlertController) {
-
+  constructor(public navCtrl: NavController, public http: Http, public navParams: NavParams, public alertCtrl: AlertController, public storage: Storage) {
+    storage.get('email').then((val) => {
+      this.user=val;
+    });
+    storage.get('password').then((val) => {
+      this.pass=val;
+    });
   }
 
   ionViewWillEnter(){
+    var email=this.user;
+    var password=this.pass;
     var nome_mag=this.navParams.data;
     this.titolo=nome_mag;
     var headers = new Headers();
@@ -26,9 +36,11 @@ export class EliminaArticoliPage {
     let options = new RequestOptions({ headers: headers }); 
 
     let postParams = {
+      email,
+      password,
       nome_mag
     };
-    this.http.post("http://niscmanager.altervista.org/get_articoli_post.php", JSON.stringify(postParams), options) 
+    this.http.post("http://niscmanager.altervista.org/get_articoli.php", JSON.stringify(postParams), options) 
     .subscribe(data => {
           this.dati_server = JSON.parse(data['_body']); 
           console.log(this.dati_server);
@@ -42,6 +54,8 @@ export class EliminaArticoliPage {
   }
 
   elimina(articolo: Articolo){
+    var email=this.user;
+    var password=this.pass;
     var id=articolo.id;
     var magazzino=articolo.nome_magazzino;
     var headers = new Headers();
@@ -49,6 +63,8 @@ export class EliminaArticoliPage {
     let options = new RequestOptions({ headers: headers }); 
 
     let postParams = {
+      email,
+      password,
       id,
       magazzino
     };

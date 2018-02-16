@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar color="danger">
+    <ion-title>{{titolo}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content style="background-color:rgb(205, 241, 245);">
+  <p>
+      <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>     
+  </p>
+  <p></p>
+  <div ng-controller="listController"> 
+    <ion-list>
+    <ion-item *ngFor="let richiesta of richieste; let i=index">
+        <ion-thumbnail item-start>
+          <img src="assets/img/articolo.png">
+        </ion-thumbnail>
+        <h2>Articolo: {{richiesta.articolo}}</h2>
+        <p>Quantità richiesta: {{richiesta.quantita_ric}}</p>
+        <p>Quantità approvata: {{richiesta.quantita_app}}</p>
+        <p>
+          <label>Approva:
+            <input [(ngModel)]=approvare[i] type="number" value="0" min="0" max={{richiesta.quantita_ric-richiesta.quantita_app}} step="1">
+          </label>
+        </p>
+        <p>Quantità disponibile: {{richiesta.quantita_max}}</p>
+        
+      </ion-item>
+    </ion-list>
+  </div>
+  <p align='center'>
+    <button ion-button color="secondary" round (click)='salva()'>Approva</button>
+    <button ion-button color="danger" round (click)='rifiuta()'>Rifiuta</button>
+  </p>
+</ion-content>

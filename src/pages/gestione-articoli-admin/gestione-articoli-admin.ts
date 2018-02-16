@@ -3,13 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Http, Headers, RequestOptions } from '@angular/http';
 
 import { DettagliPage } from '../dettagliarticoli/dettagliarticoli';
-
-/**
- * Generated class for the GestioneArticoliAdminPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { Storage } from '@ionic/storage';
 
 @IonicPage()
 @Component({
@@ -22,24 +16,42 @@ export class GestioneArticoliAdminPage {
   dati_server: any;
   totale_articoli=0;
   titolo: String;
+  user: String;
+  pass: String;
+  nome_mag: String;
 
-  constructor(public navCtrl: NavController, public http: Http, public navParams: NavParams) {
-    var nome_mag=navParams.data.nome;
-    this.titolo=nome_mag;
+  constructor(public navCtrl: NavController, public http: Http, public navParams: NavParams, public storage: Storage) {
+    this.nome_mag=navParams.data.nome;
+    this.titolo=this.nome_mag;
+    storage.get('email').then((val) => {
+      this.user=val;
+    });
+    storage.get('password').then((val) => {
+      this.pass=val;
+    });
+  }
 
+  ionViewWillEnter(){
     var headers = new Headers();
     headers.append('Content-Type', 'application/x-www-form-urlencoded' );
     let options = new RequestOptions({ headers: headers }); 
 
+    var email=this.user;
+    var password=this.pass;
+    var nome_mag=this.nome_mag;
     let postParams = {
+      email,
+      password,
       nome_mag
     };
-    this.http.post("http://niscmanager.altervista.org/get_articoli_post.php", JSON.stringify(postParams), options) 
+    this.http.post("http://niscmanager.altervista.org/get_articoli.php", JSON.stringify(postParams), options) 
     .subscribe(data => {
           this.dati_server = JSON.parse(data['_body']); 
           console.log(this.dati_server);
 
           if(this.dati_server!=null){
+            this.totale_articoli=0;
+            this.articoli=[];
             for(var i=0;i<this.dati_server.length;i++){
               this.totale_articoli+=parseInt(this.dati_server[i].quantita);
               this.articoli.push(new Articolo(this.dati_server[i].id,this.dati_server[i].nome,this.dati_server[i].quantita,this.dati_server[i].descrizione,"principale"));
@@ -59,7 +71,6 @@ export class GestioneArticoliAdminPage {
       this.articoli.push(this.dati_server[i]);
     }
   }
-
 
   getItems(ev: any) {
     // Reset items back to all of the items
@@ -91,16 +102,6 @@ class Articolo{
     this.quantita=quantita;
     this.descrizione=descrizione;
     this.nome_magazzino=nome_magazzino;
-  }
-}
-
-class Magazzino{
-  nome: string;
-  descrizione: string;
-
-  constructor(nome: string, descrizione: string){
-    this.nome=nome;
-    this.descrizione=descrizione;
   }
 }
   

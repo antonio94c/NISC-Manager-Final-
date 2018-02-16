@@ -34,6 +34,8 @@ import {InserisciModificaArticoloPage} from '../pages/inserisci-modifica-articol
 import {SpostaArticoliMagPage} from '../pages/sposta-articoli-mag/sposta-articoli-mag';
 import {ProfiloPage} from '../pages/profilo/profilo';
 import {ModificaPasswordPage} from '../pages/modifica-password/modifica-password';
+import {DettagliRichiestaMagPage} from '../pages/dettagli-richiesta-mag/dettagli-richiesta-mag';
+import {GestioneRichiesteMagPage} from '../pages/gestione-richieste-mag/gestione-richieste-mag';
 
 
 @NgModule({
@@ -64,7 +66,9 @@ import {ModificaPasswordPage} from '../pages/modifica-password/modifica-password
     InserisciModificaArticoloPage,
     SpostaArticoliMagPage,
     ProfiloPage,
-    ModificaPasswordPage
+    ModificaPasswordPage,
+    DettagliRichiestaMagPage,
+    GestioneRichiesteMagPage
   ],
   imports: [
     BrowserModule,
@@ -101,7 +105,9 @@ import {ModificaPasswordPage} from '../pages/modifica-password/modifica-password
     InserisciModificaArticoloPage,
     SpostaArticoliMagPage,
     ProfiloPage,
-    ModificaPasswordPage
+    ModificaPasswordPage,
+    DettagliRichiestaMagPage,
+    GestioneRichiesteMagPage
   ],
   providers: [
     StatusBar,

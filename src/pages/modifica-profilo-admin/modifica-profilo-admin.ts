@@ -66,7 +66,7 @@ export class ModificaProfiloAdminPage {
   } 
   presentConfirm(text: string) {
     let alert = this.altr.create({
-      title: 'Login failed',
+      title: 'Modifica Profilo',
       message: text,
       buttons: [
         {

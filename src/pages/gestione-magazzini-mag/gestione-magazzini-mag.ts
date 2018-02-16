@@ -14,38 +14,40 @@ export class GestioneMagazziniMagPage {
 
   magazzini = [];
   dati_server: any;
-  email: String;
-  password: String;
+  user: String;
+  pass: String;
 
   constructor(public navCtrl: NavController, public http: Http, public navParams: NavParams, public storage: Storage) {
-
     storage.get('email').then((val) => {
-      this.email=val;
+      this.user=val;
     });
     storage.get('password').then((val) => {
-      this.password=val;
+      this.pass=val;
     });
   }
 
   ionViewWillEnter(){
-    var user=this.email;
-    var pass=this.password;
+    var email=this.user;
+    var password=this.pass;
     this.magazzini=[];
     var headers = new Headers();
     headers.append('Content-Type', 'application/x-www-form-urlencoded' );
     let options = new RequestOptions({ headers: headers }); 
     let postParams = {
-      user,
-      pass
+      email,
+      password
     };
     this.http.post("http://niscmanager.altervista.org/get_magazzini.php", JSON.stringify(postParams), options)
         .subscribe(data => {
-          console.log(data['_body']);
-          this.dati_server = JSON.parse(data['_body']); 
-          if(this.dati_server!=null){
-            for(var i=0;i<this.dati_server.length;i++){
-              this.magazzini.push(new Magazzino(this.dati_server[i].nome,this.dati_server[i].descrizione));
+          if(data['_body'][0]=="["){
+            this.dati_server = JSON.parse(data['_body']); 
+            if(this.dati_server!=null){
+              for(var i=0;i<this.dati_server.length;i++){
+                this.magazzini.push(new Magazzino(this.dati_server[i].nome,this.dati_server[i].descrizione));
+              }
             }
+          }else{
+            console.log(data['_body']);
           }
     });
   }

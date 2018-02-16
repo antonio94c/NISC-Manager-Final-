@@ -1,4 +1,4 @@
-webpackJsonp([22],{
+webpackJsonp([24],{
 
 /***/ 108:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -6,9 +6,9 @@ webpackJsonp([22],{
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AboutPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__dettagliarticoli_dettagliarticoli__ = __webpack_require__(44);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -152,7 +152,7 @@ var AboutPage = (function () {
     };
     AboutPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'about',template:/*ion-inline-start:"C:\Users\Antonio\Documents\Progetti\NISC-Manager-Final-\src\pages\about\about.html"*/'<ion-header>\n    <ion-navbar color="primary">\n      <ion-title>Catalogo articoli</ion-title>\n    </ion-navbar>\n  </ion-header>\n  \n  <ion-content style="background-color:rgb(252, 253, 253);">\n    <p>\n  <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>\n          \n    </p>\n    <p></p>\n    <div ng-controller="listController"> \n        <ion-list>\n      \n         <ion-item *ngFor="let articolo of articoli; let i=index">\n            <ion-thumbnail item-start>\n              <img src="assets/img/componente4.jpg">\n            </ion-thumbnail>\n            <h4>Nome: {{articolo.nome}}</h4>\n            <h6><p>Disponibiltà : {{articolo.quantita}}</p>\n            <p><label>Richiesta:\n              <input type="number" name="articoli_richiesti" value="0" min="0" max="20" step="1" [(ngModel)]=quantita_articoli[i]>\n            </label></p></h6>\n           \n            <button ion-button outline  item-end (click)=\'dettagli(articolo)\'>Dettagli</button>\n          </ion-item>\n          \n      \n        </ion-list>\n      </div>\n  \n    <p align=\'center\'>\n      \n      <button ion-button color="primary" round (click)=\'invia_richiesta()\'>Invia Richiesta</button>\n      <button ion-button color="danger" round (click)=\'reset()\'>Reset</button>\n    </p>\n  </ion-content>'/*ion-inline-end:"C:\Users\Antonio\Documents\Progetti\NISC-Manager-Final-\src\pages\about\about.html"*/,
+            selector: 'about',template:/*ion-inline-start:"C:\Users\Antonio\Documents\Progetti\NISC-Manager-Final-\src\pages\about\about.html"*/'<ion-header>\n    <ion-navbar color="primary">\n      <ion-title>Catalogo articoli</ion-title>\n    </ion-navbar>\n  </ion-header>\n  \n  <ion-content style="background-color:rgb(252, 253, 253);">\n    <p>\n  <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>\n          \n    </p>\n    <p></p>\n    <div ng-controller="listController"> \n        <ion-list>\n      \n         <ion-item *ngFor="let articolo of articoli; let i=index">\n            <ion-thumbnail item-start>\n              <img src="assets/img/articolo.png">\n            </ion-thumbnail>\n            <h4>Nome: {{articolo.nome}}</h4>\n            <h6><p>Disponibiltà : {{articolo.quantita}}</p>\n            <p><label>Richiesta:\n              <input type="number" name="articoli_richiesti" value="0" min="0" max="20" step="1" [(ngModel)]=quantita_articoli[i]>\n            </label></p></h6>\n           \n            <button ion-button outline  item-end (click)=\'dettagli(articolo)\'>Dettagli</button>\n          </ion-item>\n          \n      \n        </ion-list>\n      </div>\n  \n    <p align=\'center\'>\n      \n      <button ion-button color="primary" round (click)=\'invia_richiesta()\'>Invia Richiesta</button>\n      <button ion-button color="danger" round (click)=\'reset()\'>Reset</button>\n    </p>\n  </ion-content>'/*ion-inline-end:"C:\Users\Antonio\Documents\Progetti\NISC-Manager-Final-\src\pages\about\about.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_3__ionic_storage__["b" /* Storage */]])
     ], AboutPage);
@@ -180,7 +180,7 @@ var Articolo = (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DettagliArticoliMagPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__inserisci_modifica_articolo_inserisci_modifica_articolo__ = __webpack_require__(55);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -205,7 +205,7 @@ var DettagliArticoliMagPage = (function () {
     };
     DettagliArticoliMagPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-dettagli-articoli-mag',template:/*ion-inline-start:"C:\Users\Antonio\Documents\Progetti\NISC-Manager-Final-\src\pages\dettagli-articoli-mag\dettagli-articoli-mag.html"*/'<ion-header>\n\n    <ion-navbar>\n      <ion-title>dettagli articolo</ion-title>\n    </ion-navbar>\n  \n  </ion-header>\n  \n  \n  <ion-content padding>\n    <ion-grid>\n      <ion-row>\n        <ion-col col-4 class="logo">\n          <img src="../../assets/imgs/logo.png"/>\n        </ion-col>\n        <ion-col> \n          <p><b>ID:</b> {{ articolo.id }}</p>\n          <h1>{{ articolo.nome }}</h1>\n        </ion-col>\n      </ion-row>\n      <ion-row>\n          <ion-col>\n            <b>Quantità:</b> {{ articolo.quantita }}\n          </ion-col>\n      </ion-row>\n      <ion-row>\n          <ion-col>\n              <b>Descrizione:</b><br>\n              {{ articolo.descrizione }}\n          </ion-col>\n      </ion-row>\n    </ion-grid>\n    <p align=\'center\'>\n        <button ion-button color="secondary" round (click)=\'modifica()\'>Modifica</button>\n      </p>\n  \n  </ion-content>'/*ion-inline-end:"C:\Users\Antonio\Documents\Progetti\NISC-Manager-Final-\src\pages\dettagli-articoli-mag\dettagli-articoli-mag.html"*/,
+            selector: 'page-dettagli-articoli-mag',template:/*ion-inline-start:"C:\Users\Antonio\Documents\Progetti\NISC-Manager-Final-\src\pages\dettagli-articoli-mag\dettagli-articoli-mag.html"*/'<ion-header>\n\n    <ion-navbar>\n      <ion-title>dettagli articolo</ion-title>\n    </ion-navbar>\n  \n  </ion-header>\n  \n  \n  <ion-content padding>\n    <ion-grid>\n      <ion-row>\n        <ion-col col-4 class="logo">\n          <img src="../../assets/imgs/articolo.png"/>\n        </ion-col>\n        <ion-col> \n          <p><b>ID:</b> {{ articolo.id }}</p>\n          <h1>{{ articolo.nome }}</h1>\n        </ion-col>\n      </ion-row>\n      <ion-row>\n          <ion-col>\n            <b>Quantità:</b> {{ articolo.quantita }}\n          </ion-col>\n      </ion-row>\n      <ion-row>\n          <ion-col>\n              <b>Descrizione:</b><br>\n              {{ articolo.descrizione }}\n          </ion-col>\n      </ion-row>\n    </ion-grid>\n    <p align=\'center\'>\n        <button ion-button color="secondary" round (click)=\'modifica()\'>Modifica</button>\n      </p>\n  \n  </ion-content>'/*ion-inline-end:"C:\Users\Antonio\Documents\Progetti\NISC-Manager-Final-\src\pages\dettagli-articoli-mag\dettagli-articoli-mag.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
     ], DettagliArticoliMagPage);
@@ -230,11 +230,223 @@ var Articolo = (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DettagliRichiestaMagPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(9);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+var DettagliRichiestaMagPage = (function () {
+    function DettagliRichiestaMagPage(navCtrl, http, navParams, storage, alertCtrl) {
+        var _this = this;
+        this.navCtrl = navCtrl;
+        this.http = http;
+        this.navParams = navParams;
+        this.storage = storage;
+        this.alertCtrl = alertCtrl;
+        this.richieste = [];
+        this.approvare = [];
+        storage.get('email').then(function (val) {
+            _this.user = val;
+        });
+        storage.get('password').then(function (val) {
+            _this.pass = val;
+        });
+        this.titolo = "Richiesta " + navParams.data[0] + " - " + navParams.data[1];
+    }
+    DettagliRichiestaMagPage.prototype.ionViewWillEnter = function () {
+        var _this = this;
+        var email = this.user;
+        var password = this.pass;
+        var id = this.navParams.data[0];
+        var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]();
+        headers.append('Content-Type', 'application/x-www-form-urlencoded');
+        var options = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["d" /* RequestOptions */]({ headers: headers });
+        var postParams = {
+            email: email,
+            password: password,
+            id: id
+        };
+        this.http.post("http://niscmanager.altervista.org/get_dettagli_richiesta_mag.php", JSON.stringify(postParams), options)
+            .subscribe(function (data) {
+            if (data['_body'][0] == "[") {
+                _this.dati_server = JSON.parse(data['_body']);
+                console.log(_this.dati_server);
+                if (_this.dati_server != null) {
+                    _this.richieste = [];
+                    for (var i = 0; i < _this.dati_server.length; i++) {
+                        _this.richieste.push(new Richiesta(id, _this.dati_server[i].id_articolo, _this.dati_server[i].articolo, _this.dati_server[i].quantita_ric, _this.dati_server[i].quantita_app, _this.dati_server[i].squadra, _this.dati_server[i].quantita_max));
+                    }
+                }
+            }
+            else {
+                console.log(data['_body']);
+            }
+        });
+    };
+    DettagliRichiestaMagPage.prototype.salva = function () {
+        var _this = this;
+        var flag = true;
+        var email = this.user;
+        var password = this.pass;
+        var id = this.navParams.data[0];
+        var approva = [];
+        for (var i = 0; i < this.approvare.length; i++) {
+            if (this.approvare[i] > (this.richieste[i].quantita_ric - this.richieste[i].quantita_app)) {
+                flag = false;
+            }
+            approva.push(new Approvazione(this.richieste[i].id_articolo, this.approvare[i]));
+        }
+        if (flag) {
+            var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]();
+            headers.append('Content-Type', 'application/x-www-form-urlencoded');
+            var options = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["d" /* RequestOptions */]({ headers: headers });
+            var postParams = {
+                email: email,
+                password: password,
+                id: id,
+                approva: approva
+            };
+            this.http.post("http://niscmanager.altervista.org/approva_richiesta_mag.php", JSON.stringify(postParams), options)
+                .subscribe(function (data) {
+                var alert = _this.alertCtrl.create({
+                    title: data['_body'],
+                    subTitle: '',
+                    buttons: [{
+                            text: 'Ok',
+                            handler: function () {
+                                var navTransition = alert.dismiss();
+                                navTransition.then(function () {
+                                    _this.navCtrl.pop();
+                                });
+                                return false;
+                            }
+                        }]
+                });
+                alert.present();
+            });
+        }
+        else {
+            var alert_1 = this.alertCtrl.create({
+                title: "Limite pezzi superato",
+                subTitle: '',
+                buttons: [{
+                        text: 'Ok',
+                        handler: function () {
+                            var navTransition = alert_1.dismiss();
+                            navTransition.then(function () {
+                            });
+                            return false;
+                        }
+                    }]
+            });
+            alert_1.present();
+        }
+    };
+    DettagliRichiestaMagPage.prototype.rifiuta = function () {
+        var _this = this;
+        var email = this.user;
+        var password = this.pass;
+        var id = this.navParams.data[0];
+        var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]();
+        headers.append('Content-Type', 'application/x-www-form-urlencoded');
+        var options = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["d" /* RequestOptions */]({ headers: headers });
+        var postParams = {
+            email: email,
+            password: password,
+            id: id
+        };
+        this.http.post("http://niscmanager.altervista.org/rifiuta_richiesta_mag.php", JSON.stringify(postParams), options)
+            .subscribe(function (data) {
+            var alert = _this.alertCtrl.create({
+                title: data['_body'],
+                subTitle: '',
+                buttons: [{
+                        text: 'Ok',
+                        handler: function () {
+                            var navTransition = alert.dismiss();
+                            navTransition.then(function () {
+                                _this.navCtrl.pop();
+                            });
+                            return false;
+                        }
+                    }]
+            });
+            alert.present();
+        });
+    };
+    DettagliRichiestaMagPage.prototype.initializeItems = function () {
+        this.richieste = [];
+        for (var i = 0; i < this.dati_server.length; i++) {
+            this.richieste.push(this.dati_server[i]);
+        }
+    };
+    DettagliRichiestaMagPage.prototype.getItems = function (ev) {
+        // Reset items back to all of the items
+        this.initializeItems();
+        // set val to the value of the searchbar
+        var val = ev.target.value;
+        // if the value is an empty string don't filter the items
+        if (val && val.trim() != '') {
+            this.richieste = this.richieste.filter(function (richiesta) {
+                return (richiesta.articolo.toLowerCase().indexOf(val.toLowerCase()) > -1);
+            });
+        }
+    };
+    DettagliRichiestaMagPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-dettagli-richiesta-mag',template:/*ion-inline-start:"C:\Users\Antonio\Documents\Progetti\NISC-Manager-Final-\src\pages\dettagli-richiesta-mag\dettagli-richiesta-mag.html"*/'<ion-header>\n  <ion-navbar color="danger">\n    <ion-title>{{titolo}}</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content style="background-color:rgb(205, 241, 245);">\n  <p>\n      <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>     \n  </p>\n  <p></p>\n  <div ng-controller="listController"> \n    <ion-list>\n    <ion-item *ngFor="let richiesta of richieste; let i=index">\n        <ion-thumbnail item-start>\n          <img src="assets/img/articolo.png">\n        </ion-thumbnail>\n        <h2>Articolo: {{richiesta.articolo}}</h2>\n        <p>Quantità richiesta: {{richiesta.quantita_ric}}</p>\n        <p>Quantità approvata: {{richiesta.quantita_app}}</p>\n        <p>\n          <label>Approva:\n            <input [(ngModel)]=approvare[i] type="number" value="0" min="0" max={{richiesta.quantita_ric-richiesta.quantita_app}} step="1">\n          </label>\n        </p>\n        <p>Quantità disponibile: {{richiesta.quantita_max}}</p>\n        \n      </ion-item>\n    </ion-list>\n  </div>\n  <p align=\'center\'>\n    <button ion-button color="secondary" round (click)=\'salva()\'>Approva</button>\n    <button ion-button color="danger" round (click)=\'rifiuta()\'>Rifiuta</button>\n  </p>\n</ion-content>'/*ion-inline-end:"C:\Users\Antonio\Documents\Progetti\NISC-Manager-Final-\src\pages\dettagli-richiesta-mag\dettagli-richiesta-mag.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
+    ], DettagliRichiestaMagPage);
+    return DettagliRichiestaMagPage;
+}());
+
+var Richiesta = (function () {
+    function Richiesta(id, id_articolo, articolo, quantita_ric, quantita_app, squadra, quantita_max) {
+        this.id = id;
+        this.id_articolo = id_articolo;
+        this.articolo = articolo;
+        this.quantita_ric = quantita_ric;
+        this.quantita_app = quantita_app;
+        this.squadra = squadra;
+        this.quantita_max = quantita_max;
+    }
+    return Richiesta;
+}());
+var Approvazione = (function () {
+    function Approvazione(id, quantita) {
+        this.id = id;
+        this.quantita = quantita;
+    }
+    return Approvazione;
+}());
+//# sourceMappingURL=dettagli-richiesta-mag.js.map
+
+/***/ }),
+
+/***/ 111:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DettagliRichiestaPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(7);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -345,14 +557,15 @@ var Richiesta = (function () {
 
 /***/ }),
 
-/***/ 111:
+/***/ 112:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EliminaArticoliPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(9);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -366,25 +579,38 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var EliminaArticoliPage = (function () {
-    function EliminaArticoliPage(navCtrl, http, navParams, alertCtrl) {
+    function EliminaArticoliPage(navCtrl, http, navParams, alertCtrl, storage) {
+        var _this = this;
         this.navCtrl = navCtrl;
         this.http = http;
         this.navParams = navParams;
         this.alertCtrl = alertCtrl;
+        this.storage = storage;
         this.articoli = [];
+        storage.get('email').then(function (val) {
+            _this.user = val;
+        });
+        storage.get('password').then(function (val) {
+            _this.pass = val;
+        });
     }
     EliminaArticoliPage.prototype.ionViewWillEnter = function () {
         var _this = this;
+        var email = this.user;
+        var password = this.pass;
         var nome_mag = this.navParams.data;
         this.titolo = nome_mag;
         var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/x-www-form-urlencoded');
         var options = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["d" /* RequestOptions */]({ headers: headers });
         var postParams = {
+            email: email,
+            password: password,
             nome_mag: nome_mag
         };
-        this.http.post("http://niscmanager.altervista.org/get_articoli_post.php", JSON.stringify(postParams), options)
+        this.http.post("http://niscmanager.altervista.org/get_articoli.php", JSON.stringify(postParams), options)
             .subscribe(function (data) {
             _this.dati_server = JSON.parse(data['_body']);
             console.log(_this.dati_server);
@@ -398,12 +624,16 @@ var EliminaArticoliPage = (function () {
     };
     EliminaArticoliPage.prototype.elimina = function (articolo) {
         var _this = this;
+        var email = this.user;
+        var password = this.pass;
         var id = articolo.id;
         var magazzino = articolo.nome_magazzino;
         var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/x-www-form-urlencoded');
         var options = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["d" /* RequestOptions */]({ headers: headers });
         var postParams = {
+            email: email,
+            password: password,
             id: id,
             magazzino: magazzino
         };
@@ -449,9 +679,9 @@ var EliminaArticoliPage = (function () {
     };
     EliminaArticoliPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-elimina-articoli',template:/*ion-inline-start:"C:\Users\Antonio\Documents\Progetti\NISC-Manager-Final-\src\pages\elimina-articoli\elimina-articoli.html"*/'<ion-header>\n    <ion-navbar color="danger">\n      <ion-title>Elimina articoli</ion-title>\n    </ion-navbar>\n  </ion-header>\n  \n  <ion-content style="background-color:rgb(205, 241, 245);">\n    <p>\n        <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>     \n    </p>\n    <p></p>\n    <div ng-controller="listController"> \n    <ion-list>\n  \n     <ion-item *ngFor="let articolo of articoli">\n        <ion-thumbnail item-start>\n          <img src="assets/img/componente4.jpg">\n        </ion-thumbnail>\n        <h2>Nome: {{articolo.nome}}</h2>\n        <p>Disponibiltà: {{articolo.quantita}}</p>\n       \n        <button ion-button outline item-end (click)=\'elimina(articolo)\'>Elimina</button>\n      </ion-item>\n    </ion-list>\n  </div>\n  </ion-content>'/*ion-inline-end:"C:\Users\Antonio\Documents\Progetti\NISC-Manager-Final-\src\pages\elimina-articoli\elimina-articoli.html"*/,
+            selector: 'page-elimina-articoli',template:/*ion-inline-start:"C:\Users\Antonio\Documents\Progetti\NISC-Manager-Final-\src\pages\elimina-articoli\elimina-articoli.html"*/'<ion-header>\n    <ion-navbar color="danger">\n      <ion-title>Elimina articoli</ion-title>\n    </ion-navbar>\n  </ion-header>\n  \n  <ion-content style="background-color:rgb(205, 241, 245);">\n    <p>\n        <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>     \n    </p>\n    <p></p>\n    <div ng-controller="listController"> \n    <ion-list>\n  \n     <ion-item *ngFor="let articolo of articoli">\n        <ion-thumbnail item-start>\n          <img src="assets/img/articolo.png">\n        </ion-thumbnail>\n        <h2>Nome: {{articolo.nome}}</h2>\n        <p>Disponibiltà: {{articolo.quantita}}</p>\n       \n        <button ion-button outline item-end (click)=\'elimina(articolo)\'>Elimina</button>\n      </ion-item>\n    </ion-list>\n  </div>\n  </ion-content>'/*ion-inline-end:"C:\Users\Antonio\Documents\Progetti\NISC-Manager-Final-\src\pages\elimina-articoli\elimina-articoli.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_3__ionic_storage__["b" /* Storage */]])
     ], EliminaArticoliPage);
     return EliminaArticoliPage;
 }());
@@ -470,14 +700,15 @@ var Articolo = (function () {
 
 /***/ }),
 
-/***/ 112:
+/***/ 113:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EliminaMagazziniAdminPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(9);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -491,17 +722,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var EliminaMagazziniAdminPage = (function () {
-    function EliminaMagazziniAdminPage(navCtrl, navParams, http, alertCtrl) {
+    function EliminaMagazziniAdminPage(navCtrl, navParams, http, alertCtrl, storage) {
+        var _this = this;
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.http = http;
         this.alertCtrl = alertCtrl;
+        this.storage = storage;
         this.magazzini = [];
         this.magazzini = navParams.data;
         this.dati_server = navParams.data;
+        storage.get('email').then(function (val) {
+            _this.user = val;
+        });
+        storage.get('password').then(function (val) {
+            _this.pass = val;
+        });
     }
-    //bisogna selezionare quelli da eliminare
     EliminaMagazziniAdminPage.prototype.elimina = function (nome) {
         var _this = this;
         var confirm = this.alertCtrl.create({
@@ -518,10 +757,14 @@ var EliminaMagazziniAdminPage = (function () {
                     text: 'SI',
                     handler: function () {
                         console.log('Agree clicked');
+                        var email = _this.user;
+                        var password = _this.pass;
                         var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]();
                         headers.append('Content-Type', 'application/x-www-form-urlencoded');
                         var options = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["d" /* RequestOptions */]({ headers: headers });
                         var postParams = {
+                            email: email,
+                            password: password,
                             nome: nome
                         };
                         _this.http.post("http://niscmanager.altervista.org/elimina_magazzino.php", JSON.stringify(postParams), options)
@@ -573,7 +816,7 @@ var EliminaMagazziniAdminPage = (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-elimina-magazzini-admin',template:/*ion-inline-start:"C:\Users\Antonio\Documents\Progetti\NISC-Manager-Final-\src\pages\elimina-magazzini-admin\elimina-magazzini-admin.html"*/'<ion-header>\n    <ion-navbar color="danger">\n      <ion-title>Elimina magazzini</ion-title>\n    </ion-navbar>\n  </ion-header>\n  \n  <ion-content style="background-color:rgb(205, 241, 245);">\n    <p>\n        <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>\n    </p>\n    <p></p>\n    <div ng-controller="listController"> \n    <ion-list>\n      <ion-item *ngFor="let magazzino of magazzini">\n        <h2>{{magazzino.nome}}</h2>\n        <p>{{magazzino.descrizione}}</p>     \n        <button ion-button outline item-end (click)=\'elimina(magazzino.nome)\'>Elimina</button>\n      </ion-item>\n    </ion-list>\n  </div>\n  </ion-content>'/*ion-inline-end:"C:\Users\Antonio\Documents\Progetti\NISC-Manager-Final-\src\pages\elimina-magazzini-admin\elimina-magazzini-admin.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_3__ionic_storage__["b" /* Storage */]])
     ], EliminaMagazziniAdminPage);
     return EliminaMagazziniAdminPage;
 }());
@@ -582,15 +825,16 @@ var EliminaMagazziniAdminPage = (function () {
 
 /***/ }),
 
-/***/ 113:
+/***/ 114:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GestioneArticoliAdminPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__dettagliarticoli_dettagliarticoli__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_storage__ = __webpack_require__(9);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -604,40 +848,52 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-/**
- * Generated class for the GestioneArticoliAdminPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+
 var GestioneArticoliAdminPage = (function () {
-    function GestioneArticoliAdminPage(navCtrl, http, navParams) {
+    function GestioneArticoliAdminPage(navCtrl, http, navParams, storage) {
         var _this = this;
         this.navCtrl = navCtrl;
         this.http = http;
         this.navParams = navParams;
+        this.storage = storage;
         this.articoli = [];
         this.totale_articoli = 0;
-        var nome_mag = navParams.data.nome;
-        this.titolo = nome_mag;
+        this.nome_mag = navParams.data.nome;
+        this.titolo = this.nome_mag;
+        storage.get('email').then(function (val) {
+            _this.user = val;
+        });
+        storage.get('password').then(function (val) {
+            _this.pass = val;
+        });
+    }
+    GestioneArticoliAdminPage.prototype.ionViewWillEnter = function () {
+        var _this = this;
         var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/x-www-form-urlencoded');
         var options = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["d" /* RequestOptions */]({ headers: headers });
+        var email = this.user;
+        var password = this.pass;
+        var nome_mag = this.nome_mag;
         var postParams = {
+            email: email,
+            password: password,
             nome_mag: nome_mag
         };
-        this.http.post("http://niscmanager.altervista.org/get_articoli_post.php", JSON.stringify(postParams), options)
+        this.http.post("http://niscmanager.altervista.org/get_articoli.php", JSON.stringify(postParams), options)
             .subscribe(function (data) {
             _this.dati_server = JSON.parse(data['_body']);
             console.log(_this.dati_server);
             if (_this.dati_server != null) {
+                _this.totale_articoli = 0;
+                _this.articoli = [];
                 for (var i = 0; i < _this.dati_server.length; i++) {
                     _this.totale_articoli += parseInt(_this.dati_server[i].quantita);
                     _this.articoli.push(new Articolo(_this.dati_server[i].id, _this.dati_server[i].nome, _this.dati_server[i].quantita, _this.dati_server[i].descrizione, "principale"));
                 }
             }
         });
-    }
+    };
     GestioneArticoliAdminPage.prototype.dettagli = function (articolo) {
         console.log("Selected Item", articolo.nome);
         this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__dettagliarticoli_dettagliarticoli__["a" /* DettagliPage */], articolo);
@@ -662,9 +918,9 @@ var GestioneArticoliAdminPage = (function () {
     };
     GestioneArticoliAdminPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-gestione-articoli-admin',template:/*ion-inline-start:"C:\Users\Antonio\Documents\Progetti\NISC-Manager-Final-\src\pages\gestione-articoli-admin\gestione-articoli-admin.html"*/'<ion-header>\n  <ion-navbar color="danger">\n    <ion-title>{{ titolo }}</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content style="background-color:rgb(205, 241, 245);">\n  <p>\n      <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>     \n  </p>\n  <p></p>\n  <div ng-controller="listController"> \n  <ion-list>\n\n   <ion-item *ngFor="let articolo of articoli">\n      <ion-thumbnail item-start>\n        <img src="assets/img/componente4.jpg">\n      </ion-thumbnail>\n      <h2>Nome: {{articolo.nome}}</h2>\n      <p>Disponibiltà: {{articolo.quantita}}</p>\n     \n      <button ion-button outline item-end (click)=\'dettagli(articolo)\'>Dettagli</button>\n    </ion-item>\n    \n\n  </ion-list>\n</div>\n<h2 align=\'center\'>Totale: {{totale_articoli}} </h2>\n</ion-content>'/*ion-inline-end:"C:\Users\Antonio\Documents\Progetti\NISC-Manager-Final-\src\pages\gestione-articoli-admin\gestione-articoli-admin.html"*/,
+            selector: 'page-gestione-articoli-admin',template:/*ion-inline-start:"C:\Users\Antonio\Documents\Progetti\NISC-Manager-Final-\src\pages\gestione-articoli-admin\gestione-articoli-admin.html"*/'<ion-header>\n  <ion-navbar color="danger">\n    <ion-title>{{ titolo }}</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content style="background-color:rgb(205, 241, 245);">\n  <p>\n      <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>     \n  </p>\n  <p></p>\n  <div ng-controller="listController"> \n  <ion-list>\n\n   <ion-item *ngFor="let articolo of articoli">\n      <ion-thumbnail item-start>\n        <img src="assets/img/articolo.png">\n      </ion-thumbnail>\n      <h2>Nome: {{articolo.nome}}</h2>\n      <p>Disponibiltà: {{articolo.quantita}}</p>\n     \n      <button ion-button outline item-end (click)=\'dettagli(articolo)\'>Dettagli</button>\n    </ion-item>\n    \n\n  </ion-list>\n</div>\n<h2 align=\'center\'>Totale: {{totale_articoli}} </h2>\n</ion-content>'/*ion-inline-end:"C:\Users\Antonio\Documents\Progetti\NISC-Manager-Final-\src\pages\gestione-articoli-admin\gestione-articoli-admin.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_4__ionic_storage__["b" /* Storage */]])
     ], GestioneArticoliAdminPage);
     return GestioneArticoliAdminPage;
 }());
@@ -679,29 +935,23 @@ var Articolo = (function () {
     }
     return Articolo;
 }());
-var Magazzino = (function () {
-    function Magazzino(nome, descrizione) {
-        this.nome = nome;
-        this.descrizione = descrizione;
-    }
-    return Magazzino;
-}());
 //# sourceMappingURL=gestione-articoli-admin.js.map
 
 /***/ }),
 
-/***/ 114:
+/***/ 115:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GestioneArticoliMagPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__dettagli_articoli_mag_dettagli_articoli_mag__ = __webpack_require__(109);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__inserisci_modifica_articolo_inserisci_modifica_articolo__ = __webpack_require__(55);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__elimina_articoli_elimina_articoli__ = __webpack_require__(111);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__sposta_articoli_mag_sposta_articoli_mag__ = __webpack_require__(115);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__elimina_articoli_elimina_articoli__ = __webpack_require__(112);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__sposta_articoli_mag_sposta_articoli_mag__ = __webpack_require__(116);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_storage__ = __webpack_require__(9);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -718,24 +968,37 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var GestioneArticoliMagPage = (function () {
-    function GestioneArticoliMagPage(navCtrl, http, navParams) {
+    function GestioneArticoliMagPage(navCtrl, http, navParams, storage) {
+        var _this = this;
         this.navCtrl = navCtrl;
         this.http = http;
         this.navParams = navParams;
+        this.storage = storage;
         this.articoli = [];
+        storage.get('email').then(function (val) {
+            _this.user = val;
+        });
+        storage.get('password').then(function (val) {
+            _this.pass = val;
+        });
     }
     GestioneArticoliMagPage.prototype.ionViewWillEnter = function () {
         var _this = this;
+        var email = this.user;
+        var password = this.pass;
         var nome_mag = this.navParams.data.nome;
         this.titolo = nome_mag;
         var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/x-www-form-urlencoded');
         var options = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["d" /* RequestOptions */]({ headers: headers });
         var postParams = {
+            email: email,
+            password: password,
             nome_mag: nome_mag
         };
-        this.http.post("http://niscmanager.altervista.org/get_articoli_post.php", JSON.stringify(postParams), options)
+        this.http.post("http://niscmanager.altervista.org/get_articoli.php", JSON.stringify(postParams), options)
             .subscribe(function (data) {
             _this.dati_server = JSON.parse(data['_body']);
             console.log(_this.dati_server);
@@ -782,9 +1045,9 @@ var GestioneArticoliMagPage = (function () {
     };
     GestioneArticoliMagPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-gestione-articoli-mag',template:/*ion-inline-start:"C:\Users\Antonio\Documents\Progetti\NISC-Manager-Final-\src\pages\gestione-articoli-mag\gestione-articoli-mag.html"*/'<ion-header>\n  <ion-navbar color="danger">\n    <ion-title>{{ titolo }}</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content style="background-color:rgb(205, 241, 245);">\n  <p>\n      <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>     \n  </p>\n  <p></p>\n  <div ng-controller="listController"> \n  <ion-list>\n\n   <ion-item *ngFor="let articolo of articoli">\n      <ion-thumbnail item-start>\n        <img src="assets/img/componente4.jpg">\n      </ion-thumbnail>\n      <h2>Nome: {{articolo.nome}}</h2>\n      <p>Disponibiltà: {{articolo.quantita}}</p>\n     \n      <button ion-button outline item-end (click)=\'dettagli(articolo)\'>Dettagli</button>\n    </ion-item>\n  </ion-list>\n</div>\n<p align=\'center\'>\n  <button ion-button color="secondary" round (click)=\'inserisci()\'>Inserisci</button>\n  <button ion-button round (click)=\'sposta()\'>Sposta</button>\n  <button ion-button color="danger" round (click)=\'elimina()\'>Elimina</button>\n</p>\n</ion-content>'/*ion-inline-end:"C:\Users\Antonio\Documents\Progetti\NISC-Manager-Final-\src\pages\gestione-articoli-mag\gestione-articoli-mag.html"*/,
+            selector: 'page-gestione-articoli-mag',template:/*ion-inline-start:"C:\Users\Antonio\Documents\Progetti\NISC-Manager-Final-\src\pages\gestione-articoli-mag\gestione-articoli-mag.html"*/'<ion-header>\n  <ion-navbar color="danger">\n    <ion-title>{{ titolo }}</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content style="background-color:rgb(205, 241, 245);">\n  <p>\n      <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>     \n  </p>\n  <p></p>\n  <div ng-controller="listController"> \n  <ion-list>\n\n   <ion-item *ngFor="let articolo of articoli">\n      <ion-thumbnail item-start>\n        <img src="assets/img/articolo.png">\n      </ion-thumbnail>\n      <h2>Nome: {{articolo.nome}}</h2>\n      <p>Disponibiltà: {{articolo.quantita}}</p>\n     \n      <button ion-button outline item-end (click)=\'dettagli(articolo)\'>Dettagli</button>\n    </ion-item>\n  </ion-list>\n</div>\n<p align=\'center\'>\n  <button ion-button color="secondary" round (click)=\'inserisci()\'>Inserisci</button>\n  <button ion-button round (click)=\'sposta()\'>Sposta</button>\n  <button ion-button color="danger" round (click)=\'elimina()\'>Elimina</button>\n</p>\n</ion-content>'/*ion-inline-end:"C:\Users\Antonio\Documents\Progetti\NISC-Manager-Final-\src\pages\gestione-articoli-mag\gestione-articoli-mag.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_7__ionic_storage__["b" /* Storage */]])
     ], GestioneArticoliMagPage);
     return GestioneArticoliMagPage;
 }());
@@ -803,14 +1066,15 @@ var Articolo = (function () {
 
 /***/ }),
 
-/***/ 115:
+/***/ 116:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SpostaArticoliMagPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(9);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -824,26 +1088,39 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var SpostaArticoliMagPage = (function () {
-    function SpostaArticoliMagPage(navCtrl, http, navParams, alertCtrl) {
+    function SpostaArticoliMagPage(navCtrl, http, navParams, alertCtrl, storage) {
+        var _this = this;
         this.navCtrl = navCtrl;
         this.http = http;
         this.navParams = navParams;
         this.alertCtrl = alertCtrl;
+        this.storage = storage;
         this.articoli = [];
         this.magazzini = [];
+        storage.get('email').then(function (val) {
+            _this.user = val;
+        });
+        storage.get('password').then(function (val) {
+            _this.pass = val;
+        });
     }
     SpostaArticoliMagPage.prototype.ionViewWillEnter = function () {
         var _this = this;
+        var email = this.user;
+        var password = this.pass;
         var nome_mag = this.navParams.data;
         this.titolo = nome_mag;
         var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/x-www-form-urlencoded');
         var options = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["d" /* RequestOptions */]({ headers: headers });
         var postParams = {
+            email: email,
+            password: password,
             nome_mag: nome_mag
         };
-        this.http.post("http://niscmanager.altervista.org/get_articoli_post.php", JSON.stringify(postParams), options)
+        this.http.post("http://niscmanager.altervista.org/get_articoli.php", JSON.stringify(postParams), options)
             .subscribe(function (data) {
             _this.dati_server = JSON.parse(data['_body']);
             console.log(_this.dati_server);
@@ -855,6 +1132,8 @@ var SpostaArticoliMagPage = (function () {
             }
         });
         postParams = {
+            email: email,
+            password: password,
             nome_mag: nome_mag
         };
         this.http.post("http://niscmanager.altervista.org/get_lista_magazzini.php", JSON.stringify(postParams), options)
@@ -865,6 +1144,8 @@ var SpostaArticoliMagPage = (function () {
     };
     SpostaArticoliMagPage.prototype.sposta = function (articolo, spostare) {
         var _this = this;
+        var email = this.user;
+        var password = this.pass;
         var alert = this.alertCtrl.create();
         alert.setTitle('Sposta da ' + this.navParams.data + ' a...');
         alert.addInput({
@@ -894,6 +1175,8 @@ var SpostaArticoliMagPage = (function () {
                 headers.append('Content-Type', 'application/x-www-form-urlencoded');
                 var options = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["d" /* RequestOptions */]({ headers: headers });
                 var postParams = {
+                    email: email,
+                    password: password,
                     id: id,
                     nome: nome,
                     descrizione: descrizione,
@@ -954,9 +1237,9 @@ var SpostaArticoliMagPage = (function () {
     };
     SpostaArticoliMagPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-sposta-articoli-mag',template:/*ion-inline-start:"C:\Users\Antonio\Documents\Progetti\NISC-Manager-Final-\src\pages\sposta-articoli-mag\sposta-articoli-mag.html"*/'<ion-header>\n    <ion-navbar color="danger">\n      <ion-title>Sposta articoli</ion-title>\n    </ion-navbar>\n  </ion-header>\n  \n  <ion-content style="background-color:rgb(205, 241, 245);">\n    <p>\n        <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>     \n    </p>\n    <p></p>\n    <div ng-controller="listController"> \n      <ion-list>\n    \n      <ion-item *ngFor="let articolo of articoli">\n          <ion-thumbnail item-start>\n            <img src="assets/img/componente4.jpg">\n          </ion-thumbnail>\n          <h2>Nome: {{articolo.nome}}</h2>\n          <p>Disponibiltà: {{articolo.quantita}}</p>\n          <p>\n            <label>Da spostare:\n              <input #spostare type="number" value="0" min="0" max={{articolo.quantita}} step="1">\n            </label>\n          </p>\n          <button ion-button outline item-end (click)=\'sposta(articolo,spostare.value)\'>Sposta</button>\n        </ion-item>\n      </ion-list>\n    </div>\n\n  </ion-content>'/*ion-inline-end:"C:\Users\Antonio\Documents\Progetti\NISC-Manager-Final-\src\pages\sposta-articoli-mag\sposta-articoli-mag.html"*/,
+            selector: 'page-sposta-articoli-mag',template:/*ion-inline-start:"C:\Users\Antonio\Documents\Progetti\NISC-Manager-Final-\src\pages\sposta-articoli-mag\sposta-articoli-mag.html"*/'<ion-header>\n    <ion-navbar color="danger">\n      <ion-title>Sposta articoli</ion-title>\n    </ion-navbar>\n  </ion-header>\n  \n  <ion-content style="background-color:rgb(205, 241, 245);">\n    <p>\n        <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>     \n    </p>\n    <p></p>\n    <div ng-controller="listController"> \n      <ion-list>\n    \n      <ion-item *ngFor="let articolo of articoli">\n          <ion-thumbnail item-start>\n            <img src="assets/img/articolo.png">\n          </ion-thumbnail>\n          <h2>Nome: {{articolo.nome}}</h2>\n          <p>Disponibiltà: {{articolo.quantita}}</p>\n          <p>\n            <label>Da spostare:\n              <input #spostare type="number" value="0" min="0" max={{articolo.quantita}} step="1">\n            </label>\n          </p>\n          <button ion-button outline item-end (click)=\'sposta(articolo,spostare.value)\'>Sposta</button>\n        </ion-item>\n      </ion-list>\n    </div>\n\n  </ion-content>'/*ion-inline-end:"C:\Users\Antonio\Documents\Progetti\NISC-Manager-Final-\src\pages\sposta-articoli-mag\sposta-articoli-mag.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_3__ionic_storage__["b" /* Storage */]])
     ], SpostaArticoliMagPage);
     return SpostaArticoliMagPage;
 }());
@@ -975,18 +1258,18 @@ var Articolo = (function () {
 
 /***/ }),
 
-/***/ 116:
+/***/ 117:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GestioneMagazziniAdminPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__inserisci_modifica_magazzino_inserisci_modifica_magazzino__ = __webpack_require__(117);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__gestione_articoli_admin_gestione_articoli_admin__ = __webpack_require__(113);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__elimina_magazzini_admin_elimina_magazzini_admin__ = __webpack_require__(112);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_storage__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__inserisci_modifica_magazzino_inserisci_modifica_magazzino__ = __webpack_require__(118);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__gestione_articoli_admin_gestione_articoli_admin__ = __webpack_require__(114);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__elimina_magazzini_admin_elimina_magazzini_admin__ = __webpack_require__(113);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_storage__ = __webpack_require__(9);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1011,26 +1294,24 @@ var GestioneMagazziniAdminPage = (function () {
         this.navParams = navParams;
         this.storage = storage;
         this.magazzini = [];
-        storage.set('email', 'pippopluto92@gmail.com');
-        storage.set('password', 'pippopluto');
         storage.get('email').then(function (val) {
-            _this.email = val;
+            _this.user = val;
         });
         storage.get('password').then(function (val) {
-            _this.password = val;
+            _this.pass = val;
         });
     }
     GestioneMagazziniAdminPage.prototype.ionViewWillEnter = function () {
         var _this = this;
-        var user = this.email;
-        var pass = this.password;
+        var email = this.user;
+        var password = this.pass;
         this.magazzini = [];
         var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/x-www-form-urlencoded');
         var options = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["d" /* RequestOptions */]({ headers: headers });
         var postParams = {
-            user: user,
-            pass: pass
+            email: email,
+            password: password
         };
         this.http.post("http://niscmanager.altervista.org/get_magazzini.php", JSON.stringify(postParams), options)
             .subscribe(function (data) {
@@ -1078,7 +1359,7 @@ var GestioneMagazziniAdminPage = (function () {
     };
     GestioneMagazziniAdminPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-gestione-magazzini-admin',template:/*ion-inline-start:"C:\Users\Antonio\Documents\Progetti\NISC-Manager-Final-\src\pages\gestione-magazzini-admin\gestione-magazzini-admin.html"*/'<ion-header>\n  <ion-navbar color="danger">\n    <ion-title>Gestione magazzini</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content style="background-color:rgb(205, 241, 245);">\n  <p>\n      \n      <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>\n        \n  </p>\n  <p></p>\n  <div ng-controller="listController"> \n  <ion-list>\n\n   <ion-item *ngFor="let magazzino of magazzini">\n      <h2 (click)=\'mostra_articoli(magazzino)\'>{{magazzino.nome}}</h2>\n      <p>{{magazzino.descrizione}}</p>\n           \n      <button ion-button outline item-end (click)=\'modifica(magazzino)\'>Modifica</button>\n    </ion-item>\n  </ion-list>\n</div>\n\n  <p align=\'center\'>\n    \n    <button ion-button color="secondary" round (click)=\'inserisci()\'>Inserisci</button>\n    <button ion-button color="danger" round (click)=\'elimina()\'>Elimina</button>\n  </p>\n</ion-content>'/*ion-inline-end:"C:\Users\Antonio\Documents\Progetti\NISC-Manager-Final-\src\pages\gestione-magazzini-admin\gestione-magazzini-admin.html"*/,
+            selector: 'page-gestione-magazzini-admin',template:/*ion-inline-start:"C:\Users\Antonio\Documents\Progetti\NISC-Manager-Final-\src\pages\gestione-magazzini-admin\gestione-magazzini-admin.html"*/'<ion-header>\n  <ion-navbar color="primary">\n    <ion-title>Gestione magazzini</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <p>\n      \n      <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>\n        \n  </p>\n  <p></p>\n  <div ng-controller="listController"> \n  <ion-list>\n\n   <ion-item *ngFor="let magazzino of magazzini">\n      <h2 (click)=\'mostra_articoli(magazzino)\'>{{magazzino.nome}}</h2>\n      <p>{{magazzino.descrizione}}</p>\n           \n      <button ion-button outline item-end (click)=\'modifica(magazzino)\'>Modifica</button>\n    </ion-item>\n  </ion-list>\n</div>\n\n  <p align=\'center\'>\n    \n    <button ion-button color="secondary" round (click)=\'inserisci()\'>Inserisci</button>\n    <button ion-button color="danger" round (click)=\'elimina()\'>Elimina</button>\n  </p>\n</ion-content>'/*ion-inline-end:"C:\Users\Antonio\Documents\Progetti\NISC-Manager-Final-\src\pages\gestione-magazzini-admin\gestione-magazzini-admin.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_6__ionic_storage__["b" /* Storage */]])
     ], GestioneMagazziniAdminPage);
@@ -1096,14 +1377,15 @@ var Magazzino = (function () {
 
 /***/ }),
 
-/***/ 117:
+/***/ 118:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return InserisciModificaMagazzinoPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(9);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1117,14 +1399,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var InserisciModificaMagazzinoPage = (function () {
-    function InserisciModificaMagazzinoPage(navCtrl, navParams, http, alertCtrl) {
+    function InserisciModificaMagazzinoPage(navCtrl, navParams, http, alertCtrl, storage) {
+        var _this = this;
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.http = http;
         this.alertCtrl = alertCtrl;
+        this.storage = storage;
         this.titolo_pagina = "";
-        console.log(navParams.data);
+        storage.get('email').then(function (val) {
+            _this.user = val;
+        });
+        storage.get('password').then(function (val) {
+            _this.pass = val;
+        });
         if (navParams.data == "inserisci") {
             this.titolo_pagina = "Inserisci magazzino";
             this.magazzino = new Magazzino(null, null);
@@ -1137,11 +1427,15 @@ var InserisciModificaMagazzinoPage = (function () {
     }
     InserisciModificaMagazzinoPage.prototype.salva = function (nome, descrizione) {
         var _this = this;
+        var email = this.user;
+        var password = this.pass;
         var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/x-www-form-urlencoded');
         var options = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["d" /* RequestOptions */]({ headers: headers });
         if (this.navParams.data == "inserisci") {
             var postParams = {
+                email: email,
+                password: password,
                 nome: nome,
                 descrizione: descrizione
             };
@@ -1184,6 +1478,8 @@ var InserisciModificaMagazzinoPage = (function () {
         else {
             var vecchio_nome = this.magazzino.nome;
             var postParams = {
+                email: email,
+                password: password,
                 vecchio_nome: vecchio_nome,
                 nome: nome,
                 descrizione: descrizione
@@ -1229,7 +1525,7 @@ var InserisciModificaMagazzinoPage = (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-inserisci-modifica-magazzino',template:/*ion-inline-start:"C:\Users\Antonio\Documents\Progetti\NISC-Manager-Final-\src\pages\inserisci-modifica-magazzino\inserisci-modifica-magazzino.html"*/'<ion-header>\n\n  <ion-navbar color="danger">\n    <ion-title>{{ titolo_pagina }}</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding style="background-color:rgb(205, 241, 245);">\n  <ion-grid>\n    <ion-row>\n      <ion-item>\n        <ion-label stacked>Nome magazzino (nome squadra)</ion-label>\n        <ion-input #nome type="text" value={{magazzino.nome}}></ion-input>\n      </ion-item>\n    </ion-row>\n    <ion-row>\n      <ion-item>\n        <ion-label stacked>Descrizione</ion-label>\n        <ion-input #descrizione type="text" value={{magazzino.descrizione}}></ion-input>\n      </ion-item>\n    </ion-row>\n    \n  </ion-grid>\n\n  <p align=\'center\'>\n    <button ion-button color="secondary" round (click)=\'salva(nome.value,descrizione.value)\'>Salva</button>\n  </p>\n\n</ion-content>'/*ion-inline-end:"C:\Users\Antonio\Documents\Progetti\NISC-Manager-Final-\src\pages\inserisci-modifica-magazzino\inserisci-modifica-magazzino.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_3__ionic_storage__["b" /* Storage */]])
     ], InserisciModificaMagazzinoPage);
     return InserisciModificaMagazzinoPage;
 }());
@@ -1245,16 +1541,16 @@ var Magazzino = (function () {
 
 /***/ }),
 
-/***/ 118:
+/***/ 119:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GestioneMagazziniMagPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__gestione_articoli_mag_gestione_articoli_mag__ = __webpack_require__(114);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__gestione_articoli_mag_gestione_articoli_mag__ = __webpack_require__(115);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1278,32 +1574,36 @@ var GestioneMagazziniMagPage = (function () {
         this.storage = storage;
         this.magazzini = [];
         storage.get('email').then(function (val) {
-            _this.email = val;
+            _this.user = val;
         });
         storage.get('password').then(function (val) {
-            _this.password = val;
+            _this.pass = val;
         });
     }
     GestioneMagazziniMagPage.prototype.ionViewWillEnter = function () {
         var _this = this;
-        var user = this.email;
-        var pass = this.password;
+        var email = this.user;
+        var password = this.pass;
         this.magazzini = [];
         var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/x-www-form-urlencoded');
         var options = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["d" /* RequestOptions */]({ headers: headers });
         var postParams = {
-            user: user,
-            pass: pass
+            email: email,
+            password: password
         };
         this.http.post("http://niscmanager.altervista.org/get_magazzini.php", JSON.stringify(postParams), options)
             .subscribe(function (data) {
-            console.log(data['_body']);
-            _this.dati_server = JSON.parse(data['_body']);
-            if (_this.dati_server != null) {
-                for (var i = 0; i < _this.dati_server.length; i++) {
-                    _this.magazzini.push(new Magazzino(_this.dati_server[i].nome, _this.dati_server[i].descrizione));
+            if (data['_body'][0] == "[") {
+                _this.dati_server = JSON.parse(data['_body']);
+                if (_this.dati_server != null) {
+                    for (var i = 0; i < _this.dati_server.length; i++) {
+                        _this.magazzini.push(new Magazzino(_this.dati_server[i].nome, _this.dati_server[i].descrizione));
+                    }
                 }
+            }
+            else {
+                console.log(data['_body']);
             }
         });
     };
@@ -1330,7 +1630,7 @@ var GestioneMagazziniMagPage = (function () {
     };
     GestioneMagazziniMagPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-gestione-magazzini-mag',template:/*ion-inline-start:"C:\Users\Antonio\Documents\Progetti\NISC-Manager-Final-\src\pages\gestione-magazzini-mag\gestione-magazzini-mag.html"*/'<ion-header>\n  <ion-navbar color="danger">\n    <ion-title>Gestione magazzini</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content style="background-color:rgb(205, 241, 245);">\n  <p>\n      <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>\n  </p>\n  <p></p>\n  <div ng-controller="listController"> \n  <ion-list>\n   <ion-item *ngFor="let magazzino of magazzini" (click)=\'mostra_articoli(magazzino)\'>\n      <h2>{{magazzino.nome}}</h2>\n      <p>{{magazzino.descrizione}}</p>\n    </ion-item>\n  </ion-list>\n</div>\n</ion-content>'/*ion-inline-end:"C:\Users\Antonio\Documents\Progetti\NISC-Manager-Final-\src\pages\gestione-magazzini-mag\gestione-magazzini-mag.html"*/,
+            selector: 'page-gestione-magazzini-mag',template:/*ion-inline-start:"C:\Users\Antonio\Documents\Progetti\NISC-Manager-Final-\src\pages\gestione-magazzini-mag\gestione-magazzini-mag.html"*/'<ion-header>\n  <ion-navbar color="secondary">\n    <ion-title>Gestione magazzini</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <p>\n      <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>\n  </p>\n  <p></p>\n  <div ng-controller="listController"> \n  <ion-list>\n   <ion-item *ngFor="let magazzino of magazzini" (click)=\'mostra_articoli(magazzino)\'>\n      <h2>{{magazzino.nome}}</h2>\n      <p>{{magazzino.descrizione}}</p>\n    </ion-item>\n  </ion-list>\n</div>\n</ion-content>'/*ion-inline-end:"C:\Users\Antonio\Documents\Progetti\NISC-Manager-Final-\src\pages\gestione-magazzini-mag\gestione-magazzini-mag.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__ionic_storage__["b" /* Storage */]])
     ], GestioneMagazziniMagPage);
@@ -1348,15 +1648,15 @@ var Magazzino = (function () {
 
 /***/ }),
 
-/***/ 119:
+/***/ 120:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GestioneRegistrazionePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(9);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1378,6 +1678,7 @@ var GestioneRegistrazionePage = (function () {
         this.http = http;
         this.str = str;
         this.utenti = [];
+        this.utenti_s = [];
         str.get('email').then(function (email) {
             _this.email_a = email;
         });
@@ -1401,7 +1702,8 @@ var GestioneRegistrazionePage = (function () {
             console.log(_this.dati_server);
             if (_this.dati_server != null) {
                 for (var i = 0; i < _this.dati_server.length; i++) {
-                    _this.utenti.push(new Utente(_this.dati_server[i].email, _this.dati_server[i].password, _this.dati_server[i].nome_squadra, _this.dati_server[i].componenti, _this.dati_server[i].stato));
+                    if (_this.dati_server[i].ruolo != 'Amministratore')
+                        _this.utenti.push(new Utente(_this.dati_server[i].email, _this.dati_server[i].password, _this.dati_server[i].nome_squadra, _this.dati_server[i].componenti, _this.dati_server[i].stato, _this.dati_server[i].ruolo));
                 }
             }
         }, function (error) {
@@ -1429,6 +1731,25 @@ var GestioneRegistrazionePage = (function () {
             console.log(error); // Error getting the data
         });
     };
+    GestioneRegistrazionePage.prototype.initializeItems = function () {
+        this.utenti = [];
+        for (var i = 0; i < this.dati_server.length; i++) {
+            if (this.dati_server[i].ruolo != 'Amministratore')
+                this.utenti.push(new Utente(this.dati_server[i].email, this.dati_server[i].password, this.dati_server[i].nome_squadra, this.dati_server[i].componenti, this.dati_server[i].stato, this.dati_server[i].ruolo));
+        }
+    };
+    GestioneRegistrazionePage.prototype.getItems = function (ev) {
+        // Reset items back to all of the items
+        this.initializeItems();
+        // set val to the value of the searchbar
+        var val = ev.target.value;
+        // if the value is an empty string don't filter the items
+        if (val && val.trim() != '') {
+            this.utenti = this.utenti.filter(function (search) {
+                return (search.nome_s.toLowerCase().indexOf(val.toLowerCase()) > -1);
+            });
+        }
+    };
     GestioneRegistrazionePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-gestione-registrazione',template:/*ion-inline-start:"C:\Users\Antonio\Documents\Progetti\NISC-Manager-Final-\src\pages\gestione-registrazione\gestione-registrazione.html"*/'<ion-header>\n\n  <ion-navbar color="primary">\n    <ion-title>Gestione Registrazione</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content padding>\n    \n        <ion-searchbar placeholder="Cerca per nome squadra" (ionInput)="getItems($event)"></ion-searchbar>\n\n        <ion-list>\n            <ion-item *ngFor="let utente of utenti">\n              <h2>{{utente.nome_s}}</h2>\n              <h3>{{utente.email}}</h3>\n              <p>{{utente.ruolo}}</p>\n              <button item-end *ngIf="utente.stato == \'rifiutato\';" class="rifiutato" ion-button> </button>\n              <button item-end *ngIf="utente.stato == \'approvato\';" class="approvato" ion-button> </button>\n              <button item-end *ngIf="utente.stato == \'in attesa\';" class="inAttesa" ion-button> </button>\n              <ion-icon item-end name="checkmark-circle-outline" (click)="updateStatus(utente,\'approvato\',\'\')"></ion-icon> \n              <ion-icon item-end name="close" (click)="updateStatus(utente,\'rifiutato\',\'\')"></ion-icon>\n            </ion-item> \n          </ion-list>\n\n\n</ion-content>\n    \n        '/*ion-inline-end:"C:\Users\Antonio\Documents\Progetti\NISC-Manager-Final-\src\pages\gestione-registrazione\gestione-registrazione.html"*/,
@@ -1439,12 +1760,13 @@ var GestioneRegistrazionePage = (function () {
 }());
 
 var Utente = (function () {
-    function Utente(email, password, nome_s, compo, stato) {
+    function Utente(email, password, nome_s, compo, stato, ruolo) {
         this.email = email;
         this.password = password;
         this.nome_s = nome_s;
         this.componenti = compo;
         this.stato = stato;
+        this.ruolo = ruolo;
     }
     return Utente;
 }());
@@ -1452,16 +1774,127 @@ var Utente = (function () {
 
 /***/ }),
 
-/***/ 120:
+/***/ 121:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GestioneRichiesteMagPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__dettagli_richiesta_mag_dettagli_richiesta_mag__ = __webpack_require__(110);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+var GestioneRichiesteMagPage = (function () {
+    function GestioneRichiesteMagPage(navCtrl, http, navParams, storage) {
+        var _this = this;
+        this.navCtrl = navCtrl;
+        this.http = http;
+        this.navParams = navParams;
+        this.storage = storage;
+        this.richieste = [];
+        storage.get('email').then(function (val) {
+            _this.user = val;
+        });
+        storage.get('password').then(function (val) {
+            _this.pass = val;
+        });
+    }
+    GestioneRichiesteMagPage.prototype.ionViewWillEnter = function () {
+        var _this = this;
+        var email = this.user;
+        var password = this.pass;
+        this.richieste = [];
+        var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]();
+        headers.append('Content-Type', 'application/x-www-form-urlencoded');
+        var options = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["d" /* RequestOptions */]({ headers: headers });
+        var postParams = {
+            email: email,
+            password: password
+        };
+        this.http.post("http://niscmanager.altervista.org/get_richieste_mag.php", JSON.stringify(postParams), options)
+            .subscribe(function (data) {
+            console.log(data['_body']);
+            _this.dati_server = JSON.parse(data['_body']);
+            if (_this.dati_server != null) {
+                for (var i = 0; i < _this.dati_server.length; i++) {
+                    _this.richieste.push(new Richiesta(_this.dati_server[i].id, _this.dati_server[i].squadra, _this.dati_server[i].stato));
+                }
+            }
+        });
+    };
+    GestioneRichiesteMagPage.prototype.gestisci = function (richiesta) {
+        if (richiesta.stato == "in attesa") {
+            var valori = [];
+            valori[0] = richiesta.id;
+            valori[1] = richiesta.squadra;
+            this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__dettagli_richiesta_mag_dettagli_richiesta_mag__["a" /* DettagliRichiestaMagPage */], valori);
+        }
+        else {
+        }
+    };
+    GestioneRichiesteMagPage.prototype.initializeItems = function () {
+        this.richieste = [];
+        for (var i = 0; i < this.dati_server.length; i++) {
+            this.richieste.push(this.dati_server[i]);
+        }
+    };
+    GestioneRichiesteMagPage.prototype.getItems = function (ev) {
+        // Reset items back to all of the items
+        this.initializeItems();
+        // set val to the value of the searchbar
+        var val = ev.target.value;
+        // if the value is an empty string don't filter the items
+        if (val && val.trim() != '') {
+            this.richieste = this.richieste.filter(function (richiesta) {
+                return (richiesta.squadra.toLowerCase().indexOf(val.toLowerCase()) > -1);
+            });
+        }
+    };
+    GestioneRichiesteMagPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-gestione-richieste-mag',template:/*ion-inline-start:"C:\Users\Antonio\Documents\Progetti\NISC-Manager-Final-\src\pages\gestione-richieste-mag\gestione-richieste-mag.html"*/'<ion-header>\n  <ion-navbar color="danger">\n    <ion-title>Gestione richieste</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content style="background-color:rgb(205, 241, 245);">\n  <p>\n      <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>\n  </p>\n  <p></p>\n  <div ng-controller="listController"> \n  <ion-list>\n   <ion-item *ngFor="let richiesta of richieste">\n      <h2>ID: {{richiesta.id}}</h2>\n      <p>Squadra: {{richiesta.squadra}}</p>\n      <p>Stato: {{richiesta.stato}}</p>\n      <button ion-button outline item-end (click)=\'gestisci(richiesta)\'>Gestisci</button>\n    </ion-item>\n  </ion-list>\n</div>\n</ion-content>'/*ion-inline-end:"C:\Users\Antonio\Documents\Progetti\NISC-Manager-Final-\src\pages\gestione-richieste-mag\gestione-richieste-mag.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__ionic_storage__["b" /* Storage */]])
+    ], GestioneRichiesteMagPage);
+    return GestioneRichiesteMagPage;
+}());
+
+var Richiesta = (function () {
+    function Richiesta(id, squadra, stato) {
+        this.id = id;
+        this.squadra = squadra;
+        this.stato = stato;
+    }
+    return Richiesta;
+}());
+//# sourceMappingURL=gestione-richieste-mag.js.map
+
+/***/ }),
+
+/***/ 122:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GestioneUtentiPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__modifica_profilo_admin_modifica_profilo_admin__ = __webpack_require__(121);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_storage__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__modifica_profilo_admin_modifica_profilo_admin__ = __webpack_require__(123);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_storage__ = __webpack_require__(9);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1541,10 +1974,9 @@ var GestioneUtentiPage = (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-gestione-utenti',template:/*ion-inline-start:"C:\Users\Antonio\Documents\Progetti\NISC-Manager-Final-\src\pages\gestione-utenti\gestione-utenti.html"*/'<ion-header>\n\n  <ion-navbar color="primary">\n    <ion-title>Gestione Utenti</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content padding>\n    <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>\n    <ion-list>\n      <ion-item *ngFor="let utente of utenti">\n        <ion-card>\n            <ion-card-header text-center>\n              {{utente.email}}\n            </ion-card-header>\n            <ion-card-content>\n              <ion-list>\n                  <ion-item><span>Squadra:  </span><span class="dati">{{utente.nome_s}}</span> <br/>\n                      Componenti:{{utente.componenti}} <br/>\n                      Ruolo : {{utente.ruolo}} <br/>\n                      Stato: {{utente.stato}} \n                    </ion-item>\n                  </ion-list>\n                      <div align=\'center\'><button ion-button round item-end (click)="goToModified(utente)">Modifica</button></div>\n                  \n             \n            </ion-card-content>\n          </ion-card>\n        </ion-item>\n    </ion-list>\n</ion-content>\n'/*ion-inline-end:"C:\Users\Antonio\Documents\Progetti\NISC-Manager-Final-\src\pages\gestione-utenti\gestione-utenti.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4__ionic_storage__["b" /* Storage */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__ionic_storage__["b" /* Storage */]) === "function" && _d || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */], __WEBPACK_IMPORTED_MODULE_4__ionic_storage__["b" /* Storage */]])
     ], GestioneUtentiPage);
     return GestioneUtentiPage;
-    var _a, _b, _c, _d;
 }());
 
 var Utente = (function () {
@@ -1562,14 +1994,14 @@ var Utente = (function () {
 
 /***/ }),
 
-/***/ 121:
+/***/ 123:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ModificaProfiloAdminPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__home_amm_home_amm__ = __webpack_require__(56);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1632,7 +2064,7 @@ var ModificaProfiloAdminPage = (function () {
     };
     ModificaProfiloAdminPage.prototype.presentConfirm = function (text) {
         var alert = this.altr.create({
-            title: 'Login failed',
+            title: 'Modifica Profilo',
             message: text,
             buttons: [
                 {
@@ -1659,16 +2091,16 @@ var ModificaProfiloAdminPage = (function () {
 
 /***/ }),
 
-/***/ 122:
+/***/ 124:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MymagazzinoPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__dettagliarticoli_dettagliarticoli__ = __webpack_require__(44);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_storage__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_storage__ = __webpack_require__(9);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1758,7 +2190,7 @@ var MymagazzinoPage = (function () {
     };
     MymagazzinoPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-mymagazzino',template:/*ion-inline-start:"C:\Users\Antonio\Documents\Progetti\NISC-Manager-Final-\src\pages\mymagazzino\mymagazzino.html"*/'<!--\n  Generated template for the MymagazzinoPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar color="danger">\n    <ion-title>My Magazzino</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n    <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>\n\n    <ion-grid>\n      <ion-row>\n        <ion-col col-3></ion-col>\n        <ion-col col-1>ID</ion-col>\n        <ion-col col-6>Nome</ion-col>\n        <ion-col col-2>Quantità</ion-col>\n      </ion-row>\n    </ion-grid>\n\n    <ion-list>\n        <button ion-item *ngFor="let articolo of articoli" (click)="itemSelected(articolo)">\n          <ion-grid>\n              <ion-row>\n                <ion-col col-3><img src="assets/img/componente2.jpg"></ion-col>\n                <ion-col col-1>{{ articolo.id }}</ion-col>\n                <ion-col col-6>{{ articolo.nome }}</ion-col>\n                <ion-col col-2>{{ articolo.quantita }}</ion-col>\n              </ion-row>\n            </ion-grid>\n        </button>\n\n      </ion-list>\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\Antonio\Documents\Progetti\NISC-Manager-Final-\src\pages\mymagazzino\mymagazzino.html"*/,
+            selector: 'page-mymagazzino',template:/*ion-inline-start:"C:\Users\Antonio\Documents\Progetti\NISC-Manager-Final-\src\pages\mymagazzino\mymagazzino.html"*/'<ion-header>\n\n  <ion-navbar color="primary">\n    <ion-title>My Magazzino</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n    <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>\n\n    <ion-grid>\n      <ion-row>\n        <ion-col col-3></ion-col>\n        <ion-col col-1>ID</ion-col>\n        <ion-col col-6>Nome</ion-col>\n        <ion-col col-2>Quantità</ion-col>\n      </ion-row>\n    </ion-grid>\n\n    <ion-list>\n        <button ion-item *ngFor="let articolo of articoli" (click)="itemSelected(articolo)">\n          <ion-grid>\n              <ion-row>\n                <ion-col col-3><img src="assets/img/componente2.jpg"></ion-col>\n                <ion-col col-1>{{ articolo.id }}</ion-col>\n                <ion-col col-6>{{ articolo.nome }}</ion-col>\n                <ion-col col-2>{{ articolo.quantita }}</ion-col>\n              </ion-row>\n            </ion-grid>\n        </button>\n\n      </ion-list>\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\Antonio\Documents\Progetti\NISC-Manager-Final-\src\pages\mymagazzino\mymagazzino.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_4__ionic_storage__["b" /* Storage */]])
     ], MymagazzinoPage);
@@ -1779,16 +2211,16 @@ var Articolo = (function () {
 
 /***/ }),
 
-/***/ 123:
+/***/ 125:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RichiesteMaterialePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__dettaglirichiesta_dettaglirichiesta__ = __webpack_require__(110);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__dettaglirichiesta_dettaglirichiesta__ = __webpack_require__(111);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1877,7 +2309,7 @@ var RichiesteMaterialePage = (function () {
     };
     RichiesteMaterialePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-richiestemateriale',template:/*ion-inline-start:"C:\Users\Antonio\Documents\Progetti\NISC-Manager-Final-\src\pages\richiestemateriale\richiestemateriale.html"*/'<ion-header>\n    \n      <ion-navbar color="danger">\n        <ion-title>Richieste materiale</ion-title>\n      </ion-navbar>\n    \n    </ion-header>\n    \n    \n    <ion-content padding>\n    \n        <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>\n    \n        <ion-grid>\n          <ion-row>\n            \n            <ion-col col-4>ID richiesta</ion-col>\n            <ion-col col-5>Status</ion-col>\n            \n           \n          </ion-row>\n        </ion-grid>\n    \n        <ion-list>\n            <button ion-item *ngFor="let richiesta of richieste" (click)="itemSelected(richiesta)">\n              <ion-grid>\n                  <ion-row >\n                    \n                    <ion-col col-4>{{ richiesta.id }}</ion-col>\n                    <ion-col col-5>{{ richiesta.stato }}</ion-col>\n                    \n                  </ion-row>\n                </ion-grid>\n            </button>\n    \n          </ion-list>\n    \n    </ion-content>\n    '/*ion-inline-end:"C:\Users\Antonio\Documents\Progetti\NISC-Manager-Final-\src\pages\richiestemateriale\richiestemateriale.html"*/,
+            selector: 'page-richiestemateriale',template:/*ion-inline-start:"C:\Users\Antonio\Documents\Progetti\NISC-Manager-Final-\src\pages\richiestemateriale\richiestemateriale.html"*/'<ion-header>\n    \n      <ion-navbar color="primary">\n        <ion-title>Richieste materiale</ion-title>\n      </ion-navbar>\n    \n    </ion-header>\n    \n    \n    <ion-content padding>\n    \n        <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>\n    \n        <ion-grid>\n          <ion-row>\n            \n            <ion-col col-4>ID richiesta</ion-col>\n            <ion-col col-5>Status</ion-col>\n            \n           \n          </ion-row>\n        </ion-grid>\n    \n        <ion-list>\n            <button ion-item *ngFor="let richiesta of richieste" (click)="itemSelected(richiesta)">\n              <ion-grid>\n                  <ion-row >\n                    \n                    <ion-col col-4>{{ richiesta.id }}</ion-col>\n                    <ion-col col-5>{{ richiesta.stato }}</ion-col>\n                    \n                  </ion-row>\n                </ion-grid>\n            </button>\n    \n          </ion-list>\n    \n    </ion-content>\n    '/*ion-inline-end:"C:\Users\Antonio\Documents\Progetti\NISC-Manager-Final-\src\pages\richiestemateriale\richiestemateriale.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* Http */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */]])
     ], RichiesteMaterialePage);
@@ -1899,15 +2331,15 @@ var Richiesta = (function () {
 
 /***/ }),
 
-/***/ 124:
+/***/ 126:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ModificaPasswordPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__login_login__ = __webpack_require__(29);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -2001,16 +2433,17 @@ var ModificaPasswordPage = (function () {
 
 /***/ }),
 
-/***/ 125:
+/***/ 127:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomeMagPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__login_login__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__gestione_magazzini_mag_gestione_magazzini_mag__ = __webpack_require__(118);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__gestione_magazzini_mag_gestione_magazzini_mag__ = __webpack_require__(119);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__profilo_profilo__ = __webpack_require__(45);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__gestione_richieste_mag_gestione_richieste_mag__ = __webpack_require__(121);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2020,6 +2453,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -2038,9 +2472,12 @@ var HomeMagPage = (function () {
     HomeMagPage.prototype.goToProfilo = function () {
         this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__profilo_profilo__["a" /* ProfiloPage */]);
     };
+    HomeMagPage.prototype.goToRichiesteArticoli = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_5__gestione_richieste_mag_gestione_richieste_mag__["a" /* GestioneRichiesteMagPage */]);
+    };
     HomeMagPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-home-mag',template:/*ion-inline-start:"C:\Users\Antonio\Documents\Progetti\NISC-Manager-Final-\src\pages\home-mag\home-mag.html"*/'<ion-header>\n  <ion-navbar color="primary" >\n    <ion-title>Home</ion-title>\n    <ion-buttons end>\n      <button ion-button icon-only color="royal" (click)=\'logout()\'>\n        <ion-icon name="logout"><img src="assets/img/logout.png" class="dimensioni"> </ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding >\n    <p>\n        <img src="assets/img/logo1.gif"/>\n        </p>\n        <ion-grid>\n          <ion-row>\n            <ion-col>\n            <button class="home" (click)="goToProfilo()"><img src="assets/mag/Profilo.PNG"/>Profilo</button>\n           </ion-col>\n           <ion-col> \n           <button class="home" (click)="viewMagazzini()"><img src="assets/mag/Settings.PNG" />\n          Gestione Magazzini\n          </button>\n          </ion-col>\n          </ion-row>\n          </ion-grid>\n        <p align=\'center\'><button class="mag"><img src="assets/mag/Articoli.PNG" />\n          Gestione Richieste articoli\n        </button></p>\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\Antonio\Documents\Progetti\NISC-Manager-Final-\src\pages\home-mag\home-mag.html"*/,
+            selector: 'page-home-mag',template:/*ion-inline-start:"C:\Users\Antonio\Documents\Progetti\NISC-Manager-Final-\src\pages\home-mag\home-mag.html"*/'<ion-header>\n  <ion-navbar color="primary" >\n    <ion-title>Home</ion-title>\n    <ion-buttons end>\n      <button ion-button icon-only color="royal" (click)=\'logout()\'>\n        <ion-icon name="logout"><img src="assets/img/logout.png" class="dimensioni"> </ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding >\n    <p>\n        <img src="assets/img/logo1.gif"/>\n        </p>\n        <ion-grid>\n          <ion-row>\n            <ion-col>\n            <button class="home" (click)="goToProfilo()"><img src="assets/mag/Profilo.PNG"/>Profilo</button>\n           </ion-col>\n           <ion-col> \n           <button class="home" (click)="viewMagazzini()"><img src="assets/mag/Settings.PNG" />\n          Gestione Magazzini\n          </button>\n          </ion-col>\n          </ion-row>\n          </ion-grid>\n        <p align=\'center\'><button class="mag" (click)="goToRichiesteArticoli()"><img src="assets/mag/Articoli.PNG" />\n          Gestione Richieste articoli\n        </button></p>\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\Antonio\Documents\Progetti\NISC-Manager-Final-\src\pages\home-mag\home-mag.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]])
     ], HomeMagPage);
@@ -2051,7 +2488,7 @@ var HomeMagPage = (function () {
 
 /***/ }),
 
-/***/ 137:
+/***/ 139:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -2064,100 +2501,108 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 137;
+webpackEmptyAsyncContext.id = 139;
 
 /***/ }),
 
-/***/ 179:
+/***/ 181:
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
 	"../pages/about/about.module": [
-		308,
-		21
+		310,
+		23
 	],
 	"../pages/dettagli-articoli-mag/dettagli-articoli-mag.module": [
-		309,
-		20
+		311,
+		22
+	],
+	"../pages/dettagli-richiesta-mag/dettagli-richiesta-mag.module": [
+		312,
+		21
 	],
 	"../pages/dettagliarticoli/dettagliarticoli.module": [
-		310,
-		19
+		313,
+		20
 	],
 	"../pages/dettaglirichiesta/dettaglirichiesta.module": [
-		311,
-		18
+		314,
+		19
 	],
 	"../pages/elimina-articoli/elimina-articoli.module": [
-		312,
-		17
+		315,
+		18
 	],
 	"../pages/elimina-magazzini-admin/elimina-magazzini-admin.module": [
-		313,
-		16
+		316,
+		17
 	],
 	"../pages/gestione-articoli-admin/gestione-articoli-admin.module": [
-		314,
-		15
+		317,
+		16
 	],
 	"../pages/gestione-articoli-mag/gestione-articoli-mag.module": [
-		315,
-		14
+		318,
+		15
 	],
 	"../pages/gestione-magazzini-admin/gestione-magazzini-admin.module": [
-		316,
-		13
+		319,
+		14
 	],
 	"../pages/gestione-magazzini-mag/gestione-magazzini-mag.module": [
-		317,
-		12
+		320,
+		13
 	],
 	"../pages/gestione-registrazione/gestione-registrazione.module": [
-		318,
+		321,
+		12
+	],
+	"../pages/gestione-richieste-mag/gestione-richieste-mag.module": [
+		322,
 		11
 	],
 	"../pages/gestione-utenti/gestione-utenti.module": [
-		319,
+		323,
 		10
 	],
 	"../pages/home-amm/home-amm.module": [
-		320,
+		324,
 		9
 	],
 	"../pages/home-mag/home-mag.module": [
-		321,
+		325,
 		8
 	],
 	"../pages/inserisci-modifica-articolo/inserisci-modifica-articolo.module": [
-		322,
+		326,
 		7
 	],
 	"../pages/inserisci-modifica-magazzino/inserisci-modifica-magazzino.module": [
-		323,
+		327,
 		6
 	],
 	"../pages/modifica-password/modifica-password.module": [
-		324,
+		328,
 		5
 	],
 	"../pages/modifica-profilo-admin/modifica-profilo-admin.module": [
-		325,
+		329,
 		4
 	],
 	"../pages/mymagazzino/mymagazzino.module": [
-		326,
+		330,
 		3
 	],
 	"../pages/profilo/profilo.module": [
-		327,
+		331,
 		2
 	],
 	"../pages/richiestemateriale/richiestemateriale.module": [
-		328,
+		332,
 		1
 	],
 	"../pages/sposta-articoli-mag/sposta-articoli-mag.module": [
-		329,
+		333,
 		0
 	]
 };
@@ -2172,19 +2617,19 @@ function webpackAsyncContext(req) {
 webpackAsyncContext.keys = function webpackAsyncContextKeys() {
 	return Object.keys(map);
 };
-webpackAsyncContext.id = 179;
+webpackAsyncContext.id = 181;
 module.exports = webpackAsyncContext;
 
 /***/ }),
 
-/***/ 180:
+/***/ 182:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RegistratiPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__login_login__ = __webpack_require__(29);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -2270,16 +2715,16 @@ var RegistratiPage = (function () {
 
 /***/ }),
 
-/***/ 181:
+/***/ 183:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RecuperaPasswordPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__login_login__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_email_composer__ = __webpack_require__(182);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_email_composer__ = __webpack_require__(184);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2353,17 +2798,17 @@ var RecuperaPasswordPage = (function () {
 
 /***/ }),
 
-/***/ 184:
+/***/ 186:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__login_login__ = __webpack_require__(29);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__about_about__ = __webpack_require__(108);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__mymagazzino_mymagazzino__ = __webpack_require__(122);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__richiestemateriale_richiestemateriale__ = __webpack_require__(123);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__mymagazzino_mymagazzino__ = __webpack_require__(124);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__richiestemateriale_richiestemateriale__ = __webpack_require__(125);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__profilo_profilo__ = __webpack_require__(45);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -2413,13 +2858,13 @@ var HomePage = (function () {
 
 /***/ }),
 
-/***/ 226:
+/***/ 228:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(227);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(248);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(229);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(250);
 
 
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
@@ -2427,53 +2872,57 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 248:
+/***/ 250:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(30);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(301);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(303);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_login_login__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_registrati_registrati__ = __webpack_require__(180);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_recupera_password_recupera_password__ = __webpack_require__(181);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_common_http__ = __webpack_require__(302);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__angular_http__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_home_home__ = __webpack_require__(184);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_registrati_registrati__ = __webpack_require__(182);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_recupera_password_recupera_password__ = __webpack_require__(183);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_common_http__ = __webpack_require__(304);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__angular_http__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_home_home__ = __webpack_require__(186);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_about_about__ = __webpack_require__(108);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_dettagliarticoli_dettagliarticoli__ = __webpack_require__(44);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_mymagazzino_mymagazzino__ = __webpack_require__(122);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_mymagazzino_mymagazzino__ = __webpack_require__(124);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_home_amm_home_amm__ = __webpack_require__(56);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_gestione_registrazione_gestione_registrazione__ = __webpack_require__(119);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_elimina_magazzini_admin_elimina_magazzini_admin__ = __webpack_require__(112);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_gestione_articoli_admin_gestione_articoli_admin__ = __webpack_require__(113);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_gestione_magazzini_admin_gestione_magazzini_admin__ = __webpack_require__(116);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_inserisci_modifica_magazzino_inserisci_modifica_magazzino__ = __webpack_require__(117);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_home_mag_home_mag__ = __webpack_require__(125);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__ionic_native_status_bar__ = __webpack_require__(224);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__ionic_native_email_composer__ = __webpack_require__(182);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__ionic_native_splash_screen__ = __webpack_require__(225);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__ionic_storage__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__pages_gestione_magazzini_mag_gestione_magazzini_mag__ = __webpack_require__(118);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__pages_richiestemateriale_richiestemateriale__ = __webpack_require__(123);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__pages_dettaglirichiesta_dettaglirichiesta__ = __webpack_require__(110);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__pages_gestione_utenti_gestione_utenti__ = __webpack_require__(120);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__pages_modifica_profilo_admin_modifica_profilo_admin__ = __webpack_require__(121);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_gestione_registrazione_gestione_registrazione__ = __webpack_require__(120);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_elimina_magazzini_admin_elimina_magazzini_admin__ = __webpack_require__(113);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_gestione_articoli_admin_gestione_articoli_admin__ = __webpack_require__(114);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_gestione_magazzini_admin_gestione_magazzini_admin__ = __webpack_require__(117);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_inserisci_modifica_magazzino_inserisci_modifica_magazzino__ = __webpack_require__(118);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_home_mag_home_mag__ = __webpack_require__(127);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__ionic_native_status_bar__ = __webpack_require__(226);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__ionic_native_email_composer__ = __webpack_require__(184);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__ionic_native_splash_screen__ = __webpack_require__(227);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__ionic_storage__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__pages_gestione_magazzini_mag_gestione_magazzini_mag__ = __webpack_require__(119);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__pages_richiestemateriale_richiestemateriale__ = __webpack_require__(125);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__pages_dettaglirichiesta_dettaglirichiesta__ = __webpack_require__(111);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__pages_gestione_utenti_gestione_utenti__ = __webpack_require__(122);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__pages_modifica_profilo_admin_modifica_profilo_admin__ = __webpack_require__(123);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__pages_dettagli_articoli_mag_dettagli_articoli_mag__ = __webpack_require__(109);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__pages_elimina_articoli_elimina_articoli__ = __webpack_require__(111);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__pages_gestione_articoli_mag_gestione_articoli_mag__ = __webpack_require__(114);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__pages_elimina_articoli_elimina_articoli__ = __webpack_require__(112);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__pages_gestione_articoli_mag_gestione_articoli_mag__ = __webpack_require__(115);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__pages_inserisci_modifica_articolo_inserisci_modifica_articolo__ = __webpack_require__(55);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__pages_sposta_articoli_mag_sposta_articoli_mag__ = __webpack_require__(115);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__pages_sposta_articoli_mag_sposta_articoli_mag__ = __webpack_require__(116);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__pages_profilo_profilo__ = __webpack_require__(45);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__pages_modifica_password_modifica_password__ = __webpack_require__(124);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__pages_modifica_password_modifica_password__ = __webpack_require__(126);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__pages_dettagli_richiesta_mag_dettagli_richiesta_mag__ = __webpack_require__(110);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__pages_gestione_richieste_mag_gestione_richieste_mag__ = __webpack_require__(121);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
 
 
 
@@ -2542,7 +2991,9 @@ var AppModule = (function () {
                 __WEBPACK_IMPORTED_MODULE_32__pages_inserisci_modifica_articolo_inserisci_modifica_articolo__["a" /* InserisciModificaArticoloPage */],
                 __WEBPACK_IMPORTED_MODULE_33__pages_sposta_articoli_mag_sposta_articoli_mag__["a" /* SpostaArticoliMagPage */],
                 __WEBPACK_IMPORTED_MODULE_34__pages_profilo_profilo__["a" /* ProfiloPage */],
-                __WEBPACK_IMPORTED_MODULE_35__pages_modifica_password_modifica_password__["a" /* ModificaPasswordPage */]
+                __WEBPACK_IMPORTED_MODULE_35__pages_modifica_password_modifica_password__["a" /* ModificaPasswordPage */],
+                __WEBPACK_IMPORTED_MODULE_36__pages_dettagli_richiesta_mag_dettagli_richiesta_mag__["a" /* DettagliRichiestaMagPage */],
+                __WEBPACK_IMPORTED_MODULE_37__pages_gestione_richieste_mag_gestione_richieste_mag__["a" /* GestioneRichiesteMagPage */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["a" /* BrowserModule */],
@@ -2552,6 +3003,7 @@ var AppModule = (function () {
                     links: [
                         { loadChildren: '../pages/about/about.module#AboutPageModule', name: 'AboutPage', segment: 'about', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/dettagli-articoli-mag/dettagli-articoli-mag.module#DettagliArticoliMagPageModule', name: 'DettagliArticoliMagPage', segment: 'dettagli-articoli-mag', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/dettagli-richiesta-mag/dettagli-richiesta-mag.module#DettagliRichiestaMagPageModule', name: 'DettagliRichiestaMagPage', segment: 'dettagli-richiesta-mag', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/dettagliarticoli/dettagliarticoli.module#DettagliPageModule', name: 'DettagliPage', segment: 'dettagliarticoli', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/dettaglirichiesta/dettaglirichiesta.module#DettagliRichiestaPageModule', name: 'DettagliRichiestaPage', segment: 'dettaglirichiesta', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/elimina-articoli/elimina-articoli.module#EliminaArticoliPageModule', name: 'EliminaArticoliPage', segment: 'elimina-articoli', priority: 'low', defaultHistory: [] },
@@ -2561,6 +3013,7 @@ var AppModule = (function () {
                         { loadChildren: '../pages/gestione-magazzini-admin/gestione-magazzini-admin.module#GestioneMagazziniAdminPageModule', name: 'GestioneMagazziniAdminPage', segment: 'gestione-magazzini-admin', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/gestione-magazzini-mag/gestione-magazzini-mag.module#GestioneMagazziniMagPageModule', name: 'GestioneMagazziniMagPage', segment: 'gestione-magazzini-mag', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/gestione-registrazione/gestione-registrazione.module#GestioneRegistrazionePageModule', name: 'GestioneRegistrazionePage', segment: 'gestione-registrazione', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/gestione-richieste-mag/gestione-richieste-mag.module#GestioneRichiesteMagPageModule', name: 'GestioneRichiesteMagPage', segment: 'gestione-richieste-mag', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/gestione-utenti/gestione-utenti.module#GestioneUtentiPageModule', name: 'GestioneUtentiPage', segment: 'gestione-utenti', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/home-amm/home-amm.module#HomeAmmPageModule', name: 'HomeAmmPage', segment: 'home-amm', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/home-mag/home-mag.module#HomeMagPageModule', name: 'HomeMagPage', segment: 'home-mag', priority: 'low', defaultHistory: [] },
@@ -2604,7 +3057,9 @@ var AppModule = (function () {
                 __WEBPACK_IMPORTED_MODULE_32__pages_inserisci_modifica_articolo_inserisci_modifica_articolo__["a" /* InserisciModificaArticoloPage */],
                 __WEBPACK_IMPORTED_MODULE_33__pages_sposta_articoli_mag_sposta_articoli_mag__["a" /* SpostaArticoliMagPage */],
                 __WEBPACK_IMPORTED_MODULE_34__pages_profilo_profilo__["a" /* ProfiloPage */],
-                __WEBPACK_IMPORTED_MODULE_35__pages_modifica_password_modifica_password__["a" /* ModificaPasswordPage */]
+                __WEBPACK_IMPORTED_MODULE_35__pages_modifica_password_modifica_password__["a" /* ModificaPasswordPage */],
+                __WEBPACK_IMPORTED_MODULE_36__pages_dettagli_richiesta_mag_dettagli_richiesta_mag__["a" /* DettagliRichiestaMagPage */],
+                __WEBPACK_IMPORTED_MODULE_37__pages_gestione_richieste_mag_gestione_richieste_mag__["a" /* GestioneRichiesteMagPage */]
             ],
             providers: [
                 __WEBPACK_IMPORTED_MODULE_20__ionic_native_status_bar__["a" /* StatusBar */],
@@ -2627,14 +3082,14 @@ var AppModule = (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__registrati_registrati__ = __webpack_require__(180);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__recupera_password_recupera_password__ = __webpack_require__(181);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__home_home__ = __webpack_require__(184);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_http__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__registrati_registrati__ = __webpack_require__(182);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__recupera_password_recupera_password__ = __webpack_require__(183);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__home_home__ = __webpack_require__(186);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_http__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__home_amm_home_amm__ = __webpack_require__(56);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__home_mag_home_mag__ = __webpack_require__(125);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_storage__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__home_mag_home_mag__ = __webpack_require__(127);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_storage__ = __webpack_require__(9);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2765,15 +3220,15 @@ var Utente = (function () {
 
 /***/ }),
 
-/***/ 301:
+/***/ 303:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(224);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(225);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(226);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(227);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_login_login__ = __webpack_require__(29);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -2817,7 +3272,7 @@ var MyApp = (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DettagliPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2847,7 +3302,7 @@ var DettagliPage = (function () {
     }
     DettagliPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-dettagliarticoli',template:/*ion-inline-start:"C:\Users\Antonio\Documents\Progetti\NISC-Manager-Final-\src\pages\dettagliarticoli\dettagliarticoli.html"*/'<!--\n  Generated template for the DettagliArticoloPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar color="danger">\n    <ion-title>Dettagli articolo</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <ion-grid>\n    <ion-row>\n      <ion-col col-4 class="logo">\n        <img src="assets/img/componente3.jpg"/>\n      </ion-col>\n      <ion-col> \n        <p><b>ID:</b> {{ id }}</p>\n        <h1>{{ nome }}</h1>\n      </ion-col>\n    </ion-row>\n    <ion-row>\n        <ion-col>\n          <b>Quantità:</b> {{ quantita }}\n        </ion-col>\n    </ion-row>\n    <ion-row>\n        <ion-col>\n            <b>Descrizione:</b><br>\n            {{ descrizione }}\n        </ion-col>\n    </ion-row>\n  </ion-grid>\n\n</ion-content>'/*ion-inline-end:"C:\Users\Antonio\Documents\Progetti\NISC-Manager-Final-\src\pages\dettagliarticoli\dettagliarticoli.html"*/,
+            selector: 'page-dettagliarticoli',template:/*ion-inline-start:"C:\Users\Antonio\Documents\Progetti\NISC-Manager-Final-\src\pages\dettagliarticoli\dettagliarticoli.html"*/'<!--\n  Generated template for the DettagliArticoloPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar color="danger">\n    <ion-title>Dettagli articolo</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <ion-grid>\n    <ion-row>\n      <ion-col col-4 class="logo">\n        <img src="assets/img/articolo.png"/>\n      </ion-col>\n      <ion-col> \n        <p><b>ID:</b> {{ id }}</p>\n        <h1>{{ nome }}</h1>\n      </ion-col>\n    </ion-row>\n    <ion-row>\n        <ion-col>\n          <b>Quantità:</b> {{ quantita }}\n        </ion-col>\n    </ion-row>\n    <ion-row>\n        <ion-col>\n            <b>Descrizione:</b><br>\n            {{ descrizione }}\n        </ion-col>\n    </ion-row>\n  </ion-grid>\n\n</ion-content>'/*ion-inline-end:"C:\Users\Antonio\Documents\Progetti\NISC-Manager-Final-\src\pages\dettagliarticoli\dettagliarticoli.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
     ], DettagliPage);
@@ -2864,10 +3319,10 @@ var DettagliPage = (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProfiloPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__modifica_password_modifica_password__ = __webpack_require__(124);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__modifica_password_modifica_password__ = __webpack_require__(126);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2946,8 +3401,9 @@ var ProfiloPage = (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return InserisciModificaArticoloPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(9);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2961,21 +3417,38 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var InserisciModificaArticoloPage = (function () {
-    function InserisciModificaArticoloPage(navCtrl, navParams, http, alertCtrl) {
+    function InserisciModificaArticoloPage(navCtrl, navParams, http, alertCtrl, storage) {
         var _this = this;
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.http = http;
         this.alertCtrl = alertCtrl;
+        this.storage = storage;
         this.titolo_pagina = "";
+        storage.get('email').then(function (val) {
+            _this.user = val;
+        });
+        storage.get('password').then(function (val) {
+            _this.pass = val;
+        });
+        this.articolo = new Articolo(null, null, null, null, null);
+    }
+    InserisciModificaArticoloPage.prototype.ionViewWillEnter = function () {
+        var _this = this;
+        var email = this.user;
+        var password = this.pass;
         var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/x-www-form-urlencoded');
         var options = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["d" /* RequestOptions */]({ headers: headers });
-        if (navParams.data[0] == "inserisci") {
+        if (this.navParams.data[0] == "inserisci") {
             this.magazzino = this.navParams.data[1];
             this.titolo_pagina = "Inserisci articolo";
-            var postParams = {};
+            var postParams = {
+                email: email,
+                password: password
+            };
             this.http.post("http://niscmanager.altervista.org/get_info_articoli.php", JSON.stringify(postParams), options)
                 .subscribe(function (data) {
                 _this.dati_server = JSON.parse(data['_body']);
@@ -2984,18 +3457,19 @@ var InserisciModificaArticoloPage = (function () {
                     _this.next_id++;
                 }
             });
-            this.articolo = new Articolo(null, null, null, null, null);
         }
         else {
             this.titolo_pagina = "Modifica articolo";
-            this.articolo = navParams.data;
+            this.articolo = this.navParams.data;
             this.next_id = this.articolo.id;
             this.magazzino = this.articolo.nome_magazzino;
             console.log(this.articolo.nome);
         }
-    }
+    };
     InserisciModificaArticoloPage.prototype.salva = function (nome, quantita, descrizione, magazzino) {
         var _this = this;
+        var email = this.user;
+        var password = this.pass;
         if (nome == "" || quantita == "" || descrizione == "" || magazzino == "") {
             console.log("vuoto");
             var alert_1 = this.alertCtrl.create({
@@ -3011,6 +3485,8 @@ var InserisciModificaArticoloPage = (function () {
             var options = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["d" /* RequestOptions */]({ headers: headers });
             if (this.navParams.data[0] == "inserisci") {
                 var postParams = {
+                    email: email,
+                    password: password,
                     nome: nome,
                     quantita: quantita,
                     descrizione: descrizione,
@@ -3049,6 +3525,8 @@ var InserisciModificaArticoloPage = (function () {
             else {
                 var id = this.articolo.id;
                 var postParams = {
+                    email: email,
+                    password: password,
                     id: id,
                     nome: nome,
                     quantita: quantita,
@@ -3092,7 +3570,7 @@ var InserisciModificaArticoloPage = (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-inserisci-modifica-articolo',template:/*ion-inline-start:"C:\Users\Antonio\Documents\Progetti\NISC-Manager-Final-\src\pages\inserisci-modifica-articolo\inserisci-modifica-articolo.html"*/'<ion-header>\n\n  <ion-navbar color="danger">\n    <ion-title>{{ titolo_pagina }}</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding style="background-color:rgb(205, 241, 245);">\n  <ion-grid>\n      <ion-row>\n          <ion-item>\n            <p>ID: {{next_id}}</p>\n          </ion-item>\n        </ion-row>\n    <ion-row>\n      <ion-item>\n        <ion-label stacked>Nome</ion-label>\n        <ion-input #nome type="text" value={{articolo.nome}}></ion-input>\n      </ion-item>\n    </ion-row>\n    <ion-row>\n      <ion-item>\n        <ion-label stacked>Quantità</ion-label>\n        <ion-input #quantita type="number" value={{articolo.quantita}}></ion-input>\n      </ion-item>\n    </ion-row>\n    <ion-row>\n      <ion-item>\n        <ion-label stacked>Descrizione</ion-label>\n        <ion-input #descrizione type="text" value={{articolo.descrizione}}></ion-input>\n      </ion-item>\n    </ion-row>\n    <ion-row>\n      <ion-item>\n          <p #mag>Magazzino: {{magazzino}}</p>\n      </ion-item>\n    </ion-row>\n    \n  </ion-grid>\n\n  <p align=\'center\'>\n    <button ion-button color="secondary" round (click)=\'salva(nome.value,quantita.value,descrizione.value,magazzino)\'>Salva</button>\n  </p>\n\n</ion-content>'/*ion-inline-end:"C:\Users\Antonio\Documents\Progetti\NISC-Manager-Final-\src\pages\inserisci-modifica-articolo\inserisci-modifica-articolo.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_3__ionic_storage__["b" /* Storage */]])
     ], InserisciModificaArticoloPage);
     return InserisciModificaArticoloPage;
 }());
@@ -3117,11 +3595,11 @@ var Articolo = (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomeAmmPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__login_login__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__gestione_registrazione_gestione_registrazione__ = __webpack_require__(119);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__gestione_magazzini_admin_gestione_magazzini_admin__ = __webpack_require__(116);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__gestione_utenti_gestione_utenti__ = __webpack_require__(120);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__gestione_registrazione_gestione_registrazione__ = __webpack_require__(120);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__gestione_magazzini_admin_gestione_magazzini_admin__ = __webpack_require__(117);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__gestione_utenti_gestione_utenti__ = __webpack_require__(122);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__profilo_profilo__ = __webpack_require__(45);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -3183,5 +3661,5 @@ var Utente = (function () {
 
 /***/ })
 
-},[226]);
+},[228]);
 //# sourceMappingURL=main.js.map

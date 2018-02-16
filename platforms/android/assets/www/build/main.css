@@ -25699,6 +25699,7 @@ page-gestione-registrazione .inAttesa {
   height: 30px !important;
   border-radius: 50% !important;
   background-color: #EDFF21;
+  right: 10px;
 }
 
 page-gestione-registrazione .approvato {
@@ -25706,6 +25707,7 @@ page-gestione-registrazione .approvato {
   height: 30px !important;
   border-radius: 50% !important;
   background-color: #287233;
+  right: 15px;
 }
 
 page-gestione-registrazione .rifiutato {
@@ -25713,6 +25715,11 @@ page-gestione-registrazione .rifiutato {
   height: 30px !important;
   border-radius: 50% !important;
   background-color: red;
+  right: 10px;
+}
+
+page-gestione-registrazione .dati {
+  font-size: 19px;
 }
 
 page-home .sfondo {
@@ -25720,31 +25727,18 @@ page-home .sfondo {
 }
 
 page-home .dimensioni {
-  width: 20%;
-  right: 90%;
+  width: 30%;
 }
 
-page-home .card-background-page ion-card {
-  position: relative;
-  text-align: center;
-  opacity: 0.7;
+page-home img {
+  width: 95%;
+  height: 95%;
 }
 
-page-home .card-background-page .card-title {
-  position: absolute;
-  top: 36%;
-  font-size: 2.0em;
-  width: 100%;
-  font-weight: bold;
-  color: #0c0106;
-}
-
-page-home .card-background-page .card-subtitle {
-  font-size: 1.0em;
-  position: absolute;
-  top: 52%;
-  width: 100%;
-  color: #fff;
+page-home .home {
+  width: 95%;
+  height: 95%;
+  background: #ffffff;
 }
 
 page-home-amm .sfondo {
@@ -25774,27 +25768,16 @@ page-home-mag .dimensioni {
   width: 30%;
 }
 
-page-home-mag .card-background-page ion-card {
-  position: relative;
-  text-align: center;
-  opacity: 0.7;
+page-home-mag .home {
+  width: 95%;
+  height: 95%;
+  background: #ffffff;
 }
 
-page-home-mag .card-background-page .card-title {
-  position: absolute;
-  top: 36%;
-  font-size: 2.0em;
-  width: 100%;
-  font-weight: bold;
-  color: #0c0106;
-}
-
-page-home-mag .card-background-page .card-subtitle {
-  font-size: 1.0em;
-  position: absolute;
-  top: 52%;
-  width: 100%;
-  color: #fff;
+page-home-mag .mag {
+  width: 50%;
+  height: 50%;
+  background: #ffffff;
 }
 
 login-page .no-scroll {
@@ -25807,6 +25790,11 @@ page-mymagazzino ion-col {
 
 page-profilo ion-col {
   text-align: center;
+}
+
+page-profilo .dati {
+  text-align: right;
+  font-size: 14px;
 }
 
 page-richiestemateriale ion-col {

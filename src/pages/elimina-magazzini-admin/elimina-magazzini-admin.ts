@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Http, Headers, RequestOptions } from '@angular/http';
 import { AlertController } from 'ionic-angular';
+import { Storage } from '@ionic/storage';
 
 @IonicPage()
 @Component({
@@ -12,14 +13,22 @@ export class EliminaMagazziniAdminPage {
 
   magazzini = [];
   dati_server: any;
+  user: String;
+  pass: String;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http, public alertCtrl: AlertController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http, public alertCtrl: AlertController, public storage: Storage) {
     this.magazzini=navParams.data;
     this.dati_server=navParams.data;
+    storage.get('email').then((val) => {
+      this.user=val;
+    });
+    storage.get('password').then((val) => {
+      this.pass=val;
+    });
   }
 
-  //bisogna selezionare quelli da eliminare
   elimina(nome: String) {
+    
     let confirm = this.alertCtrl.create({
       title: 'Sicuro di voler eliminare il magazzino "'+nome+'"?',
       message: '',
@@ -34,11 +43,14 @@ export class EliminaMagazziniAdminPage {
           text: 'SI',
           handler: () => {
             console.log('Agree clicked');
-
+            var email=this.user;
+            var password=this.pass;
             var headers = new Headers();
             headers.append('Content-Type', 'application/x-www-form-urlencoded' );
             let options = new RequestOptions({ headers: headers }); 
             let postParams = {
+              email,
+              password,
               nome
             };
             this.http.post("http://niscmanager.altervista.org/elimina_magazzino.php", JSON.stringify(postParams), options)

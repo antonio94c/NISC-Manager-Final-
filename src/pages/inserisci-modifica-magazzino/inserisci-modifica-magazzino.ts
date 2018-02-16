@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Http, Headers, RequestOptions } from '@angular/http';
 import { AlertController } from 'ionic-angular';
+import { Storage } from '@ionic/storage';
 
 @IonicPage()
 @Component({
@@ -12,9 +13,17 @@ export class InserisciModificaMagazzinoPage {
 
   titolo_pagina="";
   magazzino: Magazzino;
+  user: String;
+  pass: String;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http, public alertCtrl: AlertController) {
-    console.log(navParams.data);
+  constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http, public alertCtrl: AlertController, public storage: Storage) {
+    storage.get('email').then((val) => {
+      this.user=val;
+    });
+    storage.get('password').then((val) => {
+      this.pass=val;
+    }); 
+
     if(navParams.data=="inserisci"){
       this.titolo_pagina="Inserisci magazzino";
       this.magazzino=new Magazzino(null,null);
@@ -27,12 +36,16 @@ export class InserisciModificaMagazzinoPage {
   }
 
   salva(nome: String, descrizione: String) {
+    var email=this.user;
+    var password=this.pass;
     var headers = new Headers();
     headers.append('Content-Type', 'application/x-www-form-urlencoded' );
     let options = new RequestOptions({ headers: headers }); 
  
     if(this.navParams.data=="inserisci"){
       let postParams = {
+        email,
+        password,
         nome,
         descrizione
       };
@@ -73,6 +86,8 @@ export class InserisciModificaMagazzinoPage {
     }else{
       let vecchio_nome=this.magazzino.nome;
       let postParams = {
+        email,
+        password,
         vecchio_nome,
         nome,
         descrizione
