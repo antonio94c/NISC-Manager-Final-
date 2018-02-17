@@ -32,11 +32,14 @@
            <ion-item>
               <ion-label stacked>Ruolo</ion-label>
           <ion-select [(ngModel)]="ruolo" [ngModelOptions]="{standalone: true}">
-              <ion-option value="Richiedente">
-                Richiedente
-              </ion-option>
-              <ion-option value="Magazziniere">
+              <ion-option *ngIf="ruolo != 'Richiedente';" value="Amministratore">
+                  Amministratore
+                </ion-option>
+              <ion-option *ngIf="ruolo != 'Richiedente';" value="Magazziniere">
                 Magazziniere
+              </ion-option>
+              <ion-option *ngIf="ruolo == 'Richiedente';" value="Richiedente">
+                Richiedente
               </ion-option>
           </ion-select>
         </ion-item>

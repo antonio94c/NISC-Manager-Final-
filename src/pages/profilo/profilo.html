@@ -20,15 +20,19 @@
             <ion-icon name="ios-key-outline" item-start></ion-icon>
             <ion-label>Password</ion-label><ion-label class="dati"> {{password}} </ion-label>
         </ion-item>
-        <ion-item *ngIf="nome_s != 'admin';">
+        <ion-item *ngIf="ruolo != 'Richiedente';">
+            <ion-icon name="ios-contacts-outline" item-start></ion-icon>
+            <ion-label>Nome</ion-label><ion-label class="dati"> {{nome_s}} </ion-label>
+        </ion-item>
+        <ion-item *ngIf="ruolo == 'Richiedente';">
             <ion-icon name="ios-contacts-outline" item-start></ion-icon>
             <ion-label>Nome Squadra</ion-label><ion-label class="dati"> {{nome_s}} </ion-label>
         </ion-item>
-        <ion-item *ngIf="nome_s != 'admin';">
+        <ion-item *ngIf="ruolo != 'Amministratore';">
             <ion-icon name="logo-reddit" item-start></ion-icon>
             <ion-label>Componenti</ion-label><ion-label class="dati"> {{componenti}} </ion-label>
         </ion-item>
-        <ion-item *ngIf="nome_s != 'admin';">
+        <ion-item *ngIf="ruolo != 'Amministratore';">
             <ion-icon name="ios-star-outline" item-start></ion-icon>
             <ion-label>Stato</ion-label><ion-label class="dati"> {{stato}} </ion-label>
         </ion-item>

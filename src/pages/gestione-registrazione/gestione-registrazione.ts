@@ -24,10 +24,11 @@ export class GestioneRegistrazionePage {
     str.get('password').then((pass) =>{
       this.password_a = pass;
     });
-    this.postRequest(this.email_a,this.password_a);
   }
 
-  postRequest(email:string, pass:string){
+  ionViewWillEnter(){
+    var email = this.email_a;
+    var pass = this.password_a;
     var headers = new Headers();
     headers.append('Content-Type', 'application/x-www-form-urlencoded' );
     let options = new RequestOptions({ headers: headers }); 
@@ -42,6 +43,7 @@ export class GestioneRegistrazionePage {
         this.dati_server = data.json(); 
         console.log(this.dati_server);
 
+        this.utenti = [];
         if(this.dati_server!=null){
           for(var i=0;i<this.dati_server.length;i++){
               if(this.dati_server[i].ruolo != 'Amministratore')
@@ -51,6 +53,7 @@ export class GestioneRegistrazionePage {
        }, error => {
         console.log(error);// Error getting the data
       });
+
   }
 
   updateStatus(utente:Utente, stato:string, ruolo:string){
@@ -67,8 +70,7 @@ export class GestioneRegistrazionePage {
     this.http.post("http://niscmanager.altervista.org/update_status.php", JSON.stringify(postParams), options)
       .subscribe(data => {
         this.dati_server = data;
-        this.navCtrl.pop();
-        this.navCtrl.push(this.navCtrl.getActive().component);
+        this.ionViewWillEnter();
         console.log(this.dati_server);
        }, error => {
         console.log(error);// Error getting the data

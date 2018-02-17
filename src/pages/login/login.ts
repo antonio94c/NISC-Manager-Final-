@@ -45,6 +45,14 @@ export class LoginPage {
       email,
       pass
     };
+
+    if(email == null){
+      this.presentConfirm("Inserire email");
+      return;
+    }if(pass == null){
+      this.presentConfirm("Inserire password");
+      return;
+    }
     
     this.http.post("http://niscmanager.altervista.org/get_utenti.php", JSON.stringify(postParams), options)
       .subscribe(data => {

@@ -35,13 +35,14 @@ export class ModificaPasswordPage {
     var email= this.email;
     var password= this.password;
     console.log(password);
-    
-    if(pass != password){
+
+    if(pass==null || n_pass ==null || c_pass == null){
+      this.presentConfirm("Opss... C'è qualche campo vuoto");
+      return;
+    }if(pass != password){
       this.presentConfirm("Password non corretta");
       return;
-    }
-
-    if(n_pass != c_pass){
+    }if(n_pass != c_pass){
       this.presentConfirm("Le password non corrispondono");
       return;
     }
