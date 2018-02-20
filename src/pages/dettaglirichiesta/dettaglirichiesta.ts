@@ -67,7 +67,7 @@ export class DettagliRichiestaPage {
             console.log("ciao dopo "+this.richieste_divise);
             if(this.richieste_divise!=null){
               for(var i=0;i<this.richieste_divise.length;i++){
-                this.richieste.push(new Richiesta(this.richieste_divise[i].id,this.richieste_divise[i].stato,this.richieste_divise[i].articolo,this.richieste_divise[i].quantita_richiesta,this.richieste_divise[i].quantita_approvata, this.richieste_divise[i].nome_squadra));
+                this.richieste.push(new Richiesta(this.richieste_divise[i].id,this.richieste_divise[i].nome_squadra,this.richieste_divise[i].stato,this.richieste_divise[i].articolo,this.richieste_divise[i].quantita_richiesta,this.richieste_divise[i].quantita_approvata));
               }
             }
           });

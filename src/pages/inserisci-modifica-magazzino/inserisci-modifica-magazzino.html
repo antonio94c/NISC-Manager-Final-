@@ -1,13 +1,13 @@
 <ion-header>
 
-  <ion-navbar color="danger">
+  <ion-navbar color="primary">
     <ion-title>{{ titolo_pagina }}</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding style="background-color:rgb(205, 241, 245);">
+<ion-content padding>
   <ion-grid>
     <ion-row>
       <ion-item>
@@ -26,6 +26,6 @@
 </ion-content>
 <ion-footer>
   <p align='center'>
-      <button ion-button color="secondary" round (click)='salva(nome.value,descrizione.value)'>Salva</button>
+      <button ion-button color="primary" round (click)='salva(nome.value,descrizione.value)'>Salva</button>
   </p>
 </ion-footer>

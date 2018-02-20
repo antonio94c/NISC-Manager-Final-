@@ -2,13 +2,10 @@
   <ion-navbar color="primary">
     <ion-title>Gestione magazzini</ion-title>
   </ion-navbar>
+  <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar> 
 </ion-header>
 
 <ion-content>
-  <p>
-    <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar> 
-  </p>
-  <p></p>
   <div ng-controller="listController"> 
     <ion-list>
 
@@ -24,7 +21,7 @@
 </ion-content>
 <ion-footer>
   <p align='center'>
-    <button ion-button color="secondary" round (click)='inserisci()'>Inserisci</button>
+    <button ion-button color="primary" round (click)='inserisci()'>Inserisci</button>
     <button ion-button color="danger" round (click)='elimina()'>Elimina</button>
   </p>
 </ion-footer>

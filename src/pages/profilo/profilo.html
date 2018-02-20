@@ -5,41 +5,41 @@
         </ion-navbar>
       </ion-header>
       
-      <ion-content padding >
+      <ion-content padding>
         <p>
           <img src="assets/img/logo1.gif"/>
         </p>
       <p>
       </p>
       <ion-list>
-        <ion-item>
-            <ion-icon name="ios-mail-outline" item-start></ion-icon>
-            <ion-label>Email</ion-label><ion-label class="dati"> {{email}} </ion-label>
-        </ion-item>
-        <ion-item>
-            <ion-icon name="ios-key-outline" item-start></ion-icon>
-            <ion-label>Password</ion-label><ion-label class="dati"> {{password}} </ion-label>
-        </ion-item>
-        <ion-item *ngIf="ruolo != 'Richiedente';">
-            <ion-icon name="ios-contacts-outline" item-start></ion-icon>
-            <ion-label>Nome</ion-label><ion-label class="dati"> {{nome_s}} </ion-label>
-        </ion-item>
-        <ion-item *ngIf="ruolo == 'Richiedente';">
-            <ion-icon name="ios-contacts-outline" item-start></ion-icon>
-            <ion-label>Nome Squadra</ion-label><ion-label class="dati"> {{nome_s}} </ion-label>
-        </ion-item>
-        <ion-item *ngIf="ruolo != 'Amministratore';">
-            <ion-icon name="logo-reddit" item-start></ion-icon>
-            <ion-label>Componenti</ion-label><ion-label class="dati"> {{componenti}} </ion-label>
-        </ion-item>
-        <ion-item *ngIf="ruolo != 'Amministratore';">
-            <ion-icon name="ios-star-outline" item-start></ion-icon>
-            <ion-label>Stato</ion-label><ion-label class="dati"> {{stato}} </ion-label>
-        </ion-item>
-        <ion-item>
-            <ion-icon name="ios-american-football-outline" item-start></ion-icon>
-            <ion-label>Ruolo</ion-label><ion-label class="dati"> {{ruolo}} </ion-label>
-        </ion-item>
+            <ion-item>
+                    <ion-icon name="ios-mail-outline" item-start></ion-icon>
+                    <ion-label>Email</ion-label><ion-label class="dati"> {{email}} </ion-label>
+                </ion-item>
+                <ion-item>
+                    <ion-icon name="ios-key-outline" item-start></ion-icon>
+                    <ion-label>Password</ion-label><ion-label class="dati"> {{password}} </ion-label>
+                </ion-item>
+                <ion-item *ngIf="ruolo != 'Richiedente';">
+                    <ion-icon name="ios-contacts-outline" item-start></ion-icon>
+                    <ion-label>Nome</ion-label><ion-label class="dati"> {{nome_s}} </ion-label>
+                </ion-item>
+                <ion-item *ngIf="ruolo == 'Richiedente';">
+                    <ion-icon name="ios-contacts-outline" item-start></ion-icon>
+                    <ion-label>Nome Squadra</ion-label><ion-label class="dati"> {{nome_s}} </ion-label>
+                </ion-item>
+                <ion-item *ngIf="ruolo != 'Amministratore';">
+                    <ion-icon name="logo-reddit" item-start></ion-icon>
+                    <ion-label>Componenti</ion-label><ion-label class="dati"> {{componenti}} </ion-label>
+                </ion-item>
+                <ion-item *ngIf="ruolo != 'Amministratore';">
+                    <ion-icon name="ios-star-outline" item-start></ion-icon>
+                    <ion-label>Stato</ion-label><ion-label class="dati"> {{stato}} </ion-label>
+                </ion-item>
+                <ion-item>
+                    <ion-icon name="ios-american-football-outline" item-start></ion-icon>
+                    <ion-label>Ruolo</ion-label><ion-label class="dati"> {{ruolo}} </ion-label>
+                </ion-item>
         
       </ion-list>
     

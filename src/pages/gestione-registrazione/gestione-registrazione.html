@@ -3,12 +3,10 @@
   <ion-navbar color="primary">
     <ion-title>Gestione Registrazione</ion-title>
   </ion-navbar>
-
+  <ion-searchbar placeholder="Cerca per nome squadra" (ionInput)="getItems($event)"></ion-searchbar>
 </ion-header>
 
 <ion-content padding>
-    
-        <ion-searchbar placeholder="Cerca per nome squadra" (ionInput)="getItems($event)"></ion-searchbar>
 
         <ion-list>
             <ion-item *ngFor="let utente of utenti">

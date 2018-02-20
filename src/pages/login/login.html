@@ -6,7 +6,7 @@
   </ion-navbar>
 </ion-header>
 <ion-content padding id="page1" class="no-scroll">
-  <img src="assets/img/J6RhzI1UTRKQJdXpWUkV_logoneapolis.png" style="display:block;width:100%;height:auto;margin-left:auto;margin-right:auto;" />
+  <img src="assets/img/logo1.gif" style="display:block;width:100%;height:auto;margin-left:auto;margin-right:auto;" />
   <form id="page-form2">
     <ion-item id="page-input2">
       <ion-label>
@@ -21,7 +21,7 @@
       <ion-input type="password" placeholder="" [(ngModel)]="password" [ngModelOptions]="{standalone: true}"></ion-input>
     </ion-item>
    
-  </form>
+  </form> 
   <div padding>
     <a (click)='recuperaPassword()'>Password Dimentica?</a>
   <button id="page-button1" ion-button color="positive" block (click)="postRequest(user_id,password)">
@@ -31,13 +31,4 @@
     Registarti
   </button>
 </div>
-  <button ion-button color="positive" block (click)='goToHomeRic()'>
-    Richiedente
-  </button>
-  <button ion-button color="positive" block (click)='goToHomeMag()'>
-    Magazziniere
-  </button>
-  <button ion-button color="positive" block (click)='goToHomeAmm()'>
-    Amministratore
-  </button>
 </ion-content>

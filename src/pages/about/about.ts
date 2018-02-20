@@ -5,12 +5,6 @@ import { Http, Headers, RequestOptions } from '@angular/http';
 import {Storage} from '@ionic/storage';
 import { DettagliPage } from '../dettagliarticoli/dettagliarticoli';
 
-/**
- * Generated class for the MymagazzinoPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -20,13 +14,14 @@ import { DettagliPage } from '../dettagliarticoli/dettagliarticoli';
 export class AboutPage{
 
   articoli = [];
-
+  richieste=[];
   dati_server: any;
-  quantita_articoli: number[];
+  quantita_articoli= [];
   user: string;
   pass: string;
+  nome_s: string;
 
-  constructor(public navCtrl: NavController, public http: Http, public navParams: NavParams,public altr:AlertController,public storage: Storage) {
+  constructor(public navCtrl: NavController, public http: Http, public navParams: NavParams,public altr:AlertController,public storage: Storage, public alertCtrl: AlertController) {
     //sessione: chi sei?  
     storage.get('email').then((val) => {
       this.user=val;  
@@ -35,9 +30,10 @@ export class AboutPage{
     storage.get('password').then((val) => {
       this.pass=val;
     });
+    storage.get('nome_s').then((val) => {
+      this.nome_s=val;
+    });
   
-
-    this.quantita_articoli=[this.articoli.length];
   }
 
   ionViewWillEnter(){
@@ -55,16 +51,17 @@ export class AboutPage{
       };
       this.http.post("http://niscmanager.altervista.org/get_articoli.php", JSON.stringify(postParams), options)
         .subscribe(data => {
-          console.log("ciao "+data['_body']);
+          if(data['_body'][0]=="["){
           this.dati_server=JSON.parse(data['_body']);
-          //this.dati_server = data.json();
-          //console.log(this.dati_server);
           if(this.dati_server!=null){
             this.articoli=[];
             for(var i=0;i<this.dati_server.length;i++){
               this.articoli.push(new Articolo(this.dati_server[i].id,this.dati_server[i].nome,this.dati_server[i].quantita,this.dati_server[i].descrizione,nome_mag));
             }
           }
+        }else{
+          console.log(data['_body']);
+        }
         });
   }
 
@@ -73,43 +70,73 @@ export class AboutPage{
     console.log("Selected Item", articolo.quantita);
     this.navCtrl.push(DettagliPage, articolo);
   }
+
   reset(){
     for(var i=0; i<this.quantita_articoli.length; i++){
      this.quantita_articoli[i]=0;
     }
   }
 
-  invia_richiesta(text: string){
-    console.log("hai preso",this.quantita_articoli[0]);
-    /*var headers = new Headers();
-    headers.append('Content-Type', 'application/x-www-form-urlencoded' );
-    let options = new RequestOptions({ headers: headers }); 
- 
-    var email= this.user;
-    var password= this.pass;
-    var nome_mag="principale"; 
-  
+  invia_richiesta(){
+    var flag=true;
+    var email=this.user;
+    var password=this.pass;
+    var richiedi=[];
+    var squadra=this.nome_s;
+    for(var i=0;i<this.articoli.length;i++){
+      if(this.quantita_articoli[i]>this.articoli[i].quantita){
+        flag=false;
+      }
+      if(this.quantita_articoli[i]==undefined || this.quantita_articoli[i]==0){
+      }else{
+        richiedi.push(new Richiesta(this.articoli[i].id,this.quantita_articoli[i]));
+      }
+    }
+    if(flag){
+      var headers = new Headers();
+      headers.append('Content-Type', 'application/x-www-form-urlencoded');
+      let options = new RequestOptions({ headers: headers }); 
+
       let postParams = {
-        nome_mag,
         email,
         password,
-        
+        squadra,
+        richiedi
       };
-      this.http.post("http://niscmanager.altervista.org/articoli_inviati.php", JSON.stringify(postParams), options)
-        .subscribe(data => {
-          console.log("ciao "+data['_body']);
-          this.dati_server=JSON.parse(data['_body']);
-          if(this.dati_server!=null){
-            this.articoli=[];
-            for(var i=0;i<this.dati_server.length;i++){
-              this.articoli.push(new Articolo(this.dati_server[i].id,this.dati_server[i].nome,this.dati_server[i].quantita,this.dati_server[i].descrizione));
-            }
+      this.http.post("http://niscmanager.altervista.org/richiedi_articoli.php", JSON.stringify(postParams), options) 
+      .subscribe(data => {
+          let alert = this.alertCtrl.create({
+            title: data['_body'],
+            subTitle: '',
+            buttons: [{
+              text: 'Ok',
+              handler: () => {
+                let navTransition = alert.dismiss();
+                navTransition.then(() => {
+                    this.navCtrl.pop();
+                  });
+                return false;
+              }
+            }]
+          });
+          alert.present();
+      });
+    }else{
+      let alert = this.alertCtrl.create({
+        title: "Limite pezzi superato",
+        subTitle: '',
+        buttons: [{
+          text: 'Ok',
+          handler: () => {
+            let navTransition = alert.dismiss();
+            navTransition.then(() => {
+            });
+            return false;
           }
-        });*/
-/* inviare con post i dati 
-*/
-
-    this.presentConfirm('con successo');
+        }]
+      });
+      alert.present();
+    }
   }
 
 
@@ -153,8 +180,6 @@ export class AboutPage{
     }
   }
 
-
-
 }
 
 class Articolo{
@@ -165,7 +190,6 @@ class Articolo{
   nome_magazzino: string;
 
   constructor(id: number, nome: string, quantita: number, descrizione: string,nome_magazzino: string){
-    //
     this.id=id;
     this.nome=nome;
     this.quantita=quantita;
@@ -173,4 +197,14 @@ class Articolo{
     this.nome_magazzino=nome_magazzino;
   }
   
+}
+
+class Richiesta{
+  id: string;
+  quantita: string;
+
+  constructor(id:string,quantita:string){
+    this.id=id;
+    this.quantita=quantita;
+  }
 }

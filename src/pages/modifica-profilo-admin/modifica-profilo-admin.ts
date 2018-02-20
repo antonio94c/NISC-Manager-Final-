@@ -34,6 +34,7 @@ export class ModificaProfiloAdminPage {
     this.ruolo=navParams.data.ruolo;
     this.nome_s=navParams.data.nome_s;
     this.stato = navParams.data.stato;
+
   }
 
   postRequest(email:string, stato:string, ruolo:string) {
@@ -52,6 +53,8 @@ export class ModificaProfiloAdminPage {
       this.presentConfirm("Ops... ci sono dei campi vuoti");
       return;
     }
+    
+    console.log(email, ruolo, stato, nome_squadra);
 
     this.http.post("http://niscmanager.altervista.org/update_utente.php", JSON.stringify(postParams), options)
       .subscribe(data => {

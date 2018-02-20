@@ -53,7 +53,6 @@ export class GestioneRegistrazionePage {
        }, error => {
         console.log(error);// Error getting the data
       });
-
   }
 
   updateStatus(utente:Utente, stato:string, ruolo:string){

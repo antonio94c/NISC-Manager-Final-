@@ -24,11 +24,6 @@ export class RecuperaPasswordPage {
     let postParams = {
       email,
     };
-
-    if(email == null){
-      this.presentConfirm("Inserire email");
-      return;
-    }
  
     this.http.post("http://niscmanager.altervista.org/email_forward.php", JSON.stringify(postParams), options)
       .subscribe(data => {

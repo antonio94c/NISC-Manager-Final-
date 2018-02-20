@@ -38,7 +38,6 @@ export class RichiesteMaterialePage{
       this.pass=val;
     });
 
-    this.ionViewWillEnter();
   }
 
   ionViewWillEnter(){
